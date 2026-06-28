@@ -2,7 +2,7 @@
 <html lang="de">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <link rel="icon" type="image/svg+xml" href="favicon.svg">
 <title>StromSchwaben · Solaranlagen für Eigenheime und Gewerbe im Raum Stuttgart</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -21,7 +21,7 @@
   --max:1100px;
   --pad:24px;
 }
-html{scroll-behavior:smooth}
+html{scroll-behavior:auto}
 body{font-family:'Geist',system-ui,sans-serif;background:var(--white);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased}
 .honeycomb-bg{background-color:var(--white);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V17L28 1l28 16v33L28 66zm0-6l22-13V23L28 7 6 20v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.5'/%3E%3Cpath d='M28 100L0 84V51l28-17 28 17v33L28 100zm0-6l22-13V57L28 41 6 57v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.5'/%3E%3C/svg%3E");}
 .section:not(.bg-off):not(.contact-bg){background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V17L28 1l28 16v33L28 66zm0-6l22-13V23L28 7 6 20v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.4'/%3E%3Cpath d='M28 100L0 84V51l28-17 28 17v33L28 100zm0-6l22-13V57L28 41 6 57v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.4'/%3E%3C/svg%3E");}
@@ -1154,4 +1154,11 @@ rechnen();
 
 
 </body>
+<script>
+window.addEventListener('load', function() {
+  setTimeout(function() {
+    document.documentElement.style.scrollBehavior = 'smooth';
+  }, 100);
+});
+</script>
 </html>
