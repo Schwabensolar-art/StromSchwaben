@@ -235,6 +235,57 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   .proj-grid,.reviews-grid,.blog-grid{grid-template-columns:1fr}
   .trust-items{grid-template-columns:repeat(2,1fr)}
   .hero-stats{grid-template-columns:1fr 1fr}
+
+  /* Hero */
+  .hero h1{max-width:100%;font-size:2rem}
+  .hero-sub{max-width:100%}
+  .hero-visual-bg{display:none}
+
+  /* Modals */
+  #modal-rechner > div,
+  #modal-impressum > div,
+  #modal-datenschutz > div{
+    margin:0;
+    border-radius:0;
+    padding:28px 20px;
+    min-height:100vh;
+  }
+
+  /* Impressum grid */
+  #modal-impressum > div > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr !important;
+    gap:28px !important;
+  }
+
+  /* Rechner buttons */
+  #modal-rechner button[style*="flex:1"]{
+    font-size:0.75rem;
+    padding:8px 4px;
+  }
+
+  /* Ergebnis grid */
+  #ergebnis > div[style*="grid-template-columns:1fr 1fr"]{
+    grid-template-columns:1fr 1fr !important;
+    gap:14px !important;
+  }
+
+  /* Über uns */
+  .about-layout{grid-template-columns:1fr}
+
+  /* Kontakt */
+  .contact-layout{grid-template-columns:1fr}
+
+  /* FAQ */
+  details summary{font-size:0.9rem}
+
+  /* Blog */
+  .blog-article-header{flex-direction:column;gap:8px}
+
+  /* Wrap padding */
+  .wrap{padding-left:16px;padding-right:16px}
+
+  /* Section padding */
+  .section{padding:48px 0}
 }
 
 /* ── SUN ELEMENTS ── */
@@ -863,7 +914,7 @@ function toggleBlog(header){
 
 <!-- RECHNER MODAL -->
 <div id="modal-rechner" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.55);overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:var(--white);max-width:620px;margin:40px auto;border-radius:10px;padding:48px;position:relative" onclick="event.stopPropagation()">
+  <div style="background:var(--white);max-width:620px;width:100%;margin:40px auto;border-radius:10px;padding:clamp(20px,4vw,48px);position:relative;box-sizing:border-box" onclick="event.stopPropagation()">
     <button type="button" onclick="document.getElementById('modal-rechner').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.25rem;cursor:pointer;color:var(--muted)">✕</button>
     <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px">Einsparpotenzial</p>
     <h2 style="font-size:1.4rem;font-weight:700;margin-bottom:6px">Wie viel könnte deine Anlage bringen?</h2>
@@ -1011,11 +1062,11 @@ rechnen();
 
 <!-- IMPRESSUM MODAL -->
 <div id="modal-impressum" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.55);overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:var(--white);max-width:780px;margin:40px auto;border-radius:10px;padding:48px;position:relative">
+  <div style="background:var(--white);max-width:780px;width:100%;margin:40px auto;border-radius:10px;padding:clamp(20px,4vw,48px);position:relative;box-sizing:border-box">
     <button onclick="document.getElementById('modal-impressum').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.25rem;cursor:pointer;color:var(--muted)">✕</button>
     <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px">Rechtliches</p>
     <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:32px">Impressum</h2>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:48px">
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:32px">
       <div>
         <h3 style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:12px">Angaben gemäß § 5 TMG</h3>
         <p style="font-size:0.875rem;line-height:1.8;color:var(--text)">Manuel Langendörfer und Anton Reuter GbR<br>handelnd unter „StromSchwaben"<br>Hintere Gasse 53<br>70794 Filderstadt<br>Deutschland</p>
@@ -1048,7 +1099,7 @@ rechnen();
 
 <!-- DATENSCHUTZ MODAL -->
 <div id="modal-datenschutz" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.55);overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
-  <div style="background:var(--white);max-width:780px;margin:40px auto;border-radius:10px;padding:48px;position:relative">
+  <div style="background:var(--white);max-width:780px;width:100%;margin:40px auto;border-radius:10px;padding:clamp(20px,4vw,48px);position:relative;box-sizing:border-box">
     <button onclick="document.getElementById('modal-datenschutz').style.display='none'" style="position:absolute;top:20px;right:20px;background:none;border:none;font-size:1.25rem;cursor:pointer;color:var(--muted)">✕</button>
     <p style="font-size:0.75rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:var(--muted);margin-bottom:8px">Rechtliches</p>
     <h2 style="font-size:1.5rem;font-weight:700;margin-bottom:32px">Datenschutzerklärung</h2>
