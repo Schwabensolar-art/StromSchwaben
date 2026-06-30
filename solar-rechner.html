@@ -34,6 +34,64 @@
   "provider": {"@type": "Organization", "name": "StromSchwaben", "url": "https://stromschwaben.de"}
 }
 </script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Wie genau ist dieser Solarrechner?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Rechner liefert eine erste Orientierung auf Basis branchenüblicher Richtwerte für Süddeutschland. Er berücksichtigt Dachgröße, Ausrichtung und Neigung, aber keine individuelle Verschattung durch Bäume oder Nachbargebäude, keinen exakten Standort und keine Besonderheiten deiner Haustechnik. Für eine belastbare Planung schauen wir uns dein Dach persönlich an."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Wie wird der Autarkiegrad berechnet?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Der Autarkiegrad zeigt, wie viel Prozent deines gesamten Jahresstromverbrauchs du durch die Solaranlage selbst deckst. Er berechnet sich aus dem geschätzten Eigenverbrauch geteilt durch deinen Jahresverbrauch. Ohne Speicher liegt er meist bei 20 bis 35 Prozent, mit Speicher häufig bei 50 bis 80 Prozent, abhängig von Anlagengröße und Verbrauchsprofil."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Was ist der Unterschied zwischen Eigenverbrauch und Einspeisung?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eigenverbrauch ist der Teil des erzeugten Solarstroms, den du direkt selbst nutzt, etwa für Haushaltsgeräte, eine Wärmepumpe oder ein E-Auto. Einspeisung ist der überschüssige Strom, der ins öffentliche Netz fließt und mit der Einspeisevergütung vergütet wird. Eigenverbrauch ist wirtschaftlich deutlich wertvoller, da er den teuren Netzstrombezug ersetzt statt nur die niedrigere Einspeisevergütung zu erhalten."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Warum unterscheiden sich Süd-, Ost-, West- und Nordausrichtung so stark?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Die Sonneneinstrahlung trifft eine Südfläche über den Tag verteilt am intensivsten. Ost- und Westausrichtung erzielen etwa 85 Prozent des Ertrags einer Südfläche, verteilen die Produktion aber gleichmäßiger über Morgen und Abend. Nordausrichtung liefert deutlich weniger Ertrag und eignet sich meist nur als Ergänzung zu einer Hauptfläche in besserer Ausrichtung."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Kann ich mit dem Rechner auch ein Flachdach planen?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Ja. Wähle bei der Ausrichtung die Option Flachdach. Module auf Flachdächern werden meist mit einer Aufständerung in einem festen Winkel montiert, der Rechner setzt dafür einen mittleren Ertragswert an, der zwischen optimaler Südausrichtung und einer reinen Horizontalmontage liegt."
+      }
+    }
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {"@type": "ListItem", "position": 1, "name": "Startseite", "item": "https://stromschwaben.de/index.html"},
+    {"@type": "ListItem", "position": 2, "name": "Solar-Rechner", "item": "https://stromschwaben.de/solar-rechner.html"}
+  ]
+}
+</script>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
@@ -454,6 +512,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <li><a href="index.html#projekte">Projekte</a></li>
         <li><a href="index.html#blog">Blog</a></li>
         <li><a href="index.html#faq">FAQ</a></li>
+        <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       </ul>
     </nav>
     <a href="index.html#kontakt" class="nav-btn">Beratung anfragen</a>
@@ -643,6 +702,32 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       <p style="font-size:0.9375rem;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:16px">Jedes platzierte Modul hat eine Leistung von 0,44 kWp, das entspricht modernen Modulen wie sie 2026 üblich verbaut werden. Der Jahresertrag pro kWp hängt von Ausrichtung und Neigung ab: Süd mit optimaler Neigung erzielt in Süddeutschland rund 1.050 kWh pro kWp, Ost- oder Westausrichtung etwa 85 Prozent davon, Nordausrichtung deutlich weniger. Diese Werte sind Richtwerte, dein tatsächlicher Ertrag hängt zusätzlich von Verschattung, genauem Standort und Witterung ab.</p>
       <p style="font-size:0.9375rem;color:var(--text);line-height:1.8;text-align:justify">Die Eigenverbrauchsquote schätzen wir auf Basis typischer Haushalte: etwa 30 Prozent ohne Speicher, 65 bis 70 Prozent mit Speicher. Die Einspeisevergütung ist mit 7,78 Cent pro Kilowattstunde angesetzt, der aktuelle Satz für Teileinspeisung bis 10 kWp (Stand Februar 2026). Mehr zur möglichen Entwicklung der Förderung liest du in unserem <a href="eeg-reform-2027.html" style="color:var(--text);text-decoration:underline">Artikel zur EEG-Reform 2027</a>, mehr zur Speicherfrage im <a href="photovoltaik-speicher-lohnt-sich.html" style="color:var(--text);text-decoration:underline">Artikel zum Batteriespeicher</a>.</p>
     </div>
+
+    <div style="max-width:720px;margin-top:40px">
+      <h2 class="sec-title" style="font-size:1.3rem">Häufige Fragen zum Solar-Rechner.</h2>
+      <div style="margin-top:20px">
+        <details>
+          <summary>Wie genau ist dieser Solarrechner?</summary>
+          <div class="faq-body">Der Rechner liefert eine erste Orientierung auf Basis branchenüblicher Richtwerte für Süddeutschland. Er berücksichtigt Dachgröße, Ausrichtung und Neigung, aber keine individuelle Verschattung durch Bäume oder Nachbargebäude, keinen exakten Standort und keine Besonderheiten deiner Haustechnik. Für eine belastbare Planung schauen wir uns dein Dach persönlich an.</div>
+        </details>
+        <details>
+          <summary>Wie wird der Autarkiegrad berechnet?</summary>
+          <div class="faq-body">Der Autarkiegrad zeigt, wie viel Prozent deines gesamten Jahresstromverbrauchs du durch die Solaranlage selbst deckst. Er berechnet sich aus dem geschätzten Eigenverbrauch geteilt durch deinen Jahresverbrauch. Ohne Speicher liegt er meist bei 20 bis 35 Prozent, mit Speicher häufig bei 50 bis 80 Prozent, abhängig von Anlagengröße und Verbrauchsprofil.</div>
+        </details>
+        <details>
+          <summary>Was ist der Unterschied zwischen Eigenverbrauch und Einspeisung?</summary>
+          <div class="faq-body">Eigenverbrauch ist der Teil des erzeugten Solarstroms, den du direkt selbst nutzt, etwa für Haushaltsgeräte, eine Wärmepumpe oder ein E-Auto. Einspeisung ist der überschüssige Strom, der ins öffentliche Netz fließt und mit der Einspeisevergütung vergütet wird. Eigenverbrauch ist wirtschaftlich deutlich wertvoller, da er den teuren Netzstrombezug ersetzt statt nur die niedrigere Einspeisevergütung zu erhalten.</div>
+        </details>
+        <details>
+          <summary>Warum unterscheiden sich Süd-, Ost-, West- und Nordausrichtung so stark?</summary>
+          <div class="faq-body">Die Sonneneinstrahlung trifft eine Südfläche über den Tag verteilt am intensivsten. Ost- und Westausrichtung erzielen etwa 85 Prozent des Ertrags einer Südfläche, verteilen die Produktion aber gleichmäßiger über Morgen und Abend, was bei hohem Verbrauch zu diesen Zeiten sogar vorteilhaft sein kann. Nordausrichtung liefert deutlich weniger Ertrag und eignet sich meist nur als Ergänzung zu einer Hauptfläche in besserer Ausrichtung.</div>
+        </details>
+        <details>
+          <summary>Kann ich mit dem Rechner auch ein Flachdach planen?</summary>
+          <div class="faq-body">Ja. Wähle bei der Ausrichtung die Option Flachdach. Module auf Flachdächern werden meist mit einer Aufständerung in einem festen Winkel montiert, der Rechner setzt dafür einen mittleren Ertragswert an, der zwischen optimaler Südausrichtung und einer reinen Horizontalmontage liegt.</div>
+        </details>
+      </div>
+    </div>
   </div>
 </section>
 
@@ -655,6 +740,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       <li><a href="index.html#projekte">Projekte</a></li>
       <li><a href="index.html#blog">Blog</a></li>
       <li><a href="index.html#faq">FAQ</a></li>
+      <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       <li><a href="index.html">Impressum</a></li>
       <li><a href="index.html">Datenschutz</a></li>
     </ul>
