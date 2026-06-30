@@ -612,53 +612,64 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- PROBLEME -->
+<style>
+.pc-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:32px}
+.pc-card{perspective:1200px;cursor:pointer;height:168px}
+.pc-inner{position:relative;width:100%;height:100%;transition:transform .5s cubic-bezier(.4,0,.2,1);transform-style:preserve-3d}
+.pc-card.open .pc-inner{transform:rotateY(180deg)}
+.pc-face{position:absolute;inset:0;backface-visibility:hidden;border:1px solid var(--border);border-radius:8px;background:var(--white);padding:22px;display:flex;flex-direction:column;justify-content:space-between}
+.pc-back{transform:rotateY(180deg);justify-content:center}
+.pc-num{font-size:0.72rem;font-weight:700;color:var(--muted);display:flex;align-items:center}
+.pc-card h3{font-size:1rem;font-weight:700;letter-spacing:-0.01em}
+.pc-hint{font-size:0.75rem;color:var(--muted);display:flex;align-items:center;gap:5px}
+.pc-back p{font-size:0.84rem;color:var(--text);line-height:1.6;text-align:justify}
+@media(max-width:640px){.pc-grid{grid-template-columns:1fr}.pc-card{height:auto}.pc-inner{transition:none}.pc-card.open .pc-inner{transform:none}.pc-face{position:static;backface-visibility:visible}.pc-back{display:none}.pc-card.open .pc-back{display:flex}.pc-card.open .pc-front{display:none}}
+</style>
 <section class="section bg-off" id="probleme">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Warum wir</p>
     <h2 class="sec-title">Wir kennen die Branche von innen.</h2>
     <p class="sec-body">Unser Ansatz ist einfach: Bildung ist das A und O. Wer nicht versteht was er kauft trifft keine gute Entscheidung. Wir nehmen uns die Zeit die dafür nötig ist, bevor irgendwas bestellt wird.</p>
-    <div class="problem-layout">
-      <div class="problem-list">
-        <div class="problem-item">
-          <div class="p-n"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);margin-right:4px;vertical-align:middle"></span>01</div>
-          <div class="p-body">
+    <div class="pc-grid">
+      <div class="pc-card" onclick="this.classList.toggle('open')">
+        <div class="pc-inner">
+          <div class="pc-face pc-front">
+            <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg><span style="margin-left:6px">01</span></div>
             <h3>Fertigpakete statt Analyse</h3>
-            <p>Viele Anbieter haben Lagerbestände die sie abbauen müssen. Das Ergebnis sind Komponenten die nicht zusammenpassen oder schlicht falsch dimensioniert sind.</p>
+            <div class="pc-hint">Antippen zum Lesen <span>↻</span></div>
           </div>
-        </div>
-        <div class="problem-item">
-          <div class="p-n"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);margin-right:4px;vertical-align:middle"></span>02</div>
-          <div class="p-body">
-            <h3>Module falsch angebracht</h3>
-            <p>Ausrichtung, Neigung, Verschattung. Wenn das nicht stimmt produziert die Anlage dauerhaft 20 bis 40 Prozent weniger. Über 20 Jahre summiert sich das zu echtem Schaden.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="p-n"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);margin-right:4px;vertical-align:middle"></span>03</div>
-          <div class="p-body">
-            <h3>Niemand plant den Zeitplan mit</h3>
-            <p>Die Netzzusage durch das EVU dauert oft Monate. Wenn das niemand parallel koordiniert verliert man wertvolle Produktionszeit.</p>
-          </div>
-        </div>
-        <div class="problem-item">
-          <div class="p-n"><span style="display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);margin-right:4px;vertical-align:middle"></span>04</div>
-          <div class="p-body">
-            <h3>Kunden verstehen nicht was sie kaufen</h3>
-            <p>Wenn man etwas nicht versteht muss man selbst nachforschen. Nur so trifft man die richtigen Entscheidungen. Das war unser Grundsatz im Studium und gilt hier genauso.</p>
-          </div>
+          <div class="pc-face pc-back"><p>Viele Anbieter haben Lagerbestände die sie abbauen müssen. Das Ergebnis sind Komponenten die nicht zusammenpassen oder schlicht falsch dimensioniert sind.</p></div>
         </div>
       </div>
-      <div class="problem-aside">
-        <p class="pa-title">Deine Anlage wird für dich zusammengestellt, Teil für Teil.</p>
-        <div class="pa-rows">
-          <div class="pa-row"><span class="pa-left">Paketlösung vom Lager</span><span class="pa-bad">Andere</span></div>
-          <div class="pa-row"><span class="pa-left">Analyse Haustechnik</span><span class="pa-good">StromSchwaben</span></div>
-          <div class="pa-row"><span class="pa-left">Zeitplan ab Tag 1</span><span class="pa-good">StromSchwaben</span></div>
-          <div class="pa-row"><span class="pa-left">Direktkontakt Berater</span><span class="pa-good">StromSchwaben</span></div>
-          <div class="pa-row"><span class="pa-left">Eigene Monteure</span><span class="pa-good">Via Celaris</span></div>
-          <div class="pa-row"><span class="pa-left">Ehrliche Absage wenn nötig</span><span class="pa-good">StromSchwaben</span></div>
+      <div class="pc-card" onclick="this.classList.toggle('open')">
+        <div class="pc-inner">
+          <div class="pc-face pc-front">
+            <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="9" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="14" x2="21" y2="21"/><line x1="21" y1="14" x2="14" y2="21"/></svg><span style="margin-left:6px">02</span></div>
+            <h3>Module falsch angebracht</h3>
+            <div class="pc-hint">Antippen zum Lesen <span>↻</span></div>
+          </div>
+          <div class="pc-face pc-back"><p>Ausrichtung, Neigung, Verschattung. Wenn das nicht stimmt produziert die Anlage dauerhaft 20 bis 40 Prozent weniger. Über 20 Jahre summiert sich das zu echtem Schaden.</p></div>
         </div>
-        <p class="pa-footer"><strong>Celaris GmbH, Karlsruhe</strong><br>Für die Montage und Inbetriebnahme haben wir uns bewusst für Celaris entschieden. Meisterbetrieb, eigene Monteure, aus der Region. Celaris ist euer Ansprechpartner im Raum Karlsruhe, wir von StromSchwaben im Raum Stuttgart und Esslingen.</p>
+      </div>
+      <div class="pc-card" onclick="this.classList.toggle('open')">
+        <div class="pc-inner">
+          <div class="pc-face pc-front">
+            <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span style="margin-left:6px">03</span></div>
+            <h3>Niemand plant den Zeitplan mit</h3>
+            <div class="pc-hint">Antippen zum Lesen <span>↻</span></div>
+          </div>
+          <div class="pc-face pc-back"><p>Die Netzzusage durch das EVU dauert oft Monate. Wenn das niemand parallel koordiniert verliert man wertvolle Produktionszeit.</p></div>
+        </div>
+      </div>
+      <div class="pc-card" onclick="this.classList.toggle('open')">
+        <div class="pc-inner">
+          <div class="pc-face pc-front">
+            <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6v.6h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg><span style="margin-left:6px">04</span></div>
+            <h3>Kunden verstehen nicht was sie kaufen</h3>
+            <div class="pc-hint">Antippen zum Lesen <span>↻</span></div>
+          </div>
+          <div class="pc-face pc-back"><p>Wenn man etwas nicht versteht muss man selbst nachforschen. Nur so trifft man die richtigen Entscheidungen. Das war unser Grundsatz im Studium und gilt hier genauso.</p></div>
+        </div>
       </div>
     </div>
   </div>
@@ -678,9 +689,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <div class="step"><div class="step-n-sun">5</div><div><h3>Danach erreichst du uns genauso</h3><p>Du hast die Nummer von Anton oder Manuel, direkt. Für Fragen, Erweiterungen oder wenn irgendwas nicht stimmt.</p></div></div>
       </div>
       <div class="how-aside">
-        <p class="ha-title">Wir arbeiten ohne eigenen Lagerbestand.</p>
-        <p class="ha-text">Das klingt simpel aber es verändert alles. Wir können dir wirklich sagen was für dich sinnvoll ist, weil unsere Empfehlung nicht davon abhängt was gerade verfügbar ist.</p>
-        <hr class="ha-divider">
         <p class="sec-label" style="margin-bottom:14px">Installationspartner</p>
         <div class="celaris-row">
           <div class="celaris-initial">C</div>
