@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://stromschwaben.de/sitemap.xml
