@@ -632,7 +632,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     <p class="hero-sub" style="margin-top:24px">Für Eigenheime, Gewerbehallen und Betriebe. Wir schauen uns zuerst an was du hast, dann bestellen wir genau die Teile die zu deiner Anlage passen.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-dark">Kostenlose Beratung</a>
-      <a href="#modal-rechner" class="btn-plain" onclick="event.preventDefault();document.getElementById('modal-rechner').style.display='block'">Potenzial berechnen</a>
+      <a href="solar-rechner.html" class="btn-plain">Potenzial berechnen</a>
     </div>
     <div class="hero-stats" style="grid-template-columns:repeat(4,1fr)">
       <div class="stat">
@@ -689,7 +689,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     <h2 class="sec-title">Wir kennen die Branche von innen.</h2>
     <p class="sec-body">Unser Ansatz ist einfach: Bildung ist das A und O. Wer nicht versteht was er kauft trifft keine gute Entscheidung. Wir nehmen uns die Zeit die dafür nötig ist, bevor irgendwas bestellt wird.</p>
     <div class="pc-grid">
-      <div class="pc-card" onclick="this.classList.toggle('open')">
+      <div class="pc-card" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button">
         <div class="pc-inner">
           <div class="pc-face pc-front">
             <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 8l-9-5-9 5 9 5 9-5z"/><path d="M3 8v8l9 5 9-5V8"/><path d="M12 13v8"/></svg><span style="margin-left:6px">01</span></div>
@@ -699,7 +699,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
           <div class="pc-face pc-back"><p>Viele Anbieter haben Lagerbestände die sie abbauen müssen. Das Ergebnis sind Komponenten die nicht zusammenpassen oder schlicht falsch dimensioniert sind.</p></div>
         </div>
       </div>
-      <div class="pc-card" onclick="this.classList.toggle('open')">
+      <div class="pc-card" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button">
         <div class="pc-inner">
           <div class="pc-face pc-front">
             <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="9" height="7" rx="1"/><rect x="14" y="3" width="7" height="7" rx="1"/><rect x="3" y="14" width="7" height="7" rx="1"/><line x1="14" y1="14" x2="21" y2="21"/><line x1="21" y1="14" x2="14" y2="21"/></svg><span style="margin-left:6px">02</span></div>
@@ -709,7 +709,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
           <div class="pc-face pc-back"><p>Ausrichtung, Neigung, Verschattung. Wenn das nicht stimmt produziert die Anlage dauerhaft 20 bis 40 Prozent weniger. Über 20 Jahre summiert sich das zu echtem Schaden.</p></div>
         </div>
       </div>
-      <div class="pc-card" onclick="this.classList.toggle('open')">
+      <div class="pc-card" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button">
         <div class="pc-inner">
           <div class="pc-face pc-front">
             <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg><span style="margin-left:6px">03</span></div>
@@ -719,7 +719,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
           <div class="pc-face pc-back"><p>Die Netzzusage durch das EVU dauert oft Monate. Wenn das niemand parallel koordiniert verliert man wertvolle Produktionszeit.</p></div>
         </div>
       </div>
-      <div class="pc-card" onclick="this.classList.toggle('open')">
+      <div class="pc-card" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button">
         <div class="pc-inner">
           <div class="pc-face pc-front">
             <div class="pc-num"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--sun)" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M9 18h6"/><path d="M10 21h4"/><path d="M12 3a6 6 0 0 0-3.6 10.8c.5.4.6 1 .6 1.6v.6h6v-.6c0-.6.1-1.2.6-1.6A6 6 0 0 0 12 3z"/></svg><span style="margin-left:6px">04</span></div>
@@ -783,7 +783,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
 
       <div style="border-bottom:1px solid var(--border)">
-        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none">
+        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">M</div>
             <div><div style="font-size:0.84rem;font-weight:600">Markus R., Bekannter</div><div style="font-size:0.75rem;color:var(--muted)">Raum Stuttgart, Verschattung ignoriert</div></div>
@@ -796,7 +796,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       </div>
 
       <div style="border-bottom:1px solid var(--border)">
-        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none">
+        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">S</div>
             <div><div style="font-size:0.84rem;font-weight:600">Sandra K., Bekannte</div><div style="font-size:0.75rem;color:var(--muted)">Raum Karlsruhe, Falsches Speicherkonzept</div></div>
@@ -809,7 +809,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       </div>
 
       <div>
-        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none">
+        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">T</div>
             <div><div style="font-size:0.84rem;font-weight:600">Thomas B., Nachbar</div><div style="font-size:0.75rem;color:var(--muted)">Raum Esslingen, Billigmontage, teurer Schaden</div></div>
