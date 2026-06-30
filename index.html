@@ -472,6 +472,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <li><a href="#projekte">Projekte</a></li>
         <li><a href="#blog">Blog</a></li>
         <li><a href="#faq">FAQ</a></li>
+        <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       </ul>
     </nav>
     <a href="#kontakt" class="nav-btn">Beratung anfragen</a>
@@ -1184,6 +1185,33 @@ rechnen();
   </div>
 </div>
 
+<style>
+.brand-strip{padding:36px 0;border-top:1px solid var(--border);background:var(--black);overflow:hidden}
+.brand-strip-label{text-align:center;font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.08em;color:rgba(255,255,255,.5);margin-bottom:20px}
+.brand-marquee{display:flex;width:max-content;animation:brand-scroll 32s linear infinite}
+.brand-marquee:hover{animation-play-state:paused}
+.brand-item{display:flex;align-items:center;padding:0 40px;font-size:1.05rem;font-weight:700;letter-spacing:-0.01em;color:var(--white);white-space:nowrap;flex-shrink:0}
+@keyframes brand-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media(max-width:640px){.brand-item{padding:0 24px;font-size:0.9rem}}
+</style>
+<section class="brand-strip">
+  <p class="brand-strip-label">Marken, mit denen wir planen</p>
+  <div class="brand-marquee">
+    <span class="brand-item">JA Solar</span>
+    <span class="brand-item">Tongwei</span>
+    <span class="brand-item">Jinkosolar</span>
+    <span class="brand-item">Jolywood</span>
+    <span class="brand-item">Aiko</span>
+    <span class="brand-item">SolarEdge</span>
+    <span class="brand-item">JA Solar</span>
+    <span class="brand-item">Tongwei</span>
+    <span class="brand-item">Jinkosolar</span>
+    <span class="brand-item">Jolywood</span>
+    <span class="brand-item">Aiko</span>
+    <span class="brand-item">SolarEdge</span>
+  </div>
+</section>
+
 <footer>
   <div class="foot-inner">
     <div class="foot-logo"><span style="color:var(--sun)">Strom</span>Schwaben</div>
@@ -1193,6 +1221,7 @@ rechnen();
       <li><a href="#projekte">Projekte</a></li>
       <li><a href="#blog">Blog</a></li>
       <li><a href="#faq">FAQ</a></li>
+      <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       <li><a href="#modal-impressum" onclick="event.preventDefault();document.getElementById('modal-impressum').style.display='block'">Impressum</a></li>
       <li><a href="#modal-datenschutz" onclick="event.preventDefault();document.getElementById('modal-datenschutz').style.display='block'">Datenschutz</a></li>
     </ul>
