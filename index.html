@@ -800,6 +800,13 @@ document.querySelectorAll('.r-body').forEach(b=>{
 .blog-body th{background:var(--bg);font-weight:600}
 .blog-body .blog-cta{display:inline-block;margin-top:20px;padding:11px 22px;background:var(--black);color:var(--white);border-radius:6px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:opacity .15s}
 .blog-body .blog-cta:hover{opacity:.8}
+.blog-teaser{border:1px solid var(--border);border-radius:8px;background:var(--white);padding:22px}
+.blog-teaser h3{font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:6px}
+.blog-teaser h3 a{color:var(--black);text-decoration:none}
+.blog-teaser h3 a:hover{text-decoration:underline}
+.blog-teaser p{font-size:0.85rem;color:var(--muted);line-height:1.6;margin-bottom:10px}
+.blog-teaser-link{font-size:0.8rem;font-weight:600;color:var(--black);text-decoration:none}
+.blog-teaser-link:hover{text-decoration:underline}
 </style>
 <section class="section" id="blog">
   <div class="wrap">
@@ -822,219 +829,34 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <button type="submit" style="padding:10px 20px;background:var(--black);color:var(--white);border:none;border-radius:6px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap">Anmelden</button>
       </form>
     </div>
-      <article class="blog-article">
-        <div class="blog-article-header" onclick="toggleBlog(this)">
-          <div class="blog-article-meta">
-            <p class="sun-tag" style="margin-bottom:8px">Wirtschaftlichkeit</p>
-            <h3>Solaranlage Einfamilienhaus: Lohnt sie sich 2025 wirklich?</h3>
-            <p>Strom kostet heute fast 40 Cent pro Kilowattstunde. Solarmodule sind so günstig wie noch nie. Aber ob sich eine Anlage lohnt hängt nicht an diesen Zahlen allein.</p>
-          </div>
-          <span class="blog-read">Lesen ↓</span>
-        </div>
-        <div class="blog-body">
-          <h2>Warum gerade jetzt die Frage nach der Wirtschaftlichkeit brennt</h2>
-          <p>Strom kostet heute zwischen 35 und 40 Cent pro Kilowattstunde. Vor fünf Jahren waren es noch 28 Cent. Der Trend zeigt nicht nach unten. Gleichzeitig sind die Preise für Solarmodule in den letzten zehn Jahren um über 70 Prozent gefallen. Das Ergebnis: 2025 ist der Break-even für eine gut geplante Photovoltaikanlage früher erreichbar als je zuvor.</p>
-          <p>Trotzdem ist das kein Freifahrtschein. Eine Solaranlage ist eine Investition, keine Garantie. Ob sie sich lohnt hängt nicht pauschal davon ab ob du ein Haus hast und ein Dach. Es hängt davon ab wie dein Dach aussieht, wann du Strom verbrauchst, und ob jemand die Anlage wirklich auf deine Situation zugeschnitten hat.</p>
-
-          <h2>Was eine Solaranlage fürs Einfamilienhaus 2025 kostet</h2>
-          <p>Für ein typisches Einfamilienhaus mit einer Anlagenleistung zwischen 8 und 12 kWp musst du mit folgenden Größenordnungen rechnen:</p>
-          <p>Anlage ohne Speicher (8 bis 12 kWp): ca. 10.000 bis 16.000 Euro. Anlage mit Batteriespeicher (10 kWh): ca. 17.000 bis 25.000 Euro. Laufende Betriebskosten: rund 1 Prozent der Investitionssumme pro Jahr.</p>
-          <p>Seit Januar 2023 gilt für Privatkunden 0 Prozent Mehrwertsteuer auf Kauf und Installation von Photovoltaikanlagen. Das macht je nach Anlage einen Unterschied von 1.500 bis 3.500 Euro.</p>
-          <p>Wichtig: Diese Zahlen sind Richtwerte. Was du tatsächlich bezahlst hängt von Dachgröße, Ausrichtung, Modultyp, Wechselrichter und Montageaufwand ab. Pauschalangebote die du online findest berücksichtigen das oft nicht, und genau dort entstehen die Probleme die Hausbesitzer erst nach der Installation bemerken.</p>
-
-          <h2>Wann amortisiert sich eine Solaranlage wirklich?</h2>
-          <p>Die häufig genannten 6 bis 8 Jahre Amortisationszeit sind möglich, aber sie sind nicht die Regel. Sie gelten unter günstigen Bedingungen: Südausrichtung, wenig Verschattung, hoher Eigenverbrauch, kein oder ein kleinerer Speicher.</p>
-          <table>
-            <tr><th>Szenario</th><th>Amortisationszeit</th></tr>
-            <tr><td>8 kWp, Süddach, kein Speicher, 30% Eigenverbrauch</td><td>8 bis 11 Jahre</td></tr>
-            <tr><td>10 kWp, Süddach, 10 kWh Speicher, 70% Eigenverbrauch</td><td>10 bis 13 Jahre</td></tr>
-            <tr><td>12 kWp, Ost-West-Dach, Speicher, Wärmepumpe</td><td>9 bis 12 Jahre</td></tr>
-          </table>
-          <p>Die Anlage hält 25 bis 30 Jahre. Selbst bei 12 Jahren Amortisation bleiben danach noch 15 Jahre mit weitgehend kostenlosem Strom. Das ist eine Rendite die die meisten klassischen Sparprodukte nicht erreichen.</p>
-
-          <h3>Der entscheidende Hebel: Eigenverbrauch</h3>
-          <p>Die Einspeisevergütung für überschüssigen Solarstrom liegt 2025 bei rund 7,78 Cent pro Kilowattstunde. Den gleichen Strom kaufst du vom Netz für knapp 40 Cent. Jede Kilowattstunde die du selbst verbrauchst ist vier bis fünfmal mehr wert als eine Kilowattstunde die du einspeist. Wer tagsüber viel zu Hause ist, Homeoffice, Familie, Wärmepumpe, E-Auto, profitiert überproportional.</p>
-
-          <h2>Die Fehler die beim Kauf einer Solaranlage passieren</h2>
-          <h3>Verschattung wird ignoriert</h3>
-          <p>Schornstein, Gauben, Bäume, Nachbargebäude: Wenn auch nur einzelne Module dauerhaft im Schatten liegen leidet die Gesamtleistung der Anlage deutlich. Ohne Optimierer oder Microinverter kann ein einziges verschattetes Modul die Leistung der gesamten Anlage auf dieses Niveau ziehen. Wer das nicht vorher analysiert kauft eine Anlage die nie das hält was auf dem Angebot steht.</p>
-          <h3>Anlage falsch dimensioniert</h3>
-          <p>Eine Anlage die zu groß ist produziert mehr Strom als du verbrauchst und speist ihn für 7,78 Cent ein. Eine Anlage die zu klein ist lässt Potenzial auf dem Dach liegen. Die richtige Dimensionierung braucht deinen Jahresverbrauch, dein Verbrauchsprofil und deine Pläne für die nächsten Jahre.</p>
-          <h3>Der günstigste Anbieter gewinnt</h3>
-          <p>Wer den günstigsten Anbieter waehlt bekommt häufig eine Montage durch Subunternehmer die das Dach nicht kennen und keine langfristige Verantwortung haben. Undichte Dachdurchfuehrungen, nicht fachgerecht verlegte Kabel, fehlende Dokumentation für den Netzanschluss. Der Anbieter der online günstig war ist danach schwer erreichbar.</p>
-
-          <h2>Für wen lohnt sich eine Solaranlage wirklich?</h2>
-          <p>Eine Solaranlage lohnt sich wenn du ein Eigenheim mit nutzbarer Dachfläche besitzt, einen Jahresstromverbrauch von mindestens 3.000 kWh hast, das Dach Richtung Süd, Ost oder West ausgerichtet ist, und du vorhast die nächsten 10 Jahre dort zu wohnen.</p>
-          <p>Sie lohnt sich weniger wenn das Dach stark verschattet ist, du in den nächsten Jahren umziehen willst, oder der Jahresstromverbrauch sehr gering ist. Und sie lohnt sich gar nicht wenn sie nicht individuell auf deine Situation geplant wurde, egal wie gut das Angebot auf dem Papier aussieht.</p>
-
-          <h2>Fazit: Die Technologie ist gut. Die Planung entscheidet.</h2>
-          <p>Photovoltaik ist 2025 so ausgereift und wirtschaftlich attraktiv wie noch nie. Der Strompreis ist hoch, die Modulpreise sind gesunken, die Förderung ist vorhanden. Das Problem ist nicht die Technologie. Das Problem ist dass zu viele Anbieter zu wenig Zeit in die Analyse stecken. Standardpakete, Subunternehmer, fehlende Verschattungsanalyse, das sind die Gründe warum manche Anlagen enttäuschen.</p>
-          <a href="#kontakt" class="blog-cta">Kostenlose Erstberatung anfragen</a>
-        </div>
+      <article class="blog-teaser">
+        <p class="sun-tag" style="margin-bottom:8px">Wirtschaftlichkeit</p>
+        <h3><a href="blog/solaranlage-einfamilienhaus-lohnt-sich-2025.html">Solaranlage Einfamilienhaus: Lohnt sie sich 2025 wirklich?</a></h3>
+        <p>Strom kostet heute deutlich mehr als noch vor wenigen Jahren. Wir rechnen vor, wann sich eine Solaranlage für ein Einfamilienhaus tatsächlich lohnt.</p>
+        <a href="blog/solaranlage-einfamilienhaus-lohnt-sich-2025.html" class="blog-teaser-link">Weiterlesen →</a>
       </article>
-
-      <article class="blog-article">
-        <div class="blog-article-header" onclick="toggleBlog(this)">
-          <div class="blog-article-meta">
-            <p class="sun-tag" style="margin-bottom:8px">Speicher</p>
-            <h3>Photovoltaik mit Speicher: Wann lohnt er sich wirklich?</h3>
-            <p>Jeder Solaranbieter empfiehlt dir einen Speicher. Manche brauchen ihn wirklich. Andere bezahlen ihn und holen nur die Hälfte des Nutzens raus.</p>
-          </div>
-          <span class="blog-read">Lesen ↓</span>
-        </div>
-        <div class="blog-body">
-          <h2>Warum der Speicher gerade so ein großes Thema ist</h2>
-          <p>Die Einspeisevergütung liegt 2025 bei rund 7,78 Cent pro Kilowattstunde. Der Strom den du vom Netz kaufst kostet dich das Fünffache: rund 37 bis 40 Cent. Das schafft eine einfache Logik: Jede Kilowattstunde die du selbst verbrauchst ist fünfmal mehr wert als eine die du einspeist. Ein Batteriespeicher ist das Werkzeug das dir hilft mehr deines eigenen Stroms selbst zu verbrauchen, auch dann wenn die Sonne gerade nicht scheint.</p>
-          <p>Das klingt erstmal nach einer klaren Sache. Ist es aber nicht immer. Denn ein Speicher kostet Geld, hat eine begrenzte Lebensdauer und rechnet sich nur unter bestimmten Bedingungen wirklich.</p>
-
-          <h2>Was ein Batteriespeicher konkret bringt</h2>
-          <p>Ohne Speicher verbraucht ein typischer Haushalt rund 25 bis 35 Prozent des selbst erzeugten Solarstroms direkt. Den Rest speist er ins Netz ein. Der Grund: Die Anlage produziert mittags am meisten, der Haushalt verbraucht abends am meisten. Mit einem passend dimensionierten Speicher steigt die Eigenverbrauchsquote auf 60 bis 80 Prozent. Haushalte mit Wärmepumpe oder Elektroauto schaffen sogar 70 bis 90 Prozent.</p>
-          <p>Ein konkretes Beispiel: Eine 10 kWp Anlage produziert im Jahr rund 9.500 kWh. Ohne Speicher verbrauchst du davon selbst etwa 2.850 kWh (30 Prozent). Mit einem 10 kWh Speicher steigt das auf rund 6.650 kWh (70 Prozent). Die zusätzlichen knapp 3.800 kWh Eigenverbrauch sparen dir bei 37 Cent pro kWh rund 1.400 Euro pro Jahr, gegenüber der Einspeisung die dir für denselben Strom nur knapp 300 Euro gebracht hätte.</p>
-
-          <h2>Was ein Speicher kostet</h2>
-          <p>Aktuelle Richtwerte für Lithium Speicher liegen bei 400 bis 600 Euro pro kWh nutzbarer Kapazität ohne Montage. Inklusive Installation rechnet man mit 500 bis 900 Euro pro kWh. Für einen typischen 10 kWh Speicher bedeutet das Installationskosten von rund 5.000 bis 9.000 Euro.</p>
-          <p>Seit Januar 2023 gilt für Batteriespeicher die zusammen mit einer PV Anlage installiert werden der gleiche Nullsteuersatz (0 Prozent MwSt.) wie für die Anlage selbst.</p>
-          <p>Ein Batteriespeicher hält in der Regel 10 bis 15 Jahre. Die PV Anlage selbst laeuft 25 bis 30 Jahre. Das bedeutet: In den meisten Faellen musst du den Speicher einmal waehrend der Lebensdauer der Anlage ersetzen. Die Preise werden bis dahin wahrscheinlich weiter fallen.</p>
-
-          <h2>Für wen lohnt sich ein Speicher wirklich?</h2>
-          <h3>Hoher Stromverbrauch vor allem abends</h3>
-          <p>Wer tagsüber wenig zu Hause ist verbraucht die meiste Energie morgens und abends. Genau dann produziert die Anlage wenig oder gar nichts. Der Speicher überbrueckt diese Zeit und macht den Eigenverbrauch erst sinnvoll.</p>
-          <h3>Jahresverbrauch über 4.000 kWh</h3>
-          <p>Unter dieser Schwelle ist das Potenzial begrenzt. Je mehr Strom ein Haushalt verbraucht desto mehr kann er selbst erzeugen und speichern, und desto größer ist die Ersparnis.</p>
-          <h3>Wärmepumpe oder Elektroauto vorhanden oder geplant</h3>
-          <p>Das sind die beiden größten Hebel für den Eigenverbrauch. Eine Wärmepumpe braucht je nach Hausgröße 3.000 bis 6.000 kWh pro Jahr. Ein Elektroauto kommt auf ähnliche Werte. Wer beides mit einer PV Anlage und Speicher kombiniert kann seinen Eigenverbrauch drastisch erhöhen.</p>
-
-          <h2>Für wen lohnt sich ein Speicher nicht?</h2>
-          <h3>Sehr geringer Stromverbrauch</h3>
-          <p>Wer alleine lebt, kaum zu Hause ist und keinen besonderen Stromfresser hat wird mit einem 10 kWh Speicher kaum die nötige Eigenverbrauchsmenge erreichen um die Investition zu rechtfertigen. Ein kleinerer Speicher oder gar keiner kann hier die bessere Wahl sein.</p>
-          <h3>Speicher zu groß gewählt</h3>
-          <p>Ein häufiger Fehler: Anbieter empfehlen größere Speicher als nötig. Ein Speicher der dauerhaft nur halb voll ist altert schneller und bringt weniger Rendite als ein passend dimensionierter. Die Faustregel: etwa 1 kWh Speicherkapazität pro 1.000 kWh Jahresverbrauch. Größere Speicher zahlen sich nur aus wenn große Verbraucher wie Wärmepumpe oder E-Auto dazukommen.</p>
-
-          <h2>Das ändert sich durch das Solarspitzengesetz 2025</h2>
-          <p>Seit Februar 2025 gilt: Neue PV Anlagen ohne Smart Meter dürfen maximal 60 Prozent ihrer Spitzenleistung ins Stromnetz einspeisen. Eine 10 kWp Anlage also maximal 6 kW. Ein Batteriespeicher mit Energiemanagementsystem kann diese Begrenzung umgehen, indem der überschüssige Strom statt ins Netz in den Speicher oder direkt in Verbraucher fließt. Außerdem bekommt wer einen steuerbaren Speicher betreibt (über 4,2 kW Ladeleistung) eine pauschale Netzentgeltreduzierung von bis zu 188 Euro pro Jahr.</p>
-
-          <h2>Fazit: Der Speicher ist kein Muss, aber für viele sinnvoll</h2>
-          <p>Ein Batteriespeicher ist keine universelle Empfehlung die für jeden passt. Er ist ein Instrument das dann funktioniert wenn die Rahmenbedingungen stimmen: ausreichend Verbrauch, zeitlicher Mismatch zwischen Produktion und Nachfrage, und ein Preis der zur Anlage passt.</p>
-          <p>Das Entscheidende ist nicht ob ein Speicher technisch funktioniert. Das tut er. Die Frage ist ob er zu deinem Verbrauchsprofil passt. Und die kann nur jemand beantworten der sich das wirklich anschaut.</p>
-          <a href="#kontakt" class="blog-cta">Kostenlose Erstberatung anfragen</a>
-        </div>
+      <article class="blog-teaser">
+        <p class="sun-tag" style="margin-bottom:8px">Speicher</p>
+        <h3><a href="blog/photovoltaik-speicher-lohnt-sich.html">Photovoltaik-Speicher: Wann lohnt sich ein Batteriespeicher wirklich?</a></h3>
+        <p>Nicht jede Anlage braucht einen Speicher. Eine nüchterne Einordnung, wann sich die Investition rechnet und wann nicht.</p>
+        <a href="blog/photovoltaik-speicher-lohnt-sich.html" class="blog-teaser-link">Weiterlesen →</a>
       </article>
-
-      <article class="blog-article">
-        <div class="blog-article-header" onclick="toggleBlog(this)">
-          <div class="blog-article-meta">
-            <p class="sun-tag" style="margin-bottom:8px">Klimatisierung</p>
-            <h3>Lohnt sich eine Klimaanlage? Was du 2026 wirklich wissen musst</h3>
-            <p>Die Sommer werden heißer, die Nachfrage nach Klimaanlagen steigt. Aber lohnt sich die Investition wirklich, und worauf kommt es bei der Entscheidung an?</p>
-          </div>
-          <span class="blog-read">Lesen ↓</span>
-        </div>
-        <div class="blog-body">
-          <h2>Warum die Frage gerade jetzt so oft gestellt wird</h2>
-          <p>Heiße Sommer sind in Deutschland längst keine Ausnahme mehr. Wer in den letzten Jahren mehrere Wochen mit Temperaturen über 30 Grad im eigenen Zuhause oder Büro erlebt hat, stellt sich zwangsläufig die Frage ob eine Klimaanlage sinnvoll ist. Gleichzeitig kursieren online sehr unterschiedliche Preisangaben, von Schnäppchen-Komplettpaketen bis zu Angeboten im fünfstelligen Bereich. Das macht eine fundierte Entscheidung schwerer als sie sein müsste.</p>
-          <p>Wie bei der Solaranlage gilt auch hier: Ob sich eine Klimaanlage lohnt hängt nicht von einer pauschalen Antwort ab, sondern von deiner konkreten Situation. Wie viele Räume sollen klimatisiert werden, wie ist das Gebäude gedämmt, und was erwartest du wirklich von der Anlage.</p>
-
-          <h2>Was eine Klimaanlage 2026 kostet</h2>
-          <p>Bei Split-Klimaanlagen, der gängigsten Lösung für feste Installationen in Wohnräumen, liegen die Gesamtkosten inklusive Montage grob zwischen 1.800 und 3.500 Euro für eine Single-Split-Anlage in einem Raum. Wer mehrere Räume klimatisieren möchte, kommt mit einer Multi-Split-Anlage auf 5.000 bis 8.000 Euro für drei Räume, beziehungsweise 7.000 bis 12.000 Euro für vier bis fünf Räume.</p>
-          <table>
-            <tr><th>System</th><th>Kosten inkl. Montage</th></tr>
-            <tr><td>Single-Split, 1 Raum</td><td>1.800 bis 3.500 Euro</td></tr>
-            <tr><td>Multi-Split, 3 Räume</td><td>5.000 bis 8.000 Euro</td></tr>
-            <tr><td>Multi-Split, 4 bis 5 Räume</td><td>7.000 bis 12.000 Euro</td></tr>
-          </table>
-          <p>Mobile Monoblock-Geräte sind mit 300 bis 1.200 Euro deutlich günstiger in der Anschaffung und brauchen keinen Fachbetrieb. Im Betrieb verbrauchen sie aber bis zum Drei- bis Fünffachen an Strom verglichen mit einer fest installierten Split-Anlage, und sind lauter. Wer die Klimaanlage regelmäßig und über mehrere Sommer nutzen will, fährt mit einer Split-Lösung meist günstiger.</p>
-
-          <h2>Split-Klimaanlagen dürfen nur Fachbetriebe installieren</h2>
-          <p>Was viele nicht wissen: Die Installation einer Split-Klimaanlage ist in Deutschland gesetzlich an zertifizierte Fachbetriebe gebunden. Grund sind die enthaltenen Kältemittel, die als umweltgefährdend eingestuft sind. Seit 2023 dürfen ausschließlich Betriebe mit entsprechender Zertifizierung nach der Chemikalien-Klimaschutzverordnung diese Arbeiten durchführen. Eine Eigenmontage ist nicht erlaubt, unabhängig davon wie handwerklich geschickt du bist.</p>
-          <p>Das ist auch der Grund warum besonders günstige Online-Komplettpakete kritisch zu betrachten sind: Wer beim Einbau spart, spart oft an der fachgerechten Verlegung der Kältemittelleitungen und an der Dichtheitsprüfung. Genau dort entstehen später teure Folgeschäden.</p>
-
-          <h2>Wann amortisiert sich eine Klimaanlage?</h2>
-          <p>Anders als bei einer Solaranlage geht es bei einer Klimaanlage nicht um eine klassische Amortisation durch Stromerzeugung, sondern um den Vergleich der Betriebskosten gegenüber Alternativen. Ein effizientes Split-Gerät mit Inverter-Technologie verbraucht im Kühlbetrieb deutlich weniger Strom als ein mobiles Gerät und liegt bei den jährlichen Stromkosten meist im Bereich von 50 bis 300 Euro, je nach Nutzung und Raumgröße.</p>
-          <p>Wird die Anlage mit Wärmepumpenfunktion auch zum Heizen in der Übergangszeit genutzt, kann sich die Investition zusätzlich rechnen, weil ein Teil der sonst genutzten Heizenergie ersetzt wird. Wichtig dabei: Bei sehr niedrigen Außentemperaturen sinkt die Effizienz deutlich, eine Klimaanlage ersetzt deshalb keine vollwertige Heizung.</p>
-
-          <h3>Steuerliche Absetzbarkeit</h3>
-          <p>Reine Klimaanlagen ohne anerkannte Heizfunktion sind nicht direkt förderfähig, da Luft-Luft-Wärmepumpen seit 2024 von der BEG-Förderung ausgeschlossen sind. Über Paragraf 35a Einkommensteuergesetz lassen sich aber 20 Prozent der reinen Lohnkosten der Installation von der Steuer absetzen, bis zu 1.200 Euro pro Jahr. Das gilt nur für den Arbeitskostenanteil, nicht für das Gerät selbst, und setzt eine Rechnung mit ausgewiesenem Lohnanteil sowie eine bargeldlose Zahlung voraus.</p>
-
-          <h2>Klimaanlage und Solaranlage zusammen denken</h2>
-          <p>Hier liegt der eigentliche Hebel, den viele übersehen. Eine Klimaanlage verbraucht am meisten Strom genau dann, wenn es draußen heiß ist, also an sonnigen Sommertagen mit hoher Solareinstrahlung. Das ist exakt der Zeitraum, in dem eine Solaranlage am meisten produziert. Wer beide Systeme zusammen plant, kann einen erheblichen Teil des Kühlbedarfs direkt mit selbst erzeugtem Solarstrom decken, statt ihn für rund 35 bis 40 Cent pro Kilowattstunde aus dem Netz zu kaufen.</p>
-          <p>Das verändert auch die Wirtschaftlichkeitsrechnung der Solaranlage selbst: Mehr Eigenverbrauch am Mittag bedeutet weniger Einspeisung zum niedrigen Vergütungssatz und mehr direkt genutzten, deutlich wertvolleren Solarstrom. Wer ohnehin eine Solaranlage plant oder bereits besitzt, sollte die Klimaanlage deshalb nicht isoliert betrachten, sondern als Baustein im Gesamtkonzept.</p>
-
-          <h2>Worauf du bei der Wahl der Klimaanlage achten solltest</h2>
-          <h3>Richtige Dimensionierung</h3>
-          <p>Eine zu groß dimensionierte Anlage kühlt schnell, aber ineffizient und entfeuchtet den Raum schlechter. Eine zu klein dimensionierte Anlage läuft dauerhaft unter Volllast und verschleißt schneller. Die passende Leistung hängt von Raumgröße, Deckenhöhe, Dämmung und Fensterflächen ab und sollte vor dem Kauf berechnet werden, nicht danach geschätzt.</p>
-          <h3>Effizienzklasse</h3>
-          <p>Achte auf den SEER-Wert (Seasonal Energy Efficiency Ratio), der die Effizienz über eine ganze Kühlsaison abbildet. Geräte ab SEER 6,0 gelten als effizient und sparen über die Lebensdauer der Anlage deutlich Stromkosten ein, auch wenn sie in der Anschaffung etwas teurer sind.</p>
-          <h3>Lautstärke des Außengeräts</h3>
-          <p>Gerade in dicht bebauten Wohngebieten lohnt sich ein Blick auf die Schallwerte des Außengeräts und einen funktionierenden Nachtmodus. Nachbarschaftskonflikte wegen eines zu lauten Außengeräts sind vermeidbar, wenn das vor dem Kauf mitgedacht wird.</p>
-
-          <h2>Für wen lohnt sich eine Klimaanlage wirklich?</h2>
-          <p>Eine Klimaanlage lohnt sich besonders, wenn du regelmäßig mehrere Wochen im Jahr mit hohen Innentemperaturen zu kämpfen hast, du oder Familienmitglieder hitzeempfindlich sind, beispielsweise im Homeoffice oder bei gesundheitlichen Einschränkungen, oder du ohnehin eine Solaranlage besitzt oder planst und den Eigenverbrauch erhöhen möchtest.</p>
-          <p>Weniger sinnvoll ist sie bei sehr seltener, kurzzeitiger Nutzung, etwa in einer selten genutzten Ferienwohnung, wo ein mobiles Gerät oft ausreicht. Und sie lohnt sich nicht, wenn die Anlage falsch dimensioniert oder von einem nicht zertifizierten Betrieb eingebaut wird, unabhängig vom Anschaffungspreis.</p>
-
-          <h2>Fazit: Sinnvolle Ergänzung, kein Muss</h2>
-          <p>Eine Klimaanlage ist 2026 technisch ausgereift und in Kombination mit einer Solaranlage besonders wirtschaftlich, weil Produktion und Verbrauch zeitlich zusammenfallen. Sie ist aber kein Produkt von der Stange. Die richtige Dimensionierung, ein zertifizierter Fachbetrieb und eine ehrliche Einschätzung deines tatsächlichen Bedarfs entscheiden darüber, ob die Investition langfristig Sinn ergibt.</p>
-          <p>Unser Fokus liegt weiterhin auf der Solaranlage. Wenn eine Klimaanlage für dich sinnvoll ist, übernimmt unser Partner Celaris GmbH die fachgerechte Planung und Installation, abgestimmt auf deine bestehende oder geplante Solaranlage.</p>
-          <a href="#kontakt" class="blog-cta">Kostenlose Erstberatung anfragen</a>
-        </div>
+      <article class="blog-teaser">
+        <p class="sun-tag" style="margin-bottom:8px">Klimatisierung</p>
+        <h3><a href="blog/klimaanlage-lohnt-sich-2026.html">Lohnt sich eine Klimaanlage? Was du 2026 wirklich wissen musst</a></h3>
+        <p>Kosten, Installationspflicht durch Fachbetriebe und wie Klimaanlage und Solaranlage sinnvoll zusammenspielen.</p>
+        <a href="blog/klimaanlage-lohnt-sich-2026.html" class="blog-teaser-link">Weiterlesen →</a>
       </article>
-
-      <article class="blog-article">
-        <div class="blog-article-header" onclick="toggleBlog(this)">
-          <div class="blog-article-meta">
-            <p class="sun-tag" style="margin-bottom:8px">Politik und Recht</p>
-            <h3>EEG-Reform 2027: Was Solarbesitzer und Käufer jetzt wissen müssen</h3>
-            <p>Die Einspeisevergütung für neue Solaranlagen steht zur Disposition. Noch ist nichts beschlossen, aber die Zeit wird knapp. Was das für deine Planung bedeutet.</p>
-          </div>
-          <span class="blog-read">Lesen ↓</span>
-        </div>
-        <div class="blog-body">
-          <h2>Worum es bei der EEG-Reform überhaupt geht</h2>
-          <p>Das Erneuerbare-Energien-Gesetz (EEG) regelt seit dem Jahr 2000 die Förderung von Solar- und Windstrom in Deutschland, unter anderem über die Einspeisevergütung. Diese garantiert Betreibern von Solaranlagen für 20 Jahre einen festen Betrag pro eingespeister Kilowattstunde, unabhängig vom Börsenstrompreis. Die aktuelle EU-beihilferechtliche Genehmigung für dieses System läuft Ende 2026 aus. Eine Neuregelung ist damit so oder so notwendig, allein schon aus europarechtlichen Gründen.</p>
-          <p>Das Bundeswirtschaftsministerium unter Katherina Reiche (CDU) hat Ende Februar 2026 einen Referentenentwurf vorgelegt, der weit über eine reine Formalie hinausgeht. Kernpunkt: Neue Photovoltaikanlagen bis 25 kWp, also praktisch alle privaten Dachanlagen, sollen ab dem 1. Januar 2027 keine garantierte feste Einspeisevergütung mehr erhalten. Stattdessen ist eine Nulleinspeisung oder eine ungeförderte Direktvermarktung vorgesehen, beides Modelle, die für private Haushalte bisher kaum praktikabel sind.</p>
-
-          <h2>Der aktuelle Stand: Verhandelt, vertagt, verhandelt</h2>
-          <p>Innerhalb der Bundesregierung ist der Entwurf umstritten. Während das CDU-geführte Wirtschaftsministerium an der Streichung festhalten will, lehnt das SPD-geführte Umweltministerium unter Carsten Schneider Pläne ab, die den Ausbau der erneuerbaren Energien gefährden könnten. Verschärfend kommt hinzu, dass Reiche die EEG-Reform an ein zweites, ebenfalls umstrittenes Gesetz gekoppelt hat: das sogenannte Netzpaket mit einem geplanten Redispatch-Vorbehalt. Dieser würde es Netzbetreibern erlauben, neue Solar- und Windanlagen in als kapazitätslimitiert eingestuften Gebieten für bis zu zehn Jahre nur eingeschränkt oder mit finanzieller Entschädigungspflicht anzuschließen.</p>
-          <p>Ein Kabinettsbeschluss wurde bereits mehrfach verschoben. Verbände wie der Bundesverband Neue Energiewirtschaft (bne) fordern deshalb, die beiden Gesetzesvorhaben zu trennen und das EEG eigenständig zu verabschieden, um Planungssicherheit für Eigentümer und Handwerk zu schaffen. Bislang ist das nicht erfolgt. Solange kein Kabinettsbeschluss vorliegt, gilt die bestehende Einspeisevergütung unverändert weiter.</p>
-
-          <h2>Was heute noch gilt: Die aktuelle Einspeisevergütung</h2>
-          <p>Wer 2026 eine Solaranlage in Betrieb nimmt, bekommt nach derzeitigem Recht weiterhin die gesetzlich garantierte Einspeisevergütung für 20 Jahre, plus das verbleibende Inbetriebnahmejahr. Aktuell liegt sie bei 7,78 Cent pro Kilowattstunde bei Teileinspeisung (bis 10 kWp) beziehungsweise 12,34 Cent pro Kilowattstunde bei Volleinspeisung. Die Vergütung sinkt automatisch alle sechs Monate um etwa 1 Prozent, jeweils zum 1. Februar und 1. August.</p>
-          <table>
-            <tr><th>Zeitpunkt</th><th>Vergütung Teileinspeisung</th></tr>
-            <tr><td>vor 15 Jahren (Volleinspeisung)</td><td>28,43 ct/kWh</td></tr>
-            <tr><td>Stand Februar 2026</td><td>7,78 ct/kWh</td></tr>
-            <tr><td>geplante Degression August 2026</td><td>ca. 7,71 ct/kWh</td></tr>
-          </table>
-          <p>Wichtig: Für bestehende Anlagen, die bereits eine Förderzusage haben, gilt nach allen bisherigen Erfahrungen mit EEG-Reformen Bestandsschutz. Eine rückwirkende Kürzung laufender Vergütungen hat es in der Geschichte des Gesetzes noch nie gegeben.</p>
-
-          <h2>Was passiert, wenn keine Einigung kommt?</h2>
-          <p>Der Bundesverband Erneuerbare Energie (BEE) hat die rechtlichen Folgen eines fehlenden EEG ab 2027 prüfen lassen. Das Ergebnis: Neue Solaranlagen könnten zwar weiterhin ans Netz angeschlossen und betrieben werden, eine Förderung wäre aber zunächst nicht rechtssicher. Sollte später eine Anschlussregelung verabschiedet werden, könnte sich die Vergütung an dem Modell orientieren, das heute bereits für Anlagen gilt, die älter als 20 Jahre sind: Die Vergütung würde sich dann am sogenannten Jahresmarktwert Solar orientieren, also am durchschnittlichen Börsenstrompreis für Solarstrom des jeweiligen Jahres. 2025 lag dieser Wert bei lediglich 4,508 Cent pro Kilowattstunde, deutlich unter der heutigen festen Vergütung.</p>
-          <p>Eine vom Berliner Institut aquu im Auftrag des Solarenergie-Förderverein Deutschland (SFV) durchgeführte Studie rechnet vor, was eine komplette Streichung der Förderung bei Nulleinspeisung bedeuten würde: Die Amortisationszeit einer 10-kWp-Anlage ohne Speicher würde sich von derzeit rund 15,6 Jahren auf über 30 Jahre erhöhen, da bis zu 69 Prozent des Jahresertrags ungenutzt verpuffen könnten, wenn der überschüssige Strom nicht mehr eingespeist werden darf.</p>
-
-          <h2>Lohnt sich der Kauf 2026 trotzdem noch?</h2>
-          <p>Für die meisten Eigentümer lautet die Antwort: ja, mit einer wichtigen Einschränkung. Wer eine Anlage noch 2026 in Betrieb nimmt, sichert sich die heutigen Vergütungssätze für 20 Jahre garantiert, unabhängig davon wie die Reform am Ende ausfällt. Das schafft Planungssicherheit, die ab 2027 möglicherweise fehlt.</p>
-          <p>Gleichzeitig verschiebt sich die wirtschaftliche Logik einer Solaranlage ohnehin seit Jahren weg von der Einspeisevergütung hin zum Eigenverbrauch. Schon heute ist selbst genutzter Solarstrom etwa drei- bis viermal mehr wert als eingespeister Strom, weil du dafür keinen Netzstrom zu 35 bis 40 Cent pro Kilowattstunde kaufen musst. Eine Anlage, die von Anfang an auf hohen Eigenverbrauch ausgelegt ist, beispielsweise mit Speicher, E-Auto oder Wärmepumpe, ist auch bei einem möglichen Wegfall der Förderung deutlich robuster als eine Anlage, die auf maximale Einspeisung optimiert wurde.</p>
-
-          <h3>Was du konkret tun kannst</h3>
-          <p>Wenn du eine Solaranlage planst, lohnt sich aktuell vor allem eines: nicht aus Unsicherheit pauschal abzuwarten, sondern die Anlage von Anfang an so zu dimensionieren, dass sie unabhängig vom Ausgang der Reform funktioniert. Das bedeutet in der Praxis eine Anlage, die zu deinem tatsächlichen Verbrauchsprofil passt, kombiniert mit einem realistisch dimensionierten Speicher und Spielraum für künftige Verbraucher wie ein Elektroauto oder eine Wärmepumpe.</p>
-
-          <h2>Fazit: Unsicherheit ja, Stillstand nicht nötig</h2>
-          <p>Die EEG-Reform 2027 ist ein laufender politischer Prozess, kein beschlossenes Gesetz. Die Richtung ist erkennbar, die Details sind es noch nicht. Für bestehende Anlagen ändert sich nach heutigem Stand nichts. Für neue Anlagen lohnt sich ein nüchterner Blick auf die eigene Verbrauchssituation, unabhängig davon, wie die Verhandlungen in Berlin am Ende ausgehen. Wir beobachten die Entwicklung und halten diesen Artikel aktuell, sobald es eine Einigung gibt.</p>
-          <a href="#kontakt" class="blog-cta">Kostenlose Erstberatung anfragen</a>
-        </div>
+      <article class="blog-teaser">
+        <p class="sun-tag" style="margin-bottom:8px">Politik und Recht</p>
+        <h3><a href="blog/eeg-reform-2027.html">EEG-Reform 2027: Was Solarbesitzer und Käufer jetzt wissen müssen</a></h3>
+        <p>Die Einspeisevergütung für neue Solaranlagen steht zur Disposition. Aktueller Stand und was das für deine Planung bedeutet.</p>
+        <a href="blog/eeg-reform-2027.html" class="blog-teaser-link">Weiterlesen →</a>
       </article>
 
     </div>
   </div>
 </section>
-<script>
-function toggleBlog(header){
-  const body=header.nextElementSibling;
-  const label=header.querySelector('.blog-read');
-  const isOpen=body.classList.contains('open');
-  body.classList.toggle('open',!isOpen);
-  label.textContent=isOpen?'Lesen ↓':'Schließen ↑';
-}
-</script>
 
 <!-- FAQ -->
 <section class="section-sm bg-off" id="faq">
