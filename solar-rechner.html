@@ -461,6 +461,10 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .rc-field{margin-bottom:16px}
 .rc-field:last-child{margin-bottom:0}
 .rc-field label{font-size:0.8rem;font-weight:600;display:block;margin-bottom:6px}
+.rc-info{display:inline-flex;align-items:center;justify-content:center;width:15px;height:15px;border-radius:50%;border:1.5px solid var(--muted);color:var(--muted);font-size:9px;font-weight:700;cursor:default;margin-left:5px;position:relative;vertical-align:middle;font-style:normal;line-height:1;flex-shrink:0}
+.rc-info::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--black);color:#fff;font-size:0.75rem;font-weight:400;line-height:1.5;padding:8px 12px;border-radius:6px;width:220px;white-space:normal;pointer-events:none;opacity:0;transition:opacity .15s;z-index:100;font-style:normal}
+.rc-info:hover::after,.rc-info:focus::after{opacity:1}
+.rc-stat-label{display:flex;align-items:center;gap:4px}
 .rc-field input[type="number"]{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;font-family:inherit;box-sizing:border-box}
 .rc-field input[type="number"]:focus{outline:2px solid var(--black);outline-offset:1px}
 .rc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
@@ -548,6 +552,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
           <h3>1. Dachfläche A (z.B. Süd- oder Hauptseite)</h3>
           <div class="rc-field">
             <label>Ausrichtung</label>
+            <label>Ausrichtung <i class="rc-info" data-tip="Himmelsrichtung der Dachfläche. Süd liefert den höchsten Ertrag (~1.050 kWh/kWp), Ost/West je ~85% davon, Nord ~65%. Flachdach wird mit Aufständerung gerechnet.">i</i></label>
             <div class="rc-btn-group" id="dachA-richtung">
               <button type="button" class="rc-btn-opt active" data-val="sued" onclick="setRichtung('A','sued',this)">Süd</button>
               <button type="button" class="rc-btn-opt" data-val="ost" onclick="setRichtung('A','ost',this)">Ost</button>
@@ -558,16 +563,17 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
           </div>
           <div class="rc-field rc-row">
             <div>
-              <label>Breite (m)</label>
+              <label>Breite (m) <i class="rc-info" data-tip="Horizontale Breite der Dachfläche in Metern. Messbar am Dachrand entlang der Traufe.">i</i></label>
               <input type="number" id="dachA-breite" value="8" min="2" max="20" step="0.5" oninput="updateRoofs()">
             </div>
             <div>
-              <label>Länge / Schräge (m)</label>
+              <label>Länge / Schräge (m) <i class="rc-info" data-tip="Länge der Dachschräge vom First bis zur Traufe. Nicht die Grundriss-Tiefe, sondern die tatsächliche Schrägfläche messen.">i</i></label>
               <input type="number" id="dachA-laenge" value="6" min="2" max="15" step="0.5" oninput="updateRoofs()">
             </div>
           </div>
           <div class="rc-field">
             <label>Dachneigung</label>
+            <label>Dachneigung <i class="rc-info" data-tip="Winkel des Dachs. 0–10°: Flachdach. 25–40°: typisches Satteldach, optimal für Solarerträge. Über 40°: sehr steiles Dach, leicht geringerer Ertrag.">i</i></label>
             <div class="rc-btn-group" id="dachA-neigung">
               <button type="button" class="rc-btn-opt" data-val="flach" onclick="setNeigung('A','flach',this)">0–10°</button>
               <button type="button" class="rc-btn-opt active" data-val="normal" onclick="setNeigung('A','normal',this)">25–40°</button>
@@ -614,15 +620,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <div class="rc-card">
           <h3>3. Verbrauch und Strompreis</h3>
           <div class="rc-field">
-            <label>Jährlicher Stromverbrauch <span id="lbl-verbrauch" style="color:var(--muted);font-weight:400">4.000 kWh</span></label>
+            <label>Jährlicher Stromverbrauch <span id="lbl-verbrauch" style="color:var(--muted);font-weight:400">4.000 kWh</span> <i class="rc-info" data-tip="Dein gesamter Haushaltsstrom pro Jahr. Typisch: 2.000–3.500 kWh (1-2 Personen), 3.500–5.000 kWh (Familie), über 5.000 kWh mit Wärmepumpe oder E-Auto.">i</i></label>
             <input type="range" id="verbrauch" min="2000" max="12000" step="500" value="4000" oninput="document.getElementById('lbl-verbrauch').textContent=parseInt(this.value).toLocaleString('de-DE')+' kWh';rechnen()" style="width:100%;accent-color:var(--black)">
           </div>
           <div class="rc-field">
-            <label>Strompreis <span id="lbl-preis" style="color:var(--muted);font-weight:400">37 ct/kWh</span></label>
+            <label>Strompreis <span id="lbl-preis" style="color:var(--muted);font-weight:400">37 ct/kWh</span> <i class="rc-info" data-tip="Dein aktueller Arbeitspreis für Netzstrom in Cent pro Kilowattstunde (ohne Grundgebühr). Stand 2026 liegt der Schnitt in Deutschland bei 35–40 ct/kWh.">i</i></label>
             <input type="range" id="preis" min="28" max="50" step="1" value="37" oninput="document.getElementById('lbl-preis').textContent=this.value+' ct/kWh';rechnen()" style="width:100%;accent-color:var(--black)">
           </div>
           <div class="rc-field">
-            <label>Speicher geplant?</label>
+            <label>Speicher geplant? <i class="rc-info" data-tip="Ein Batteriespeicher speichert überschüssigen Solarstrom für den Abend. Mit Speicher steigt die Eigenverbrauchsquote typisch von ~30% auf ~65–70%, die Anlage kostet aber mehr.">i</i></label>
             <div class="rc-btn-group">
               <button type="button" class="rc-btn-opt active" id="sp-ja" onclick="setSpeicher(true)">Ja</button>
               <button type="button" class="rc-btn-opt" id="sp-nein" onclick="setSpeicher(false)">Nein</button>
@@ -660,17 +666,17 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
           <div class="rc-stats-strip">
             <div class="rc-stat"><div class="rc-stat-val" id="stat-module">0</div><div class="rc-stat-label">Module platziert</div></div>
-            <div class="rc-stat"><div class="rc-stat-val" id="stat-kwp">0,0 kWp</div><div class="rc-stat-label">Anlagenleistung</div></div>
+            <div class="rc-stat"><div class="rc-stat-val" id="stat-kwp">0,0 kWp</div><div class="rc-stat-label">Anlagenleistung <i class="rc-info" data-tip="Kilowatt peak (kWp) ist die Nennleistung eurer Anlage unter idealen Bedingungen. Typisch für ein Einfamilienhaus: 6–12 kWp.">i</i></div></div>
           </div>
         </div>
 
         <div class="rc-result-card">
           <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:14px">Ergebnis</div>
           <div class="rc-result-grid">
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-ertrag">–</div><div class="rc-stat-label">Jahresertrag</div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-ersparnis">–</div><div class="rc-stat-label">Jahresersparnis</div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-amort">–</div><div class="rc-stat-label">Amortisation</div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-autarkie">–</div><div class="rc-stat-label">Autarkiegrad</div></div>
+            <div class="rc-result-item"><div class="rc-stat-val" id="res-ertrag">–</div><div class="rc-stat-label">Jahresertrag <i class="rc-info" data-tip="Geschätzte Strommenge die eure Anlage pro Jahr erzeugt, basierend auf Ausrichtung, Neigung und Modulanzahl.">i</i></div></div>
+            <div class="rc-result-item"><div class="rc-stat-val" id="res-ersparnis">–</div><div class="rc-stat-label">Jahresersparnis <i class="rc-info" data-tip="Summe aus eingesparten Stromkosten (Eigenverbrauch × Strompreis) und Einspeisevergütung (Einspeisung × 7,78 ct/kWh).">i</i></div></div>
+            <div class="rc-result-item"><div class="rc-stat-val" id="res-amort">–</div><div class="rc-stat-label">Amortisation <i class="rc-info" data-tip="Geschätzte Zeit in Jahren bis die Anlage ihre Investitionskosten durch Ersparnisse zurückgezahlt hat. Typisch 7–12 Jahre.">i</i></div></div>
+            <div class="rc-result-item"><div class="rc-stat-val" id="res-autarkie">–</div><div class="rc-stat-label">Autarkiegrad <i class="rc-info" data-tip="Anteil eures Jahresstrombedarfs der durch die Solaranlage gedeckt wird. 100% bedeutet vollständige Unabhängigkeit vom Netz – in der Praxis selten erreichbar.">i</i></div></div>
           </div>
 
           <div class="rc-chart-wrap">
