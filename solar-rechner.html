@@ -476,8 +476,8 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .rc-tool-btn{display:flex;align-items:center;gap:6px;padding:8px 12px;border:1px solid var(--border);border-radius:6px;background:transparent;font-size:0.78rem;font-weight:600;cursor:pointer;color:var(--black)}
 .rc-tool-btn.active{background:var(--sun);border-color:var(--sun)}
 .rc-tool-btn:hover:not(.active){border-color:var(--black)}
-.rc-roof-wrap{border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:16px;overflow-x:auto}
-.rc-roof-svg{display:block;margin:0 auto;cursor:pointer;user-select:none}
+.rc-roof-wrap{border:1px solid var(--border);border-radius:8px;background:var(--bg);padding:16px;overflow-x:auto;touch-action:pan-y}
+.rc-roof-svg{display:block;margin:0 auto;cursor:pointer;user-select:none;touch-action:none}
 .rc-roof-tile{fill:#dfe3e6;stroke:#fff;stroke-width:2;transition:fill .1s}
 .rc-roof-tile:hover{fill:#c9cfd4}
 .rc-roof-tile.module{fill:#1a2d48;stroke:#0d1826}
