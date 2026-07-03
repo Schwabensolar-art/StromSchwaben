@@ -10,17 +10,14 @@
 <meta name="description" content="Belege dein Dach virtuell mit Solarmodulen und berechne Ertrag, Eigenverbrauch, Autarkiegrad und Amortisation. Kostenloser interaktiver Solar-Rechner für Stuttgart, Esslingen und Karlsruhe.">
 <meta name="robots" content="index, follow">
 <link rel="canonical" href="https://stromschwaben.de/solar-rechner.html">
-
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://stromschwaben.de/solar-rechner.html">
 <meta property="og:title" content="Solar-Rechner: Dach belegen und Ertrag berechnen | StromSchwaben">
 <meta property="og:description" content="Belege dein Dach virtuell mit Solarmodulen und berechne Ertrag, Eigenverbrauch, Autarkiegrad und Amortisation.">
 <meta property="og:locale" content="de_DE">
-
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Solar-Rechner: Dach belegen und Ertrag berechnen">
 <meta name="twitter:description" content="Belege dein Dach virtuell mit Solarmodulen und berechne dein Einsparpotenzial. StromSchwaben.">
-
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -92,7 +89,6 @@
   ]
 }
 </script>
-
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <style>
@@ -504,6 +500,70 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .rc-disclaimer{font-size:0.72rem;color:var(--muted);line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
 
 </style>
+<style>
+
+/* Schnell-Kontakt */
+.rc-quick{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:32px;max-width:520px;margin:0 auto}
+.rc-quick h2{font-size:1.5rem;font-weight:700;letter-spacing:-0.02em;margin-bottom:8px}
+.rc-quick p{font-size:0.9rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.rc-quick-fields{display:flex;flex-direction:column;gap:12px;margin-bottom:16px}
+.rc-quick-field{display:flex;flex-direction:column;gap:5px}
+.rc-quick-field label{font-size:0.8rem;font-weight:600}
+.rc-quick-field input{padding:11px 14px;border:1px solid var(--border);border-radius:6px;font-size:0.9rem;font-family:inherit}
+.rc-quick-field input:focus{outline:2px solid var(--black);outline-offset:1px}
+.rc-quick-btn{width:100%;padding:14px;background:var(--black);color:#fff;border:none;border-radius:6px;font-size:0.95rem;font-weight:700;cursor:pointer;font-family:inherit}
+.rc-quick-btn:hover{opacity:.85}
+.rc-toggle-wrap{text-align:center;margin-top:20px}
+.rc-toggle-btn{background:none;border:none;color:var(--muted);font-size:0.85rem;cursor:pointer;font-family:inherit;display:inline-flex;align-items:center;gap:6px;padding:8px 0}
+.rc-toggle-btn:hover{color:var(--black)}
+.rc-toggle-arrow{transition:transform .3s;display:inline-block}
+.rc-toggle-arrow.open{transform:rotate(180deg)}
+
+/* Wizard */
+.rc-wizard{display:none;margin-top:40px}
+.rc-wizard.visible{display:block}
+.rc-progress{display:flex;gap:6px;margin-bottom:32px;align-items:center}
+.rc-progress-step{flex:1;height:3px;background:var(--border);border-radius:2px;transition:background .3s}
+.rc-progress-step.done{background:var(--black)}
+.rc-progress-step.active{background:var(--sun)}
+.rc-progress-label{font-size:0.75rem;color:var(--muted);margin-bottom:10px;text-align:right}
+
+.wz-step{display:none}
+.wz-step.active{display:block}
+.wz-step-title{font-size:1.1rem;font-weight:700;margin-bottom:6px}
+.wz-step-sub{font-size:0.85rem;color:var(--muted);margin-bottom:24px;line-height:1.6}
+.wz-nav{display:flex;gap:12px;margin-top:28px;align-items:center}
+.wz-btn-back{background:none;border:1px solid var(--border);color:var(--black);padding:11px 20px;border-radius:6px;font-size:0.88rem;font-weight:600;cursor:pointer;font-family:inherit}
+.wz-btn-back:hover{border-color:var(--black)}
+.wz-btn-next{background:var(--black);color:#fff;border:none;padding:11px 24px;border-radius:6px;font-size:0.88rem;font-weight:700;cursor:pointer;font-family:inherit;margin-left:auto}
+.wz-btn-next:hover{opacity:.85}
+.wz-skip{font-size:0.78rem;color:var(--muted);cursor:pointer;text-decoration:underline;margin-left:12px}
+.wz-skip:hover{color:var(--black)}
+
+/* Ergebnis-Step */
+.wz-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin-bottom:24px}
+.wz-result-item{background:var(--white);border:1px solid var(--border);border-radius:8px;padding:16px}
+.wz-result-val{font-size:1.4rem;font-weight:700;letter-spacing:-0.02em}
+.wz-result-label{font-size:0.75rem;color:var(--muted);margin-top:3px;display:flex;align-items:center;gap:4px}
+.wz-result-cta{background:var(--black);color:#fff;display:block;text-align:center;padding:14px;border-radius:6px;font-weight:700;text-decoration:none;margin-top:4px;font-size:0.95rem}
+.wz-result-cta:hover{opacity:.85}
+.wz-disclaimer{font-size:0.72rem;color:var(--muted);line-height:1.6;margin-top:16px;padding-top:16px;border-top:1px solid var(--border)}
+
+@media(max-width:640px){
+  .wz-result-grid{grid-template-columns:1fr}
+  .rc-layout{grid-template-columns:1fr}
+  .rc-sticky{position:static}
+  .pc-grid{grid-template-columns:1fr}
+  .pc-card{height:auto}
+  .pc-inner{transition:none}
+  .pc-card.open .pc-inner{transform:none}
+  .pc-face{position:static;backface-visibility:visible}
+  .pc-back{display:none;transform:none}
+  .pc-card.open .pc-back{display:flex}
+  .pc-card.open .pc-front{display:none}
+}
+
+</style>
 </head>
 <body>
 
@@ -536,64 +596,83 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 <section class="rc-hero">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Kostenloser Solar-Rechner</p>
-    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.03em;line-height:1.15;max-width:720px;margin-bottom:14px">Belege dein Dach und sieh sofort was möglich ist.</h1>
-    <p style="font-size:0.95rem;color:var(--muted);max-width:600px;line-height:1.7">Gib die Maße deines Dachs ein, platziere Module wie auf einem echten Dach und erhalte eine erste Einschätzung zu Ertrag, Eigenverbrauch und Amortisation. Kostenlos, unverbindlich, in wenigen Minuten. Eine echte Beratung mit Blick auf deine Haustechnik liefert danach das genauere Bild.</p>
+    <h1 style="font-size:clamp(1.8rem,4vw,2.8rem);font-weight:700;letter-spacing:-0.03em;line-height:1.15;max-width:720px;margin-bottom:14px">Was kann dein Dach leisten?</h1>
+    <p style="font-size:0.95rem;color:var(--muted);max-width:600px;line-height:1.7">Belege dein Dach virtuell mit Solarmodulen und sieh sofort was möglich ist. Eine echte Beratung mit Blick auf deine Haustechnik liefert danach das genauere Bild.</p>
   </div>
 </section>
 
-<!-- RECHNER -->
+<!-- HAUPT-SECTION -->
 <section class="section">
   <div class="wrap">
-    <div class="rc-layout">
 
-      <!-- LINKS: Eingaben -->
-      <div>
+    <!-- WIZARD -->
+    <div class="rc-wizard visible" id="rc-wizard">
+
+      <!-- Fortschritt -->
+      <div class="rc-progress-label" id="wz-progress-label">Schritt 1 von 5</div>
+      <div class="rc-progress">
+        <div class="rc-progress-step active" id="ps1"></div>
+        <div class="rc-progress-step" id="ps2"></div>
+        <div class="rc-progress-step" id="ps3"></div>
+        <div class="rc-progress-step" id="ps4"></div>
+        <div class="rc-progress-step" id="ps5"></div>
+      </div>
+
+      <!-- SCHRITT 1: Dachfläche A -->
+      <div class="wz-step active" id="step1">
+        <p class="wz-step-title">Dachfläche A</p>
+        <p class="wz-step-sub">Dein Hauptdach, z.B. die Südseite. Gib Maße und Ausrichtung an.</p>
         <div class="rc-card">
-          <h3>1. Dachfläche A (z.B. Süd- oder Hauptseite)</h3>
           <div class="rc-field">
-            <label>Ausrichtung</label>
-            <label>Ausrichtung <i class="rc-info" data-tip="Himmelsrichtung der Dachfläche. Süd liefert den höchsten Ertrag (~1.050 kWh/kWp), Ost/West je ~85% davon, Nord ~65%. Flachdach wird mit Aufständerung gerechnet.">i</i></label>
+            <label>Ausrichtung <i class="rc-info" data-tip="Himmelsrichtung der Dachfläche. Süd liefert den höchsten Ertrag (~1.050 kWh/kWp), Ost/West je ~85% davon, Nord ~65%.">i</i></label>
             <div class="rc-btn-group" id="dachA-richtung">
-              <button type="button" class="rc-btn-opt active" data-val="sued" onclick="setRichtung('A','sued',this)">Süd</button>
-              <button type="button" class="rc-btn-opt" data-val="ost" onclick="setRichtung('A','ost',this)">Ost</button>
-              <button type="button" class="rc-btn-opt" data-val="west" onclick="setRichtung('A','west',this)">West</button>
-              <button type="button" class="rc-btn-opt" data-val="nord" onclick="setRichtung('A','nord',this)">Nord</button>
-              <button type="button" class="rc-btn-opt" data-val="flach" onclick="setRichtung('A','flach',this)">Flachdach</button>
+              <button type="button" class="rc-btn-opt active" onclick="setRichtung('A','sued',this)">Süd</button>
+              <button type="button" class="rc-btn-opt" onclick="setRichtung('A','ost',this)">Ost</button>
+              <button type="button" class="rc-btn-opt" onclick="setRichtung('A','west',this)">West</button>
+              <button type="button" class="rc-btn-opt" onclick="setRichtung('A','nord',this)">Nord</button>
+              <button type="button" class="rc-btn-opt" onclick="setRichtung('A','flach',this)">Flachdach</button>
             </div>
           </div>
           <div class="rc-field rc-row">
             <div>
-              <label>Breite (m) <i class="rc-info" data-tip="Horizontale Breite der Dachfläche in Metern. Messbar am Dachrand entlang der Traufe.">i</i></label>
+              <label>Breite (m) <i class="rc-info" data-tip="Horizontale Breite der Dachfläche in Metern, gemessen am Dachrand.">i</i></label>
               <input type="number" id="dachA-breite" value="8" min="2" max="20" step="0.5" oninput="updateRoofs()">
             </div>
             <div>
-              <label>Länge / Schräge (m) <i class="rc-info" data-tip="Länge der Dachschräge vom First bis zur Traufe. Nicht die Grundriss-Tiefe, sondern die tatsächliche Schrägfläche messen.">i</i></label>
+              <label>Länge / Schräge (m) <i class="rc-info" data-tip="Länge der Dachschräge vom First bis zur Traufe. Nicht die Grundriss-Tiefe, sondern die tatsächliche Schrägfläche.">i</i></label>
               <input type="number" id="dachA-laenge" value="6" min="2" max="15" step="0.5" oninput="updateRoofs()">
             </div>
           </div>
           <div class="rc-field">
-            <label>Dachneigung</label>
-            <label>Dachneigung <i class="rc-info" data-tip="Winkel des Dachs. 0–10°: Flachdach. 25–40°: typisches Satteldach, optimal für Solarerträge. Über 40°: sehr steiles Dach, leicht geringerer Ertrag.">i</i></label>
+            <label>Dachneigung <i class="rc-info" data-tip="0–10°: Flachdach. 25–40°: typisches Satteldach, optimal für Solar. Über 40°: sehr steiles Dach.">i</i></label>
             <div class="rc-btn-group" id="dachA-neigung">
-              <button type="button" class="rc-btn-opt" data-val="flach" onclick="setNeigung('A','flach',this)">0–10°</button>
-              <button type="button" class="rc-btn-opt active" data-val="normal" onclick="setNeigung('A','normal',this)">25–40°</button>
-              <button type="button" class="rc-btn-opt" data-val="steil" onclick="setNeigung('A','steil',this)">über 40°</button>
+              <button type="button" class="rc-btn-opt" onclick="setNeigung('A','flach',this)">0–10°</button>
+              <button type="button" class="rc-btn-opt active" onclick="setNeigung('A','normal',this)">25–40°</button>
+              <button type="button" class="rc-btn-opt" onclick="setNeigung('A','steil',this)">über 40°</button>
             </div>
           </div>
         </div>
+        <div class="wz-nav">
+          <button class="wz-btn-next" onclick="goStep(2)">Weiter ↓</button>
+        </div>
+      </div>
 
+      <!-- SCHRITT 2: Dachfläche B (optional) -->
+      <div class="wz-step" id="step2">
+        <p class="wz-step-title">Zweite Dachfläche <span style="font-size:0.75rem;font-weight:400;color:var(--muted);margin-left:6px">Optional</span></p>
+        <p class="wz-step-sub">Hast du eine zweite Dachseite, z.B. die Nordseite oder eine Ost/West-Fläche? Du kannst diesen Schritt auch überspringen.</p>
         <div class="rc-card">
-          <h3 style="display:flex;justify-content:space-between;align-items:center">2. Dachfläche B (optional, z.B. Rückseite)
-            <label style="display:flex;align-items:center;gap:6px;font-size:0.76rem;font-weight:500;color:var(--muted);cursor:pointer"><input type="checkbox" id="dachB-aktiv" onchange="toggleDachB()"> aktivieren</label>
-          </h3>
+          <div class="rc-field">
+            <label style="display:flex;align-items:center;gap:8px;cursor:pointer"><input type="checkbox" id="dachB-aktiv" onchange="toggleDachB()"> Zweite Dachfläche hinzufügen</label>
+          </div>
           <div id="dachB-felder" style="display:none">
             <div class="rc-field">
               <label>Ausrichtung</label>
               <div class="rc-btn-group" id="dachB-richtung">
-                <button type="button" class="rc-btn-opt" data-val="sued" onclick="setRichtung('B','sued',this)">Süd</button>
-                <button type="button" class="rc-btn-opt active" data-val="nord" onclick="setRichtung('B','nord',this)">Nord</button>
-                <button type="button" class="rc-btn-opt" data-val="ost" onclick="setRichtung('B','ost',this)">Ost</button>
-                <button type="button" class="rc-btn-opt" data-val="west" onclick="setRichtung('B','west',this)">West</button>
+                <button type="button" class="rc-btn-opt" onclick="setRichtung('B','sued',this)">Süd</button>
+                <button type="button" class="rc-btn-opt active" onclick="setRichtung('B','nord',this)">Nord</button>
+                <button type="button" class="rc-btn-opt" onclick="setRichtung('B','ost',this)">Ost</button>
+                <button type="button" class="rc-btn-opt" onclick="setRichtung('B','west',this)">West</button>
               </div>
             </div>
             <div class="rc-field rc-row">
@@ -609,45 +688,58 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
             <div class="rc-field">
               <label>Dachneigung</label>
               <div class="rc-btn-group" id="dachB-neigung">
-                <button type="button" class="rc-btn-opt" data-val="flach" onclick="setNeigung('B','flach',this)">0–10°</button>
-                <button type="button" class="rc-btn-opt active" data-val="normal" onclick="setNeigung('B','normal',this)">25–40°</button>
-                <button type="button" class="rc-btn-opt" data-val="steil" onclick="setNeigung('B','steil',this)">über 40°</button>
+                <button type="button" class="rc-btn-opt" onclick="setNeigung('B','flach',this)">0–10°</button>
+                <button type="button" class="rc-btn-opt active" onclick="setNeigung('B','normal',this)">25–40°</button>
+                <button type="button" class="rc-btn-opt" onclick="setNeigung('B','steil',this)">über 40°</button>
               </div>
             </div>
           </div>
         </div>
+        <div class="wz-nav">
+          <button class="wz-btn-back" onclick="goStep(1)">↑ Zurück</button>
+          <span class="wz-skip" onclick="goStep(3)">Überspringen</span>
+          <button class="wz-btn-next" onclick="goStep(3)">Weiter ↓</button>
+        </div>
+      </div>
 
+      <!-- SCHRITT 3: Verbrauch und Strompreis -->
+      <div class="wz-step" id="step3">
+        <p class="wz-step-title">Dein Stromverbrauch</p>
+        <p class="wz-step-sub">Wie viel Strom verbraucht dein Haushalt pro Jahr? Den Wert findest du auf deiner Jahresabrechnung.</p>
         <div class="rc-card">
-          <h3>3. Verbrauch und Strompreis</h3>
           <div class="rc-field">
-            <label>Jährlicher Stromverbrauch <span id="lbl-verbrauch" style="color:var(--muted);font-weight:400">4.000 kWh</span> <i class="rc-info" data-tip="Dein gesamter Haushaltsstrom pro Jahr. Typisch: 2.000–3.500 kWh (1-2 Personen), 3.500–5.000 kWh (Familie), über 5.000 kWh mit Wärmepumpe oder E-Auto.">i</i></label>
+            <label>Jährlicher Stromverbrauch <span id="lbl-verbrauch" style="color:var(--muted);font-weight:400">4.000 kWh</span> <i class="rc-info" data-tip="Typisch: 2.000–3.500 kWh (1-2 Personen), 3.500–5.000 kWh (Familie), über 5.000 kWh mit Wärmepumpe oder E-Auto.">i</i></label>
             <input type="range" id="verbrauch" min="2000" max="12000" step="500" value="4000" oninput="document.getElementById('lbl-verbrauch').textContent=parseInt(this.value).toLocaleString('de-DE')+' kWh';rechnen()" style="width:100%;accent-color:var(--black)">
           </div>
           <div class="rc-field">
-            <label>Strompreis <span id="lbl-preis" style="color:var(--muted);font-weight:400">37 ct/kWh</span> <i class="rc-info" data-tip="Dein aktueller Arbeitspreis für Netzstrom in Cent pro Kilowattstunde (ohne Grundgebühr). Stand 2026 liegt der Schnitt in Deutschland bei 35–40 ct/kWh.">i</i></label>
+            <label>Strompreis <span id="lbl-preis" style="color:var(--muted);font-weight:400">37 ct/kWh</span> <i class="rc-info" data-tip="Dein aktueller Arbeitspreis für Netzstrom. Der BDEW-Schnitt 2026 liegt bei rund 37 ct/kWh für Bestandskunden.">i</i></label>
             <input type="range" id="preis" min="28" max="50" step="1" value="37" oninput="document.getElementById('lbl-preis').textContent=this.value+' ct/kWh';rechnen()" style="width:100%;accent-color:var(--black)">
           </div>
           <div class="rc-field">
-            <label>Speicher geplant? <i class="rc-info" data-tip="Ein Batteriespeicher speichert überschüssigen Solarstrom für den Abend. Mit Speicher steigt die Eigenverbrauchsquote typisch von ~30% auf ~65–70%, die Anlage kostet aber mehr.">i</i></label>
+            <label>Speicher geplant? <i class="rc-info" data-tip="Mit Speicher steigt die Eigenverbrauchsquote von ~30% auf ~65–70%, die Anlage kostet aber mehr.">i</i></label>
             <div class="rc-btn-group">
               <button type="button" class="rc-btn-opt active" id="sp-ja" onclick="setSpeicher(true)">Ja</button>
               <button type="button" class="rc-btn-opt" id="sp-nein" onclick="setSpeicher(false)">Nein</button>
             </div>
           </div>
         </div>
+        <div class="wz-nav">
+          <button class="wz-btn-back" onclick="goStep(2)">↑ Zurück</button>
+          <button class="wz-btn-next" onclick="goStep(4)">Weiter ↓</button>
+        </div>
       </div>
 
-      <!-- RECHTS: Dach-Editor + Ergebnis -->
-      <div class="rc-sticky">
+      <!-- SCHRITT 4: Module platzieren -->
+      <div class="wz-step" id="step4">
+        <p class="wz-step-title">Module platzieren</p>
+        <p class="wz-step-sub">Klicke auf die Kacheln um Module zu setzen oder zu entfernen. Markiere erst Hindernisse (Schornstein, Dachfenster), dann setze Module auf die freien Flächen.</p>
         <div class="rc-card">
-          <h3>4. Module platzieren</h3>
           <div class="rc-tool-row">
-            <button type="button" class="rc-tool-btn active" id="tool-modul" onclick="setTool('modul')">☀ Modul setzen</button>
+            <button type="button" class="rc-tool-btn active" id="tool-modul" onclick="setTool('modul')">☀ Modul</button>
             <button type="button" class="rc-tool-btn" id="tool-schornstein" onclick="setTool('schornstein')">▢ Schornstein</button>
             <button type="button" class="rc-tool-btn" id="tool-fenster" onclick="setTool('fenster')">◧ Dachfenster</button>
-            <button type="button" class="rc-tool-btn" onclick="clearRoof()" style="margin-left:auto">↺ Zurücksetzen</button>
+            <button type="button" class="rc-tool-btn" onclick="clearRoof()" style="margin-left:auto">↺ Reset</button>
           </div>
-          <p style="font-size:0.75rem;color:var(--muted);margin-bottom:12px">Klicke auf die Kacheln um Module zu setzen oder zu entfernen. Wähle erst ein Werkzeug, dann klicke aufs Dach.</p>
 
           <div id="dachA-wrap" class="rc-roof-wrap" style="margin-bottom:14px">
             <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.05em;color:var(--muted);margin-bottom:8px">Dachfläche A</div>
@@ -663,76 +755,73 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
             <span><i style="background:#1a2d48"></i>Modul</span>
             <span><i style="background:#e8a8a0"></i>Hindernis</span>
           </div>
-
           <div class="rc-stats-strip">
             <div class="rc-stat"><div class="rc-stat-val" id="stat-module">0</div><div class="rc-stat-label">Module platziert</div></div>
-            <div class="rc-stat"><div class="rc-stat-val" id="stat-kwp">0,0 kWp</div><div class="rc-stat-label">Anlagenleistung <i class="rc-info" data-tip="Kilowatt peak (kWp) ist die Nennleistung eurer Anlage unter idealen Bedingungen. Typisch für ein Einfamilienhaus: 6–12 kWp.">i</i></div></div>
+            <div class="rc-stat"><div class="rc-stat-val" id="stat-kwp">0,0 kWp</div><div class="rc-stat-label">Anlagenleistung <i class="rc-info" data-tip="kWp = Kilowatt peak, die Nennleistung unter optimalen Bedingungen. Typisch für ein Einfamilienhaus: 6–12 kWp.">i</i></div></div>
           </div>
         </div>
-
-        <div class="rc-result-card">
-          <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:14px">Ergebnis</div>
-          <div class="rc-result-grid">
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-ertrag">–</div><div class="rc-stat-label">Jahresertrag <i class="rc-info" data-tip="Geschätzte Strommenge die eure Anlage pro Jahr erzeugt, basierend auf Ausrichtung, Neigung und Modulanzahl.">i</i></div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-ersparnis">–</div><div class="rc-stat-label">Jahresersparnis <i class="rc-info" data-tip="Summe aus eingesparten Stromkosten (Eigenverbrauch × Strompreis) und Einspeisevergütung (Einspeisung × 7,78 ct/kWh).">i</i></div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-amort">–</div><div class="rc-stat-label">Amortisation <i class="rc-info" data-tip="Geschätzte Zeit in Jahren bis die Anlage ihre Investitionskosten durch Ersparnisse zurückgezahlt hat. Typisch 7–12 Jahre.">i</i></div></div>
-            <div class="rc-result-item"><div class="rc-stat-val" id="res-autarkie">–</div><div class="rc-stat-label">Autarkiegrad <i class="rc-info" data-tip="Anteil eures Jahresstrombedarfs der durch die Solaranlage gedeckt wird. 100% bedeutet vollständige Unabhängigkeit vom Netz – in der Praxis selten erreichbar.">i</i></div></div>
-          </div>
-
-          <div class="rc-chart-wrap">
-            <div style="font-size:0.74rem;font-weight:700;margin-bottom:10px">Eigenverbrauch vs. Einspeisung</div>
-            <div class="rc-bar-row">
-              <div class="rc-bar-label">kWh</div>
-              <div class="rc-bar-track"><div class="rc-bar-self" id="bar-self" style="width:0%"></div><div class="rc-bar-feed" id="bar-feed" style="width:0%"></div></div>
-            </div>
-            <div class="rc-legend" style="margin-top:8px">
-              <span><i style="background:var(--sun)"></i>Eigenverbrauch <span id="leg-self"></span></span>
-              <span><i style="background:#9fb3c8"></i>Einspeisung <span id="leg-feed"></span></span>
-            </div>
-          </div>
-
-          <p class="rc-disclaimer">Alle Werte sind Richtwerte auf Basis typischer Annahmen für Süddeutschland (spezifischer Ertrag, Modulwirkungsgrad, Strompreisentwicklung). Dieser Rechner ersetzt keine echte Planung, er liefert eine erste Orientierung. Faktoren wie Verschattung durch Bäume oder Nachbargebäude, der Zustand deiner Haustechnik, Statik, Stromzähler und individuelle Verbrauchsprofile fließen hier nicht ein, machen in der Praxis aber einen großen Unterschied. Ein wirklich belastbares Bild bekommst du erst mit einer persönlichen Beratung, bei der wir uns dein Dach und deine Haustechnik konkret anschauen.</p>
-          <a href="index.html#kontakt" class="article-cta" style="display:inline-block;margin-top:14px">Kostenlose Beratung anfragen</a>
+        <div class="wz-nav">
+          <button class="wz-btn-back" onclick="goStep(3)">↑ Zurück</button>
+          <button class="wz-btn-next" onclick="goStep(5)">Ergebnis anzeigen ↓</button>
         </div>
       </div>
 
-    </div>
+
+      <!-- SCHRITT 5: Ergebnis -->
+      <div class="wz-step" id="step5">
+        <p class="wz-step-title">Dein Ergebnis</p>
+        <p class="wz-step-sub">Alle Werte sind Richtwerte auf Basis typischer Annahmen für Süddeutschland. Für eine verbindliche Einschätzung schauen wir uns dein Dach persönlich an.</p>
+
+        <div class="wz-result-grid">
+          <div class="wz-result-item"><div class="wz-result-val" id="res-ertrag">–</div><div class="wz-result-label">Jahresertrag <i class="rc-info" data-tip="Geschätzte Strommenge die eure Anlage pro Jahr erzeugt, basierend auf Ausrichtung, Neigung und Modulanzahl.">i</i></div></div>
+          <div class="wz-result-item"><div class="wz-result-val" id="res-ersparnis">–</div><div class="wz-result-label">Jahresersparnis <i class="rc-info" data-tip="Summe aus eingesparten Stromkosten (Eigenverbrauch × Strompreis) und Einspeisevergütung (Einspeisung × 7,78 ct/kWh).">i</i></div></div>
+          <div class="wz-result-item"><div class="wz-result-val" id="res-amort">–</div><div class="wz-result-label">Amortisation <i class="rc-info" data-tip="Geschätzte Zeit bis die Anlage ihre Investitionskosten zurückgezahlt hat. Typisch 7–12 Jahre.">i</i></div></div>
+          <div class="wz-result-item"><div class="wz-result-val" id="res-autarkie">–</div><div class="wz-result-label">Autarkiegrad <i class="rc-info" data-tip="Anteil deines Jahresstrombedarfs der durch Solar gedeckt wird. 100% in der Praxis selten erreichbar.">i</i></div></div>
+        </div>
+
+        <div class="rc-chart-wrap">
+          <div style="font-size:0.74rem;font-weight:700;margin-bottom:10px">Eigenverbrauch vs. Einspeisung</div>
+          <div class="rc-bar-row">
+            <div class="rc-bar-label">kWh</div>
+            <div class="rc-bar-track"><div class="rc-bar-self" id="bar-self" style="width:0%"></div><div class="rc-bar-feed" id="bar-feed" style="width:0%"></div></div>
+          </div>
+          <div class="rc-legend" style="margin-top:8px">
+            <span><i style="background:var(--sun)"></i>Eigenverbrauch <span id="leg-self"></span></span>
+            <span><i style="background:#9fb3c8"></i>Einspeisung <span id="leg-feed"></span></span>
+          </div>
+        </div>
+
+        <p class="wz-disclaimer">Dieser Rechner ersetzt keine echte Planung. Faktoren wie Verschattung durch Bäume oder Nachbargebäude, der Zustand deiner Haustechnik, Statik und individuelle Verbrauchsprofile fließen hier nicht ein. Ein wirklich belastbares Bild bekommst du erst mit einer persönlichen Beratung.</p>
+
+        <a href="index.html#kontakt" class="wz-result-cta" style="margin-top:16px">Jetzt kostenlos beraten lassen</a>
+
+        <div class="wz-nav" style="margin-top:16px">
+          <button class="wz-btn-back" onclick="goStep(4)">↑ Zurück und anpassen</button>
+        </div>
+      </div>
+
+    </div><!-- /wizard -->
   </div>
 </section>
 
-<!-- Erklärtext + Blog-Verlinkung für SEO und Kontext -->
+
+<!-- SEO ERKLÄRTEXT -->
 <section class="section bg-off">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Wie der Rechner funktioniert</p>
     <h2 class="sec-title">Was hinter den Zahlen steckt.</h2>
     <div style="max-width:720px;margin-top:24px">
-      <p style="font-size:0.9375rem;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:16px">Jedes platzierte Modul hat eine Leistung von 0,44 kWp, das entspricht modernen Modulen wie sie 2026 üblich verbaut werden. Der Jahresertrag pro kWp hängt von Ausrichtung und Neigung ab: Süd mit optimaler Neigung erzielt in Süddeutschland rund 1.050 kWh pro kWp, Ost- oder Westausrichtung etwa 85 Prozent davon, Nordausrichtung deutlich weniger. Diese Werte sind Richtwerte, dein tatsächlicher Ertrag hängt zusätzlich von Verschattung, genauem Standort und Witterung ab.</p>
-      <p style="font-size:0.9375rem;color:var(--text);line-height:1.8;text-align:justify">Die Eigenverbrauchsquote schätzen wir auf Basis typischer Haushalte: etwa 30 Prozent ohne Speicher, 65 bis 70 Prozent mit Speicher. Die Einspeisevergütung ist mit 7,78 Cent pro Kilowattstunde angesetzt, der aktuelle Satz für Teileinspeisung bis 10 kWp (Stand Februar 2026). Mehr zur möglichen Entwicklung der Förderung liest du in unserem <a href="eeg-reform-2027.html" style="color:var(--text);text-decoration:underline">Artikel zur EEG-Reform 2027</a>, mehr zur Speicherfrage im <a href="photovoltaik-speicher-lohnt-sich.html" style="color:var(--text);text-decoration:underline">Artikel zum Batteriespeicher</a>.</p>
+      <p style="font-size:0.9375rem;color:var(--text);line-height:1.8;text-align:justify;margin-bottom:16px">Jedes platzierte Modul hat eine Leistung von 0,44 kWp, das entspricht modernen Modulen wie sie 2026 üblich verbaut werden. Der Jahresertrag pro kWp hängt von Ausrichtung und Neigung ab: Süd mit optimaler Neigung erzielt in Süddeutschland rund 1.050 kWh pro kWp, Ost- oder Westausrichtung etwa 85 Prozent davon, Nordausrichtung deutlich weniger. Die Eigenverbrauchsquote schätzen wir auf Basis typischer Haushalte: etwa 30 Prozent ohne Speicher, 65 bis 70 Prozent mit Speicher. Die Einspeisevergütung ist mit 7,78 Cent pro Kilowattstunde angesetzt (Stand Februar 2026). Mehr zur möglichen Entwicklung der Förderung liest du in unserem <a href="eeg-reform-2027.html" style="color:var(--text);text-decoration:underline">Artikel zur EEG-Reform 2027</a>, mehr zur Speicherfrage im <a href="photovoltaik-speicher-lohnt-sich.html" style="color:var(--text);text-decoration:underline">Artikel zum Batteriespeicher</a>.</p>
     </div>
 
     <div style="max-width:720px;margin-top:40px">
       <h2 class="sec-title" style="font-size:1.3rem">Häufige Fragen zum Solar-Rechner.</h2>
       <div style="margin-top:20px">
-        <details>
-          <summary>Wie genau ist dieser Solarrechner?</summary>
-          <div class="faq-body">Der Rechner liefert eine erste Orientierung auf Basis branchenüblicher Richtwerte für Süddeutschland. Er berücksichtigt Dachgröße, Ausrichtung und Neigung, aber keine individuelle Verschattung durch Bäume oder Nachbargebäude, keinen exakten Standort und keine Besonderheiten deiner Haustechnik. Für eine belastbare Planung schauen wir uns dein Dach persönlich an.</div>
-        </details>
-        <details>
-          <summary>Wie wird der Autarkiegrad berechnet?</summary>
-          <div class="faq-body">Der Autarkiegrad zeigt, wie viel Prozent deines gesamten Jahresstromverbrauchs du durch die Solaranlage selbst deckst. Er berechnet sich aus dem geschätzten Eigenverbrauch geteilt durch deinen Jahresverbrauch. Ohne Speicher liegt er meist bei 20 bis 35 Prozent, mit Speicher häufig bei 50 bis 80 Prozent, abhängig von Anlagengröße und Verbrauchsprofil.</div>
-        </details>
-        <details>
-          <summary>Was ist der Unterschied zwischen Eigenverbrauch und Einspeisung?</summary>
-          <div class="faq-body">Eigenverbrauch ist der Teil des erzeugten Solarstroms, den du direkt selbst nutzt, etwa für Haushaltsgeräte, eine Wärmepumpe oder ein E-Auto. Einspeisung ist der überschüssige Strom, der ins öffentliche Netz fließt und mit der Einspeisevergütung vergütet wird. Eigenverbrauch ist wirtschaftlich deutlich wertvoller, da er den teuren Netzstrombezug ersetzt statt nur die niedrigere Einspeisevergütung zu erhalten.</div>
-        </details>
-        <details>
-          <summary>Warum unterscheiden sich Süd-, Ost-, West- und Nordausrichtung so stark?</summary>
-          <div class="faq-body">Die Sonneneinstrahlung trifft eine Südfläche über den Tag verteilt am intensivsten. Ost- und Westausrichtung erzielen etwa 85 Prozent des Ertrags einer Südfläche, verteilen die Produktion aber gleichmäßiger über Morgen und Abend, was bei hohem Verbrauch zu diesen Zeiten sogar vorteilhaft sein kann. Nordausrichtung liefert deutlich weniger Ertrag und eignet sich meist nur als Ergänzung zu einer Hauptfläche in besserer Ausrichtung.</div>
-        </details>
-        <details>
-          <summary>Kann ich mit dem Rechner auch ein Flachdach planen?</summary>
-          <div class="faq-body">Ja. Wähle bei der Ausrichtung die Option Flachdach. Module auf Flachdächern werden meist mit einer Aufständerung in einem festen Winkel montiert, der Rechner setzt dafür einen mittleren Ertragswert an, der zwischen optimaler Südausrichtung und einer reinen Horizontalmontage liegt.</div>
-        </details>
+        <details><summary>Wie genau ist dieser Solarrechner?</summary><div class="faq-body">Der Rechner liefert eine erste Orientierung auf Basis branchenüblicher Richtwerte für Süddeutschland. Er berücksichtigt Dachgröße, Ausrichtung und Neigung, aber keine individuelle Verschattung, keinen exakten Standort und keine Besonderheiten deiner Haustechnik. Für eine belastbare Planung schauen wir uns dein Dach persönlich an.</div></details>
+        <details><summary>Wie wird der Autarkiegrad berechnet?</summary><div class="faq-body">Der Autarkiegrad zeigt, wie viel Prozent deines Jahresstromverbrauchs du durch Solar selbst deckst. Ohne Speicher liegt er meist bei 20 bis 35 Prozent, mit Speicher häufig bei 50 bis 80 Prozent.</div></details>
+        <details><summary>Was ist der Unterschied zwischen Eigenverbrauch und Einspeisung?</summary><div class="faq-body">Eigenverbrauch ist der Teil des Solarstroms den du direkt selbst nutzt. Einspeisung ist der überschüssige Strom der ins Netz fließt und vergütet wird. Eigenverbrauch ist wirtschaftlich deutlich wertvoller, da er teuren Netzstrom ersetzt.</div></details>
+        <details><summary>Warum unterscheiden sich Süd-, Ost-, West- und Nordausrichtung so stark?</summary><div class="faq-body">Süd liefert den höchsten Ertrag. Ost/West erzielen etwa 85 Prozent davon, verteilen die Produktion aber gleichmäßiger über Morgen und Abend. Nord eignet sich meist nur als Ergänzung.</div></details>
+        <details><summary>Kann ich mit dem Rechner auch ein Flachdach planen?</summary><div class="faq-body">Ja. Wähle bei der Ausrichtung die Option Flachdach. Module werden dort meist mit Aufständerung montiert, der Rechner setzt dafür einen mittleren Ertragswert an.</div></details>
       </div>
     </div>
   </div>
@@ -765,15 +854,56 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 
 <script>
-// ===== Datenmodell =====
-const MODUL_BREITE = 1.1; // m
-const MODUL_HOEHE = 1.8;  // m
-const MODUL_KWP = 0.44;
+// ===== Wizard Navigation =====
+let currentStep = 1;
+const totalSteps = 5;
 
+function goStep(n) {
+  document.getElementById('step' + currentStep).classList.remove('active');
+  currentStep = n;
+  document.getElementById('step' + currentStep).classList.add('active');
+  updateProgress();
+  document.getElementById('rc-wizard').scrollIntoView({behavior:'smooth', block:'start'});
+  if (n === 5) { rechnen(); submitToFormspree(); }
+  if (n === 4) { buildRoofGrid('A'); if (dach.B.aktiv) buildRoofGrid('B'); }
+}
+
+function updateProgress() {
+  document.getElementById('wz-progress-label').textContent = 'Schritt ' + currentStep + ' von ' + totalSteps;
+  for (let i = 1; i <= totalSteps; i++) {
+    const el = document.getElementById('ps' + i);
+    el.className = 'rc-progress-step' + (i < currentStep ? ' done' : i === currentStep ? ' active' : '');
+  }
+}
+
+function toggleWizard(btn) {
+  const wz = document.getElementById('rc-wizard');
+  const arrow = btn.querySelector('.rc-toggle-arrow');
+  const isOpen = wz.classList.contains('visible');
+  if (isOpen) {
+    wz.classList.remove('visible');
+    arrow.classList.remove('open');
+  } else {
+    wz.classList.add('visible');
+    arrow.classList.add('open');
+    buildRoofGrid('A');
+    wz.scrollIntoView({behavior:'smooth', block:'start'});
+  }
+}
+
+function submitQuick() {
+  const name = document.getElementById('qf-name') ? document.getElementById('qf-name').value.trim() : '';
+  const tel = document.getElementById('qf-tel') ? document.getElementById('qf-tel').value.trim() : '';
+  window.location.href = 'index.html#kontakt';
+}
+
+// ===== Rechner-Logik =====
+const MODUL_BREITE = 1.1;
+const MODUL_HOEHE = 1.8;
+const MODUL_KWP = 0.44;
 const ERTRAG_PRO_KWP = { sued: 1050, ost: 900, west: 900, nord: 700, flach: 950 };
 const NEIGUNG_FAKTOR = { flach: 0.92, normal: 1.0, steil: 0.96 };
-const STROMPREIS_DEFAULT = 37;
-const EINSPEISEVERGUETUNG = 7.78; // ct/kWh
+const EINSPEISEVERGUETUNG = 7.78;
 
 let dach = {
   A: { aktiv: true, richtung: 'sued', neigung: 'normal', breite: 8, laenge: 6, cols: 0, rows: 0, cells: [] },
@@ -782,11 +912,10 @@ let dach = {
 let currentTool = 'modul';
 let speicherAktiv = true;
 
-// ===== Werkzeugauswahl =====
 function setTool(tool) {
   currentTool = tool;
-  ['modul', 'schornstein', 'fenster'].forEach(t => {
-    document.getElementById('tool-' + t).classList.toggle('active', t === tool);
+  ['modul','schornstein','fenster'].forEach(t => {
+    document.getElementById('tool-'+t).classList.toggle('active', t===tool);
   });
 }
 
@@ -797,16 +926,16 @@ function setSpeicher(val) {
   rechnen();
 }
 
-function setRichtung(dachId, val, btn) {
-  dach[dachId].richtung = val;
-  document.querySelectorAll('#dach' + dachId + '-richtung .rc-btn-opt').forEach(b => b.classList.remove('active'));
+function setRichtung(id, val, btn) {
+  dach[id].richtung = val;
+  document.querySelectorAll('#dach'+id+'-richtung .rc-btn-opt').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   rechnen();
 }
 
-function setNeigung(dachId, val, btn) {
-  dach[dachId].neigung = val;
-  document.querySelectorAll('#dach' + dachId + '-neigung .rc-btn-opt').forEach(b => b.classList.remove('active'));
+function setNeigung(id, val, btn) {
+  dach[id].neigung = val;
+  document.querySelectorAll('#dach'+id+'-neigung .rc-btn-opt').forEach(b => b.classList.remove('active'));
   btn.classList.add('active');
   rechnen();
 }
@@ -820,32 +949,23 @@ function toggleDachB() {
   rechnen();
 }
 
-// ===== Raster aufbauen =====
 function buildRoofGrid(dachId) {
   const d = dach[dachId];
-  const breite = parseFloat(document.getElementById('dach' + dachId + '-breite').value) || 8;
-  const laenge = parseFloat(document.getElementById('dach' + dachId + '-laenge').value) || 6;
-  d.breite = breite;
-  d.laenge = laenge;
+  const breite = parseFloat(document.getElementById('dach'+dachId+'-breite').value) || 8;
+  const laenge = parseFloat(document.getElementById('dach'+dachId+'-laenge').value) || 6;
+  d.breite = breite; d.laenge = laenge;
   const cols = Math.max(1, Math.floor(breite / MODUL_BREITE));
   const rows = Math.max(1, Math.floor(laenge / MODUL_HOEHE));
-
-  // Bestehende Zellen so weit wie möglich übernehmen, Rest neu anlegen
-  const oldCells = d.cells;
-  const oldCols = d.cols, oldRows = d.rows;
+  const oldCells = d.cells, oldCols = d.cols, oldRows = d.rows;
   const newCells = [];
   for (let r = 0; r < rows; r++) {
     for (let c = 0; c < cols; c++) {
       let state = 'frei';
-      if (oldCells.length && r < oldRows && c < oldCols) {
-        state = oldCells[r * oldCols + c];
-      }
+      if (oldCells.length && r < oldRows && c < oldCols) state = oldCells[r*oldCols+c];
       newCells.push(state);
     }
   }
-  d.cols = cols;
-  d.rows = rows;
-  d.cells = newCells;
+  d.cols = cols; d.rows = rows; d.cells = newCells;
   renderRoof(dachId);
 }
 
@@ -855,26 +975,23 @@ function updateRoofs() {
   rechnen();
 }
 
-// ===== SVG Rendering =====
 function renderRoof(dachId) {
   const d = dach[dachId];
-  const svg = document.getElementById('dach' + dachId + '-svg');
+  const svg = document.getElementById('dach'+dachId+'-svg');
   const cellPx = 28;
-  const w = d.cols * cellPx;
-  const h = d.rows * cellPx;
-  svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+  const w = d.cols*cellPx, h = d.rows*cellPx;
+  svg.setAttribute('viewBox', '0 0 '+w+' '+h);
   svg.setAttribute('width', Math.min(w, 560));
-  svg.setAttribute('height', Math.min(w, 560) * (h / w));
-
+  svg.setAttribute('height', Math.min(w, 560)*(h/w));
   let svgContent = '';
   for (let r = 0; r < d.rows; r++) {
     for (let c = 0; c < d.cols; c++) {
-      const idx = r * d.cols + c;
+      const idx = r*d.cols+c;
       const state = d.cells[idx];
       let cls = 'rc-roof-tile';
-      if (state === 'modul') cls += ' module';
-      else if (state === 'schornstein' || state === 'fenster') cls += ' blocked';
-      svgContent += `<rect class="${cls}" x="${c * cellPx}" y="${r * cellPx}" width="${cellPx}" height="${cellPx}" data-dach="${dachId}" data-idx="${idx}" onclick="cellClick('${dachId}',${idx})"/>`;
+      if (state==='modul') cls += ' module';
+      else if (state==='schornstein'||state==='fenster') cls += ' blocked';
+      svgContent += '<rect class="' + cls + '" data-dach="' + dachId + '" data-idx="' + idx + '" x="' + (c*cellPx) + '" y="' + (r*cellPx) + '" width="' + cellPx + '" height="' + cellPx + '"/>';
     }
   }
   svg.innerHTML = svgContent;
@@ -883,111 +1000,134 @@ function renderRoof(dachId) {
 function cellClick(dachId, idx) {
   const d = dach[dachId];
   const current = d.cells[idx];
-  if (currentTool === 'modul') {
-    d.cells[idx] = current === 'modul' ? 'frei' : (current === 'frei' ? 'modul' : current);
-  } else if (currentTool === 'schornstein' || currentTool === 'fenster') {
-    d.cells[idx] = current === currentTool ? 'frei' : currentTool;
-  }
+  if (currentTool==='modul') d.cells[idx] = current==='modul' ? 'frei' : (current==='frei' ? 'modul' : current);
+  else if (currentTool==='schornstein'||currentTool==='fenster') d.cells[idx] = current===currentTool ? 'frei' : currentTool;
   renderRoof(dachId);
   rechnen();
 }
 
 function clearRoof() {
-  ['A', 'B'].forEach(id => {
-    if (dach[id].cells.length) {
-      dach[id].cells = dach[id].cells.map(() => 'frei');
-      renderRoof(id);
-    }
-  });
+  ['A','B'].forEach(id => { if(dach[id].cells.length) { dach[id].cells = dach[id].cells.map(()=>'frei'); renderRoof(id); } });
   rechnen();
 }
 
-// ===== Berechnung =====
 function countModules() {
   let total = 0;
-  ['A', 'B'].forEach(id => {
-    if (dach[id].aktiv) {
-      total += dach[id].cells.filter(c => c === 'modul').length;
-    }
-  });
+  ['A','B'].forEach(id => { if(dach[id].aktiv) total += dach[id].cells.filter(c=>c==='modul').length; });
   return total;
 }
 
 function gewichteterErtragProKwp() {
-  // Ertrag gewichtet nach Modulanzahl pro Dachfläche, da unterschiedliche Ausrichtungen
-  let totalModule = 0;
-  let totalErtragsAnteil = 0;
-  ['A', 'B'].forEach(id => {
+  let totalModule = 0, totalErtragsAnteil = 0;
+  ['A','B'].forEach(id => {
     const d = dach[id];
     if (!d.aktiv) return;
-    const moduleHier = d.cells.filter(c => c === 'modul').length;
-    if (moduleHier === 0) return;
-    const basis = ERTRAG_PRO_KWP[d.richtung] || 900;
-    const neigungF = NEIGUNG_FAKTOR[d.neigung] || 1.0;
-    totalModule += moduleHier;
-    totalErtragsAnteil += moduleHier * basis * neigungF;
+    const m = d.cells.filter(c=>c==='modul').length;
+    if (m===0) return;
+    const basis = ERTRAG_PRO_KWP[d.richtung]||900;
+    const neigungF = NEIGUNG_FAKTOR[d.neigung]||1.0;
+    totalModule += m;
+    totalErtragsAnteil += m*basis*neigungF;
   });
-  if (totalModule === 0) return 0;
-  return totalErtragsAnteil / totalModule;
+  return totalModule===0 ? 0 : totalErtragsAnteil/totalModule;
 }
 
 function rechnen() {
   const moduleCount = countModules();
-  const kwp = moduleCount * MODUL_KWP;
-  document.getElementById('stat-module').textContent = moduleCount;
-  document.getElementById('stat-kwp').textContent = kwp.toLocaleString('de-DE', {minimumFractionDigits: 1, maximumFractionDigits: 1}) + ' kWp';
+  const kwp = moduleCount*MODUL_KWP;
+  const statModule = document.getElementById('stat-module');
+  const statKwp = document.getElementById('stat-kwp');
+  if (statModule) statModule.textContent = moduleCount;
+  if (statKwp) statKwp.textContent = kwp.toLocaleString('de-DE',{minimumFractionDigits:1,maximumFractionDigits:1})+' kWp';
+
+  const resErtrag = document.getElementById('res-ertrag');
+  if (!resErtrag) return;
 
   const verbrauch = parseInt(document.getElementById('verbrauch').value);
   const strompreis = parseFloat(document.getElementById('preis').value);
 
-  if (moduleCount === 0) {
-    document.getElementById('res-ertrag').textContent = '–';
-    document.getElementById('res-ersparnis').textContent = '–';
-    document.getElementById('res-amort').textContent = '–';
-    document.getElementById('res-autarkie').textContent = '–';
-    document.getElementById('bar-self').style.width = '0%';
-    document.getElementById('bar-feed').style.width = '0%';
-    document.getElementById('leg-self').textContent = '';
-    document.getElementById('leg-feed').textContent = '';
+  if (moduleCount===0) {
+    ['res-ertrag','res-ersparnis','res-amort','res-autarkie'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent='\u2013'; });
+    ['bar-self','bar-feed'].forEach(id => { const el = document.getElementById(id); if(el) el.style.width='0%'; });
+    ['leg-self','leg-feed'].forEach(id => { const el = document.getElementById(id); if(el) el.textContent=''; });
     return;
   }
 
-  const ertragProKwp = gewichteterErtragProKwp();
-  const jahresertrag = kwp * ertragProKwp; // kWh
+  const jahresertrag = kwp*gewichteterErtragProKwp();
+  const evq = speicherAktiv ? 0.68 : 0.30;
+  let ev = Math.min(jahresertrag*evq, verbrauch, jahresertrag);
+  let einsp = Math.max(jahresertrag-ev, 0);
+  const ersparnis = (ev*strompreis)/100 + (einsp*EINSPEISEVERGUETUNG)/100;
+  const invest = (kwp*1400) + (speicherAktiv ? Math.max(kwp*0.8,4)*550 : 0);
+  const amort = ersparnis>0 ? invest/ersparnis : 0;
+  const autarkie = Math.min((ev/verbrauch)*100,100);
 
-  const eigenverbrauchsQuote = speicherAktiv ? 0.68 : 0.30;
-  let eigenverbrauchKwh = Math.min(jahresertrag * eigenverbrauchsQuote, verbrauch, jahresertrag);
-  let einspeisungKwh = Math.max(jahresertrag - eigenverbrauchKwh, 0);
+  document.getElementById('res-ertrag').textContent = Math.round(jahresertrag).toLocaleString('de-DE')+' kWh';
+  document.getElementById('res-ersparnis').textContent = Math.round(ersparnis).toLocaleString('de-DE')+' \u20ac';
+  document.getElementById('res-amort').textContent = amort>0 ? amort.toFixed(1).replace('.',',')+' Jahre' : '\u2013';
+  document.getElementById('res-autarkie').textContent = Math.round(autarkie)+' %';
 
-  const ersparnisEigenverbrauch = (eigenverbrauchKwh * strompreis) / 100;
-  const ersparnisEinspeisung = (einspeisungKwh * EINSPEISEVERGUETUNG) / 100;
-  const jahresersparnis = ersparnisEigenverbrauch + ersparnisEinspeisung;
-
-  const investKwp = 1400; // EUR pro kWp ohne Speicher
-  const speicherKwh = speicherAktiv ? Math.max(kwp * 0.8, 4) : 0; // grobe Faustregel
-  const investSpeicher = speicherAktiv ? speicherKwh * 550 : 0;
-  const gesamtinvest = (kwp * investKwp) + investSpeicher;
-
-  const amortisation = jahresersparnis > 0 ? gesamtinvest / jahresersparnis : 0;
-  const autarkie = Math.min((eigenverbrauchKwh / verbrauch) * 100, 100);
-
-  document.getElementById('res-ertrag').textContent = Math.round(jahresertrag).toLocaleString('de-DE') + ' kWh';
-  document.getElementById('res-ersparnis').textContent = Math.round(jahresersparnis).toLocaleString('de-DE') + ' €';
-  document.getElementById('res-amort').textContent = amortisation > 0 ? amortisation.toFixed(1).replace('.', ',') + ' Jahre' : '–';
-  document.getElementById('res-autarkie').textContent = Math.round(autarkie) + ' %';
-
-  const totalKwh = eigenverbrauchKwh + einspeisungKwh;
-  const selfPct = totalKwh > 0 ? (eigenverbrauchKwh / totalKwh) * 100 : 0;
-  const feedPct = 100 - selfPct;
-  document.getElementById('bar-self').style.width = selfPct + '%';
-  document.getElementById('bar-feed').style.width = feedPct + '%';
-  document.getElementById('leg-self').textContent = '(' + Math.round(eigenverbrauchKwh).toLocaleString('de-DE') + ' kWh)';
-  document.getElementById('leg-feed').textContent = '(' + Math.round(einspeisungKwh).toLocaleString('de-DE') + ' kWh)';
+  const totalKwh = ev+einsp;
+  const selfPct = totalKwh>0 ? (ev/totalKwh)*100 : 0;
+  document.getElementById('bar-self').style.width=selfPct+'%';
+  document.getElementById('bar-feed').style.width=(100-selfPct)+'%';
+  document.getElementById('leg-self').textContent='('+Math.round(ev).toLocaleString('de-DE')+' kWh)';
+  document.getElementById('leg-feed').textContent='('+Math.round(einsp).toLocaleString('de-DE')+' kWh)';
 }
 
-// ===== Init =====
-buildRoofGrid('A');
-rechnen();
+function submitToFormspree() {
+  const moduleCount = countModules();
+  const kwp = (moduleCount * MODUL_KWP).toFixed(1);
+  const verbrauch = document.getElementById('verbrauch').value;
+  const preis = document.getElementById('preis').value;
+  const ertrag = document.getElementById('res-ertrag').textContent;
+  const ersparnis = document.getElementById('res-ersparnis').textContent;
+  const amort = document.getElementById('res-amort').textContent;
+  const autarkie = document.getElementById('res-autarkie').textContent;
+  const dachABreite = document.getElementById('dachA-breite').value;
+  const dachALaenge = document.getElementById('dachA-laenge').value;
+  const dachBBreite = dach.B.aktiv ? document.getElementById('dachB-breite').value : '\u2013';
+  const dachBLaenge = dach.B.aktiv ? document.getElementById('dachB-laenge').value : '\u2013';
+  const richtungLabels = { sued: 'S\u00fcd', ost: 'Ost', west: 'West', nord: 'Nord', flach: 'Flachdach' };
+  const neigungLabels = { flach: '0\u201310\u00b0', normal: '25\u201340\u00b0', steil: '\u00fcber 40\u00b0' };
+
+  const data = {
+    _subject: 'Solar-Rechner Ergebnis \u2013 neue Berechnung',
+    'Dachfl\u00e4che A': dachABreite+'m x '+dachALaenge+'m | '+richtungLabels[dach.A.richtung]+' | '+neigungLabels[dach.A.neigung],
+    'Dachfl\u00e4che B': dach.B.aktiv ? dachBBreite+'m x '+dachBLaenge+'m | '+richtungLabels[dach.B.richtung]+' | '+neigungLabels[dach.B.neigung] : 'Nicht angegeben',
+    'Module platziert': moduleCount+' Module ('+kwp+' kWp)',
+    'Jahresverbrauch': verbrauch+' kWh',
+    'Strompreis': preis+' ct/kWh',
+    'Speicher geplant': speicherAktiv ? 'Ja' : 'Nein',
+    'Jahresertrag': ertrag,
+    'Jahresersparnis': ersparnis,
+    'Amortisation': amort,
+    'Autarkiegrad': autarkie,
+    '_gotcha': ''
+  };
+
+  fetch('https://formspree.io/f/meebkred', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+    body: JSON.stringify(data)
+  }).catch(function() {});
+}
+
+// Event delegation for SVG roof cells
+document.addEventListener('click', function(e) {
+  const rect = e.target.closest('rect[data-dach]');
+  if (rect) {
+    cellClick(rect.getAttribute('data-dach'), parseInt(rect.getAttribute('data-idx')));
+  }
+});
 </script>
+<!-- STICKY KONTAKT BAR -->
+<div style="position:fixed;bottom:0;left:0;right:0;z-index:100;background:var(--black);padding:12px 24px;display:flex;align-items:center;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:2px solid var(--sun)">
+  <p style="font-size:0.82rem;color:rgba(255,255,255,.8);margin:0;line-height:1.5">Rechner zu komplex? <span style="color:rgba(255,255,255,.5)">Genau dafür sind wir da.</span></p>
+  <a href="index.html#kontakt" style="background:var(--sun);color:var(--black);padding:9px 20px;border-radius:6px;font-size:0.8rem;font-weight:700;text-decoration:none;white-space:nowrap;flex-shrink:0">Wir rufen dich zurück</a>
+</div>
+<!-- Abstand damit der sticky bar den letzten Inhalt nicht verdeckt -->
+<div style="height:60px"></div>
+
 </body>
 </html>
