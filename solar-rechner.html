@@ -806,7 +806,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 
 <!-- SEO ERKLÄRTEXT -->
-<section class="section bg-off">
+<section class="section bg-off" id="seo-section" style="display:none">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Wie der Rechner funktioniert</p>
     <h2 class="sec-title">Was hinter den Zahlen steckt.</h2>
@@ -864,7 +864,7 @@ function goStep(n) {
   document.getElementById('step' + currentStep).classList.add('active');
   updateProgress();
   document.getElementById('rc-wizard').scrollIntoView({behavior:'smooth', block:'start'});
-  if (n === 5) { rechnen(); submitToFormspree(); }
+  if (n === 5) { rechnen(); submitToFormspree(); document.getElementById('seo-section').style.display='block'; }
   if (n === 4) { buildRoofGrid('A'); if (dach.B.aktiv) buildRoofGrid('B'); }
 }
 
