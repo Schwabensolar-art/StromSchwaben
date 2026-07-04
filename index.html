@@ -141,14 +141,14 @@ nav a:hover{color:var(--black)}
 .hero{padding:80px 0 64px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .hero-visual-bg{position:absolute;right:0;top:24px;height:540px;width:46%;max-width:565px;pointer-events:none;overflow:hidden;z-index:0}
 .hero-eyebrow{font-size:0.78rem;font-weight:500;color:var(--muted);margin-bottom:24px;letter-spacing:.03em}
-.hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.04em;max-width:50%;margin-bottom:20px}
-.hero-sub{font-size:1rem;color:var(--muted);max-width:48%;line-height:1.75;margin-bottom:36px;text-align:justify}
-.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px;max-width:50%}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.04em;max-width:720px;margin-bottom:20px}
+.hero-sub{font-size:1rem;color:var(--muted);max-width:680px;line-height:1.75;margin-bottom:36px;text-align:justify}
+.hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
 .btn-dark{background:var(--black);color:var(--white);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:6px;transition:opacity .15s;display:inline-block}
 .btn-dark:hover{opacity:.8}
 .btn-plain{background:transparent;color:var(--black);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:6px;border:1px solid var(--border);transition:border-color .15s;display:inline-block}
 .btn-plain:hover{border-color:#999}
-.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid var(--border);padding-top:32px;position:relative;z-index:2;background:var(--white)}
+.hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(0,0,0,0.1);padding-top:32px;position:relative;z-index:2;background:transparent}
 .stat{padding-right:32px}
 .stat-val{font-size:1.75rem;font-weight:700;letter-spacing:-0.03em;line-height:1;margin-bottom:6px}
 .stat-label{font-size:0.78rem;color:var(--muted);line-height:1.4}
@@ -490,154 +490,20 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 <!-- HERO -->
 <section class="hero">
-  <!-- Solar panel illustration background -->
-  <div class="hero-visual-bg" aria-hidden="true">
-    <svg viewBox="0 0 446 562" width="100%" height="100%" preserveAspectRatio="xMaxYMid meet" xmlns="http://www.w3.org/2000/svg" style="display:block">
-      <defs>
-        <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#2a3f5e"/>
-          <stop offset="100%" stop-color="#1a2d48"/>
-        </linearGradient>
-        <linearGradient id="pg2" x1="0" y1="0" x2="1" y2="1">
-          <stop offset="0%" stop-color="#1e3352"/>
-          <stop offset="100%" stop-color="#152540"/>
-        </linearGradient>
-        <linearGradient id="fade" x1="0" y1="0" x2="1" y2="0">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="1"/>
-          <stop offset="30%" stop-color="#ffffff" stop-opacity="0"/>
-        </linearGradient>
-        <linearGradient id="fadetop" x1="0" y1="0" x2="0" y2="1">
-          <stop offset="0%" stop-color="#ffffff" stop-opacity="0.6"/>
-          <stop offset="20%" stop-color="#ffffff" stop-opacity="0"/>
-          <stop offset="80%" stop-color="#ffffff" stop-opacity="0"/>
-          <stop offset="100%" stop-color="#ffffff" stop-opacity="0.6"/>
-        </linearGradient>
-      </defs>
-      <!-- Row 1 — 4 panels -->
-      <!-- Panel grid helper: each panel 130w x 90h, gap 8, row offset for perspective -->
-
-      <!-- Panel grid: 3 cols x 5 rows, narrower and taller -->
-
-      <!-- ROW 1 -->
-      <g transform="translate(20,40)">
-        <rect x="0" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="43" y1="0" x2="43" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="86" y1="0" x2="86" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="30" x2="130" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="60" x2="130" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="138" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="181" y1="0" x2="181" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="224" y1="0" x2="224" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="30" x2="268" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="60" x2="268" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="276" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <circle cx="314" cy="45" r="27" fill="none" stroke="#F5C842" stroke-width="2"/>
-        <circle cx="314" cy="45" r="4" fill="#F5C842"/>
-        <line x1="314" y1="21" x2="314" y2="69" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="290" y1="45" x2="338" y2="45" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="296.9" y1="27.9" x2="331.1" y2="62.1" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="296.9" y1="62.1" x2="331.1" y2="27.9" stroke="#F5C842" stroke-width="1.4"/>
-        <rect x="354" y="15" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="33" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="51" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="69" width="40" height="9" rx="2" fill="#F5C842"/>
-      </g>
-
-      <!-- ROW 2 -->
-      <g transform="translate(20,138)">
-        <rect x="0" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="43" y1="0" x2="43" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="86" y1="0" x2="86" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="30" x2="130" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="60" x2="130" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="138" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="181" y1="0" x2="181" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="224" y1="0" x2="224" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="30" x2="268" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="60" x2="268" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="276" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="319" y1="0" x2="319" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="362" y1="0" x2="362" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="30" x2="406" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="60" x2="406" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-      </g>
-
-      <!-- ROW 3 -->
-      <g transform="translate(20,236)">
-        <rect x="0" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="43" y1="0" x2="43" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="86" y1="0" x2="86" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="30" x2="130" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="60" x2="130" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="138" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="181" y1="0" x2="181" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="224" y1="0" x2="224" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="30" x2="268" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="60" x2="268" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="276" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="319" y1="0" x2="319" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="362" y1="0" x2="362" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="30" x2="406" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="60" x2="406" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-      </g>
-
-      <!-- ROW 4 -->
-      <g transform="translate(20,334)">
-        <rect x="0" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="43" y1="0" x2="43" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="86" y1="0" x2="86" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="30" x2="130" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="60" x2="130" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="138" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="181" y1="0" x2="181" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="224" y1="0" x2="224" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="30" x2="268" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="60" x2="268" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="276" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="319" y1="0" x2="319" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="362" y1="0" x2="362" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="30" x2="406" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="276" y1="60" x2="406" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-      </g>
-
-      <!-- ROW 5 -->
-      <g transform="translate(20,432)">
-        <rect x="0" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="43" y1="0" x2="43" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="86" y1="0" x2="86" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="30" x2="130" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="0" y1="60" x2="130" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="138" y="0" width="130" height="90" rx="3" fill="url(#pg2)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <line x1="181" y1="0" x2="181" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="224" y1="0" x2="224" y2="90" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="30" x2="268" y2="30" stroke="#4a6a8a" stroke-width="0.9"/>
-        <line x1="138" y1="60" x2="268" y2="60" stroke="#4a6a8a" stroke-width="0.9"/>
-        <rect x="276" y="0" width="130" height="90" rx="3" fill="url(#pg)" stroke="#3a5a7a" stroke-width="1.2"/>
-        <circle cx="314" cy="45" r="27" fill="none" stroke="#F5C842" stroke-width="2"/>
-        <circle cx="314" cy="45" r="4" fill="#F5C842"/>
-        <line x1="314" y1="21" x2="314" y2="69" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="290" y1="45" x2="338" y2="45" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="296.9" y1="27.9" x2="331.1" y2="62.1" stroke="#F5C842" stroke-width="1.4"/>
-        <line x1="296.9" y1="62.1" x2="331.1" y2="27.9" stroke="#F5C842" stroke-width="1.4"/>
-        <rect x="354" y="15" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="33" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="51" width="40" height="9" rx="2" fill="#F5C842"/>
-        <rect x="354" y="69" width="40" height="9" rx="2" fill="#F5C842"/>
-      </g>
-      <rect width="446" height="562" fill="url(#fade)"/>
-      <rect width="446" height="562" fill="url(#fadetop)"/>
-    </svg>
-  </div>
+  <!-- Video Hintergrund -->
+  <video autoplay muted loop playsinline aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.18;pointer-events:none">
+    <source src="hero-bg.mp4" type="video/mp4">
+  </video>
   <div class="wrap" style="position:relative;z-index:1">
     <h1 aria-label="Solarberatung im Raum Stuttgart, Esslingen und Karlsruhe. StromSchwaben plant unabhängig und herstellerneutral.">Die Anlage die zu deinem Haus passt. Nicht die die gerade verfügbar ist.</h1>
-    <p style="font-size:0.85rem;font-weight:600;color:var(--sun);margin-top:10px;margin-bottom:0;letter-spacing:0.02em;max-width:50%">Mit den StromSchwaben Strom sparen.</p>
-    <p style="font-size:0.9rem;font-weight:500;color:var(--muted);margin-top:8px;margin-bottom:0;letter-spacing:0.01em;max-width:50%">Solaranlagen und Klimaanlagen im Raum Stuttgart, Esslingen und Karlsruhe.</p>
+    <p style="font-size:0.85rem;font-weight:600;color:var(--sun);margin-top:10px;margin-bottom:0;letter-spacing:0.02em">Mit den StromSchwaben Strom sparen.</p>
+    <p style="font-size:0.9rem;font-weight:500;color:var(--muted);margin-top:8px;margin-bottom:0;letter-spacing:0.01em">Solaranlagen und Klimaanlagen im Raum Stuttgart, Esslingen und Karlsruhe.</p>
     <p class="hero-sub" style="margin-top:24px">Wir sind keinem Hersteller verpflichtet und arbeiten herstellerneutral. Das erlaubt uns, dein Dach, deine Haustechnik und deinen Verbrauch zuerst zu verstehen, und dann die Komponenten zu wählen die wirklich passen. Mehr Module bedeuten nicht automatisch mehr Ertrag.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-dark">Kostenlose Beratung</a>
       <a href="solar-rechner.html" class="btn-plain">Potenzial berechnen</a>
     </div>
-    <div class="hero-stats" style="grid-template-columns:repeat(4,1fr)">
+    <div class="hero-stats" style="grid-template-columns:repeat(4,1fr);background:rgba(255,255,255,0.5);backdrop-filter:blur(8px);-webkit-backdrop-filter:blur(8px);border-radius:8px;padding:20px 24px;border:1px solid rgba(255,255,255,0.6)">
       <div class="stat">
         <div class="stat-val" style="border-bottom:2px solid var(--sun);display:inline-block;padding-bottom:2px">6–8 J.</div>
         <div class="stat-label">Typische Amortisation</div>
