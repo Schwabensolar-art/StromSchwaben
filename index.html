@@ -459,6 +459,21 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   font-size:0.8rem;font-weight:800;color:var(--black);
   flex-shrink:0;
 }
+/* Hamburger Menu */
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin-left:auto;background:none;border:none;z-index:300}
+.hamburger span{display:block;width:22px;height:2px;background:var(--black);border-radius:2px;transition:all .25s}
+.hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:translateY(-7px) rotate(-45deg)}
+.mobile-menu{display:none;position:fixed;top:60px;left:0;right:0;background:var(--white);border-bottom:1px solid var(--border);z-index:200;padding:16px 0;box-shadow:0 8px 24px rgba(0,0,0,0.08)}
+.mobile-menu.open{display:block}
+.mobile-menu a{display:block;padding:13px var(--pad);font-size:0.95rem;font-weight:500;color:var(--black);text-decoration:none;border-bottom:1px solid var(--border)}
+.mobile-menu a:last-child{border-bottom:none}
+.mobile-menu a.mobile-cta{background:var(--black);color:var(--white);margin:12px var(--pad) 4px;border-radius:6px;text-align:center;font-weight:700;border-bottom:none}
+@media(max-width:640px){
+  .hamburger{display:flex}
+}
+
 </style>
 </head>
 <body>
@@ -477,6 +492,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       </ul>
     </nav>
     <a href="#kontakt" class="nav-btn">Beratung anfragen</a>
+    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:12px;align-items:center;margin-left:4px">
       <a href="https://www.instagram.com/stromschwaben.de/" target="_blank" rel="noopener" title="Instagram" style="color:var(--muted);transition:color .15s;display:flex;align-items:center" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--muted)'">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
@@ -487,6 +503,17 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     </div>
   </div>
 </header>
+<!-- Mobile Menu -->
+<div class="mobile-menu" id="mobile-menu">
+  <a href="#über-uns" onclick="closeMobileMenu()">Über uns</a>
+  <a href="#vorgehen" onclick="closeMobileMenu()">Vorgehen</a>
+  <a href="#projekte" onclick="closeMobileMenu()">Projekte</a>
+  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
+  <a href="solar-rechner.html" onclick="closeMobileMenu()">Solar-Rechner</a>
+  <a href="#kontakt" class="mobile-cta" onclick="closeMobileMenu()">Beratung anfragen</a>
+</div>
+
 
 <!-- HERO -->
 <section class="hero">
@@ -1111,6 +1138,26 @@ rechnen();
 </footer>
 
 
+
+<script>
+function toggleMobileMenu() {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  menu.classList.toggle('open');
+  btn.classList.toggle('open');
+}
+function closeMobileMenu() {
+  document.getElementById('mobile-menu').classList.remove('open');
+  document.getElementById('hamburger').classList.remove('open');
+}
+document.addEventListener('click', function(e) {
+  var menu = document.getElementById('mobile-menu');
+  var btn = document.getElementById('hamburger');
+  if (menu.classList.contains('open') && !menu.contains(e.target) && !btn.contains(e.target)) {
+    closeMobileMenu();
+  }
+});
+</script>
 
 </body>
 <script>
