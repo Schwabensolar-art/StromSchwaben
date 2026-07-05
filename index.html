@@ -141,7 +141,7 @@ nav a:hover{color:var(--black)}
 .hero{padding:80px 0 64px;border-bottom:1px solid var(--border);position:relative;overflow:hidden}
 .hero-visual-bg{position:absolute;right:0;top:24px;height:540px;width:46%;max-width:565px;pointer-events:none;overflow:hidden;z-index:0}
 .hero-eyebrow{font-size:0.78rem;font-weight:500;color:var(--muted);margin-bottom:24px;letter-spacing:.03em}
-.hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.04em;max-width:720px;margin-bottom:20px}
+.hero h1{font-size:clamp(2.2rem,4.5vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-0.04em;margin-bottom:20px}
 .hero-sub{font-size:1rem;color:var(--muted);max-width:680px;line-height:1.75;margin-bottom:36px;text-align:justify}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
 .btn-dark{background:var(--black);color:var(--white);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:6px;transition:opacity .15s;display:inline-block}
@@ -501,7 +501,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     <p class="hero-sub" style="margin-top:24px">Wir sind keinem Hersteller verpflichtet und arbeiten herstellerneutral. Das erlaubt uns, dein Dach, deine Haustechnik und deinen Verbrauch zuerst zu verstehen, und dann die Komponenten zu wählen die wirklich passen. Mehr Module bedeuten nicht automatisch mehr Ertrag.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-dark">Kostenlose Beratung</a>
-      <a href="solar-rechner.html" class="btn-plain">Potenzial berechnen</a>
+      <a href="solar-rechner.html" class="btn-plain" style="background:var(--white);border-color:var(--black)">Potenzial berechnen</a>
     </div>
     <div class="hero-stats" style="grid-template-columns:repeat(4,1fr);background:transparent;border-radius:8px;padding:20px 0;border:none;border-top:1px solid rgba(0,0,0,0.08)">
       <div class="stat">
@@ -787,8 +787,11 @@ document.querySelectorAll('.r-body').forEach(b=>{
 </section>
 
 <!-- FAQ -->
-<section class="section-sm bg-off" id="faq">
-  <div class="wrap">
+<section class="section-sm bg-off" id="faq" style="position:relative;overflow:hidden">
+  <video autoplay muted loop playsinline aria-hidden="true" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.18;pointer-events:none">
+    <source src="hero1-bg.mp4" type="video/mp4">
+  </video>
+  <div class="wrap" style="position:relative;z-index:1">
     <p class="sec-label" style="text-align:center">Häufige Fragen</p>
     <h2 class="sec-title" style="text-align:center;max-width:440px;margin:0 auto">Was wir oft gefragt werden.</h2>
     <div class="faq-wrap">
