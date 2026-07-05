@@ -460,7 +460,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   flex-shrink:0;
 }
 /* Hamburger Menu */
-.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;margin-left:auto;background:none;border:none;z-index:300}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:8px;background:none;border:none;z-index:300}
 .hamburger span{display:block;width:22px;height:2px;background:var(--black);border-radius:2px;transition:all .25s}
 .hamburger.open span:nth-child(1){transform:translateY(7px) rotate(45deg)}
 .hamburger.open span:nth-child(2){opacity:0}
@@ -492,7 +492,6 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       </ul>
     </nav>
     <a href="#kontakt" class="nav-btn">Beratung anfragen</a>
-    <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     <div style="display:flex;gap:12px;align-items:center;margin-left:4px">
       <a href="https://www.instagram.com/stromschwaben.de/" target="_blank" rel="noopener" title="Instagram" style="color:var(--muted);transition:color .15s;display:flex;align-items:center" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--muted)'">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
@@ -500,6 +499,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
       <a href="https://www.linkedin.com/company/stromschwaben-de/" target="_blank" rel="noopener" title="LinkedIn" style="color:var(--muted);transition:color .15s;display:flex;align-items:center" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--muted)'">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="3"/><line x1="8" y1="11" x2="8" y2="16"/><line x1="8" y1="8" x2="8" y2="8.5"/><line x1="12" y1="16" x2="12" y2="13"/><path d="M12 11v2a2 2 0 0 1 4 0v3"/><line x1="16" y1="16" x2="16" y2="13"/></svg>
       </a>
+      <button class="hamburger" id="hamburger" onclick="toggleMobileMenu()" aria-label="Menü öffnen"><span></span><span></span><span></span></button>
     </div>
   </div>
 </header>
