@@ -787,10 +787,12 @@ document.querySelectorAll('.r-body').forEach(b=>{
 </section>
 
 <!-- FAQ -->
-<section class="section-sm bg-off" id="faq" style="position:relative;overflow:hidden">
-  <video autoplay muted loop playsinline aria-hidden="true" id="faq-video" style="position:absolute;top:0;left:0;width:100%;height:100%;object-fit:cover;z-index:0;opacity:0.18;pointer-events:none">
-    <source src="hero1-bg.mp4" type="video/mp4">
-  </video>
+<section class="section-sm bg-off" id="faq" style="position:relative;">
+  <div id="faq-video-wrap" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0;pointer-events:none">
+    <video autoplay muted loop playsinline aria-hidden="true" id="faq-video" style="position:sticky;top:0;width:100%;height:100vh;object-fit:cover;opacity:0.18;display:block">
+      <source src="hero1-bg.mp4" type="video/mp4">
+    </video>
+  </div>
   <div class="wrap" style="position:relative;z-index:1">
     <p class="sec-label" style="text-align:center">Häufige Fragen</p>
     <h2 class="sec-title" style="text-align:center;max-width:440px;margin:0 auto">Was wir oft gefragt werden.</h2>
@@ -1110,23 +1112,6 @@ rechnen();
 
 
 
-<script>
-(function() {
-  var faqSection = document.getElementById('faq');
-  var faqVideo = document.getElementById('faq-video');
-  if (!faqSection || !faqVideo) return;
-  var initialHeight = 0;
-  function fixVideo() {
-    var rect = faqSection.getBoundingClientRect();
-    if (!initialHeight) initialHeight = faqSection.offsetHeight;
-    faqVideo.style.height = faqSection.offsetHeight + 'px';
-    faqVideo.style.top = '0';
-  }
-  document.querySelectorAll('#faq details').forEach(function(d) {
-    d.addEventListener('toggle', fixVideo);
-  });
-})();
-</script>
 </body>
 <script>
 window.addEventListener('load', function() {
