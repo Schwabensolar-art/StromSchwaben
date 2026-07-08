@@ -18,12 +18,16 @@
 <meta property="og:url" content="https://stromschwaben.de/">
 <meta property="og:title" content="StromSchwaben · Solaranlagen und Klimaanlagen im Raum Stuttgart, Esslingen und Karlsruhe">
 <meta property="og:description" content="Solaranlagen und Klimaanlagen für Eigenheime und Gewerbebetriebe. Individuelle Planung, keine Pakete, kein Lager. Kostenlose Beratung.">
+<meta property="og:image" content="https://stromschwaben.de/og-image.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
 <meta property="og:locale" content="de_DE">
 
 <!-- Twitter Card -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="StromSchwaben · Solaranlagen und Klimaanlagen im Raum Stuttgart">
 <meta name="twitter:description" content="Individuelle Solaranlagen und Klimaanlagen für Eigenheime und Gewerbe. Raum Stuttgart, Esslingen, Karlsruhe.">
+<meta name="twitter:image" content="https://stromschwaben.de/og-image.png">
 
 <!-- LocalBusiness Schema -->
 <script type="application/ld+json">
@@ -757,21 +761,21 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <p class="sun-tag" style="margin-bottom:12px">Schon ein Angebot</p>
         <p style="font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:10px;min-height:56px">Du hast schon ein Angebot. Aber du bist nicht sicher.</p>
         <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1">Ob die Anlage wirklich zu deinem Haus passt, die Dimensionierung stimmt und der Preis fair ist. Wir schauen drauf und sagen dir was wir denken, auch wenn das Angebot gut ist.</p>
-        <a href="#kontakt" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Angebot prüfen lassen</a>
+        <a href="#kontakt" onclick="setKontaktThema('Ich habe schon ein Angebot und bin unsicher')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Angebot prüfen lassen</a>
       </div>
 
       <div style="border:1px solid var(--border);border-radius:8px;background:var(--white);padding:24px;display:flex;flex-direction:column">
         <p class="sun-tag" style="margin-bottom:12px">Noch am Überlegen</p>
         <p style="font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:10px;min-height:56px">Du weißt noch nicht ob es sich bei dir lohnt.</p>
         <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1">Nicht jedes Dach und nicht jeder Haushalt profitiert gleich. Wir rechnen das ehrlich mit dir durch, bevor du irgendetwas unterschreibst. Auch wenn das Ergebnis Nein ist.</p>
-        <a href="#kontakt" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Kostenlos einschätzen lassen</a>
+        <a href="#kontakt" onclick="setKontaktThema('Ich überlege noch ob es sich lohnt')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Kostenlos einschätzen lassen</a>
       </div>
 
       <div style="border:1px solid var(--border);border-radius:8px;background:var(--white);padding:24px;display:flex;flex-direction:column">
         <p class="sun-tag" style="margin-bottom:12px">Konkret planen</p>
         <p style="font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:10px;min-height:56px">Du willst es richtig machen, nicht einfach schnell.</p>
         <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1">Keine Standardlösung, keine Überdimensionierung. Eine Anlage die zu deiner Haustechnik, deinem Verbrauch und deinen Plänen passt. Net anders.</p>
-        <a href="#kontakt" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Beratung anfragen</a>
+        <a href="#kontakt" onclick="setKontaktThema('Ich plane konkret und suche die richtige Beratung')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Beratung anfragen</a>
       </div>
 
     </div>
@@ -911,7 +915,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <div class="cf-group"><label>Name</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
         <div class="cf-group"><label>Telefon oder E-Mail</label><input type="text" name="kontakt" placeholder="+49 711 ... oder deine@email.de" required></div>
         <div class="cf-group"><label>Ort</label><input type="text" name="ort" placeholder="z.B. Stuttgart, Esslingen, Leinfelden" required></div>
-        <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option></select></div>
+        <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" id="kontakt-thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option></select></div>
         <div class="cf-group"><label>Nachricht (optional)</label><textarea name="nachricht" rows="3" placeholder="Was du schon weißt: Dachgröße, Ausrichtung, Verbrauch..."></textarea></div>
         <input type="hidden" name="_replyto" value="info@stromschwaben.de"><button type="submit" class="cf-submit">Beratungsgespräch anfragen</button>
         <p class="cf-hint">Wir melden uns innerhalb von 24 Stunden. Mit der Anfrage entstehen keine Kosten und keine Verpflichtungen.</p>
@@ -1272,6 +1276,19 @@ function filterBlog(btn) {
 }
 
 document.addEventListener('DOMContentLoaded', initBlog);
+</script>
+
+<script>
+function setKontaktThema(value) {
+  var select = document.getElementById('kontakt-thema');
+  if (!select) return;
+  for (var i = 0; i < select.options.length; i++) {
+    if (select.options[i].text === value) {
+      select.selectedIndex = i;
+      break;
+    }
+  }
+}
 </script>
 
 </body>
