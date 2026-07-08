@@ -474,6 +474,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   .hamburger{display:flex}
 }
 
+/* Blog Filter */
+.blog-filter{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:20px;margin-top:24px}
+.blog-filter-btn{background:transparent;border:1px solid var(--border);color:var(--muted);font-size:0.78rem;font-weight:600;padding:6px 14px;border-radius:20px;cursor:pointer;font-family:inherit;transition:all .15s;white-space:nowrap}
+.blog-filter-btn:hover{border-color:var(--black);color:var(--black)}
+.blog-filter-btn.active{background:var(--black);border-color:var(--black);color:var(--white)}
+.blog-teaser{transition:opacity .2s}
+.blog-teaser.hidden{display:none}
+.blog-teaser.blog-collapsed{display:none}
+
 </style>
 </head>
 <body>
@@ -768,6 +777,14 @@ document.querySelectorAll('.r-body').forEach(b=>{
     <h2 class="sec-title">Schwäbisch erklärt.</h2>
     <p class="sec-body">Praxisbeispiele aus der Region. Unabhängig eingeschätzt. Damit du weißt was du kaufst, bevor du unterschreibst.</p>
 
+    <div class="blog-filter" id="blog-filter">
+      <button class="blog-filter-btn active" data-filter="alle" onclick="filterBlog(this)">Alle</button>
+      <button class="blog-filter-btn" data-filter="Wirtschaftlichkeit" onclick="filterBlog(this)">Wirtschaftlichkeit</button>
+      <button class="blog-filter-btn" data-filter="Speicher" onclick="filterBlog(this)">Speicher</button>
+      <button class="blog-filter-btn" data-filter="Klimatisierung" onclick="filterBlog(this)">Klimatisierung</button>
+      <button class="blog-filter-btn" data-filter="Politik und Recht" onclick="filterBlog(this)">Politik & Recht</button>
+      <button class="blog-filter-btn" data-filter="Wärmepumpe & Solar" onclick="filterBlog(this)">Wärmepumpe & Solar</button>
+    </div>
     <div class="blog-grid">
     <!-- Newsletter -->
     <div style="border:1px solid var(--border);border-radius:8px;padding:22px;display:flex;align-items:center;justify-content:space-between;gap:32px;flex-wrap:wrap;background:var(--white)">
@@ -783,32 +800,32 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <button type="submit" style="padding:10px 20px;background:var(--black);color:var(--white);border:none;border-radius:6px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap">Anmelden</button>
       </form>
     </div>
-      <article class="blog-teaser">
+      <article class="blog-teaser" data-cat="Wirtschaftlichkeit">
         <p class="sun-tag" style="margin-bottom:8px">Wirtschaftlichkeit</p>
         <h3><a href="solaranlage-einfamilienhaus-lohnt-sich-2025.html">Solaranlage Einfamilienhaus: Lohnt sie sich 2026 wirklich?</a></h3>
         <p>Strom kostet heute deutlich mehr als noch vor wenigen Jahren. Wir rechnen vor, wann sich eine Solaranlage für ein Einfamilienhaus tatsächlich lohnt.</p>
         <a href="solaranlage-einfamilienhaus-lohnt-sich-2025.html" class="blog-teaser-link">Artikel zur Wirtschaftlichkeit lesen →</a>
       </article>
-      <article class="blog-teaser">
+      <article class="blog-teaser" data-cat="Speicher">
         <p class="sun-tag" style="margin-bottom:8px">Speicher</p>
         <h3><a href="photovoltaik-speicher-lohnt-sich.html">Photovoltaik-Speicher: Wann lohnt sich ein Batteriespeicher wirklich?</a></h3>
         <p>Nicht jede Anlage braucht einen Speicher. Eine nüchterne Einordnung, wann sich die Investition rechnet und wann nicht.</p>
         <a href="photovoltaik-speicher-lohnt-sich.html" class="blog-teaser-link">Artikel zum Batteriespeicher lesen →</a>
       </article>
-      <article class="blog-teaser">
+      <article class="blog-teaser" data-cat="Klimatisierung">
         <p class="sun-tag" style="margin-bottom:8px">Klimatisierung</p>
         <h3><a href="klimaanlage-lohnt-sich-2026.html">Lohnt sich eine Klimaanlage? Was du 2026 wirklich wissen musst</a></h3>
         <p>Kosten, Installationspflicht durch Fachbetriebe und wie Klimaanlage und Solaranlage sinnvoll zusammenspielen.</p>
         <a href="klimaanlage-lohnt-sich-2026.html" class="blog-teaser-link">Artikel zur Klimaanlage lesen →</a>
       </article>
-      <article class="blog-teaser">
+      <article class="blog-teaser" data-cat="Politik und Recht">
         <p class="sun-tag" style="margin-bottom:8px">Politik und Recht</p>
         <h3><a href="eeg-reform-2027.html">EEG-Reform 2027: Was Solarbesitzer und Käufer jetzt wissen müssen</a></h3>
         <p>Die Einspeisevergütung für neue Solaranlagen steht zur Disposition. Aktueller Stand und was das für deine Planung bedeutet.</p>
         <a href="eeg-reform-2027.html" class="blog-teaser-link">Artikel zur EEG-Reform lesen →</a>
       </article>
 
-      <article class="blog-teaser">
+      <article class="blog-teaser" data-cat="Wärmepumpe & Solar">
         <p class="sun-tag" style="margin-bottom:8px">Wärmepumpe &amp; Solar</p>
         <h3><a href="waermepumpe-solaranlage-kombinieren.html">Wärmepumpe und Solaranlage kombinieren: So rechnet es sich 2026</a></h3>
         <p>Wer beides richtig plant, heizt mit selbst erzeugter Energie. Was technisch nötig ist, welche Größen passen und wann die Rechnung wirklich aufgeht.</p>
@@ -1172,6 +1189,55 @@ document.addEventListener('click', function(e) {
     closeMobileMenu();
   }
 });
+</script>
+
+<script>
+var blogExpanded = false;
+
+function initBlog() {
+  var teasers = document.querySelectorAll('.blog-teaser');
+  teasers.forEach(function(a, i) {
+    if (i >= 3) a.classList.add('blog-collapsed');
+  });
+}
+
+function showAllBlogs() {
+  document.querySelectorAll('.blog-teaser.blog-collapsed').forEach(function(a) {
+    a.classList.remove('blog-collapsed');
+  });
+  var btn = document.getElementById('blog-show-more');
+  if (btn) btn.style.display = 'none';
+  blogExpanded = true;
+}
+
+function filterBlog(btn) {
+  var filter = btn.getAttribute('data-filter');
+  document.querySelectorAll('.blog-filter-btn').forEach(function(b) { b.classList.remove('active'); });
+  btn.classList.add('active');
+  var showMore = document.getElementById('blog-show-more');
+
+  if (filter === 'alle') {
+    // Show all, no collapse
+    document.querySelectorAll('.blog-teaser').forEach(function(a) {
+      a.classList.remove('hidden');
+      a.classList.remove('blog-collapsed');
+    });
+    if (showMore) showMore.style.display = 'none';
+  } else {
+    // Filter active: show all matching, hide rest, no collapse
+    document.querySelectorAll('.blog-teaser').forEach(function(a) {
+      a.classList.remove('blog-collapsed');
+      if (a.getAttribute('data-cat') === filter) {
+        a.classList.remove('hidden');
+      } else {
+        a.classList.add('hidden');
+      }
+    });
+    if (showMore) showMore.style.display = 'none';
+  }
+}
+
+document.addEventListener('DOMContentLoaded', initBlog);
 </script>
 
 </body>
