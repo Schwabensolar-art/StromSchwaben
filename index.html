@@ -134,7 +134,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,0.95);backdr
 nav ul{display:flex;gap:24px;list-style:none;flex-wrap:nowrap}
 nav a{font-size:0.82rem;color:var(--muted);font-weight:500;transition:color .15s;white-space:nowrap}
 nav a:hover{color:var(--black)}
-.nav-btn{background:var(--black);color:var(--white);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:6px;flex-shrink:0;white-space:nowrap;transition:opacity .15s}
+.nav-btn{background:var(--black);color:var(--white);font-size:0.82rem;font-weight:600;padding:8px 16px;border-radius:8px;flex-shrink:0;white-space:nowrap;transition:opacity .15s}
 .nav-btn:hover{opacity:.8}
 
 /* ── HERO ── */
@@ -144,9 +144,9 @@ nav a:hover{color:var(--black)}
 .hero h1{font-size:clamp(1.9rem,3.5vw,3rem);font-weight:700;line-height:1.15;letter-spacing:-0.03em;margin-bottom:24px}
 .hero-sub{font-size:0.9375rem;color:var(--muted);max-width:600px;line-height:1.7;margin-bottom:40px;text-align:left}
 .hero-btns{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:56px}
-.btn-dark{background:var(--black);color:var(--white);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:6px;transition:opacity .15s;display:inline-block}
+.btn-dark{background:var(--black);color:var(--white);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:8px;transition:opacity .15s;display:inline-block}
 .btn-dark:hover{opacity:.8}
-.btn-plain{background:transparent;color:var(--black);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:6px;border:1px solid var(--border);transition:border-color .15s;display:inline-block}
+.btn-plain{background:transparent;color:var(--black);font-size:0.875rem;font-weight:600;padding:11px 22px;border-radius:8px;border:1px solid var(--border);transition:border-color .15s;display:inline-block}
 .btn-plain:hover{border-color:#999}
 .hero-stats{display:grid;grid-template-columns:repeat(2,1fr);gap:0;border-top:1px solid rgba(0,0,0,0.1);padding-top:32px;position:relative;z-index:2;background:transparent}
 .stat{padding-right:32px}
@@ -165,7 +165,7 @@ nav a:hover{color:var(--black)}
 .section-sm{padding:48px 0}
 .sec-label{font-size:0.7rem;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-bottom:12px}
 .sec-title{font-size:clamp(1.6rem,2.8vw,2.4rem);font-weight:700;letter-spacing:-0.03em;line-height:1.18}
-.sec-body{font-size:0.9375rem;color:var(--muted);line-height:1.75;max-width:480px;margin-top:12px}
+.sec-body{font-size:0.9375rem;color:var(--muted);line-height:1.75;max-width:520px;margin-top:14px}
 
 /* ── PROBLEME ── */
 .bg-off{background:var(--bg)}
@@ -218,10 +218,10 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;b
 .result-big{font-size:2.8rem;font-weight:700;letter-spacing:-0.04em;color:var(--black);line-height:1;margin:8px 0 4px}
 .result-sub{font-size:0.84rem;color:var(--muted);margin-bottom:20px}
 .result-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:20px}
-.result-item{background:var(--bg);border-radius:6px;padding:11px 13px}
+.result-item{background:var(--bg);border-radius:8px;padding:11px 13px}
 .result-item-label{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:3px}
 .result-item-val{font-size:1rem;font-weight:700;color:var(--black)}
-.result-cta{display:block;text-align:center;background:var(--black);color:var(--white);padding:11px;border-radius:6px;font-size:0.875rem;font-weight:600;transition:opacity .15s}
+.result-cta{display:block;text-align:center;background:var(--black);color:var(--white);padding:11px;border-radius:8px;font-size:0.875rem;font-weight:600;transition:opacity .15s}
 .result-cta:hover{opacity:.8}
 
 /* ── ÜBER UNS ── */
@@ -232,7 +232,7 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;b
 .about-aside-title{font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--muted);margin-bottom:16px}
 .person{display:flex;gap:12px;align-items:flex-start;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--border)}
 .person:last-of-type{border:none;margin:0;padding:0}
-.person-initial{width:36px;height:36px;border-radius:6px;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--muted);flex-shrink:0}
+.person-initial{width:36px;height:36px;border-radius:8px;background:var(--border);display:flex;align-items:center;justify-content:center;font-size:0.8rem;font-weight:700;color:var(--muted);flex-shrink:0}
 .person-name{font-size:0.875rem;font-weight:700;margin-bottom:2px}
 .person-role{font-size:0.775rem;color:var(--muted);line-height:1.4}
 
@@ -298,9 +298,9 @@ details[open] summary::after{content:"−"}
 .contact-form{background:var(--white);border-radius:10px;padding:28px}
 .cf-group{margin-bottom:14px}
 .cf-group label{display:block;font-size:0.7rem;font-weight:700;text-transform:uppercase;letter-spacing:.07em;color:var(--muted);margin-bottom:5px}
-.cf-group input,.cf-group select,.cf-group textarea{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;font-family:inherit;color:var(--black);background:var(--white);transition:border-color .15s;resize:none}
+.cf-group input,.cf-group select,.cf-group textarea{width:100%;padding:9px 12px;border:1px solid var(--border);border-radius:8px;font-size:0.875rem;font-family:inherit;color:var(--black);background:var(--white);transition:border-color .15s;resize:none}
 .cf-group input:focus,.cf-group select:focus,.cf-group textarea:focus{outline:none;border-color:#888}
-.cf-submit{width:100%;padding:11px;background:var(--black);color:var(--white);border:none;border-radius:6px;font-size:0.875rem;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s}
+.cf-submit{width:100%;padding:11px;background:var(--black);color:var(--white);border:none;border-radius:8px;font-size:0.875rem;font-weight:700;font-family:inherit;cursor:pointer;transition:opacity .15s}
 .cf-submit:hover{opacity:.8}
 .cf-hint{font-size:0.72rem;color:var(--muted);text-align:center;margin-top:8px}
 
@@ -328,6 +328,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   .service-item:nth-child(3){border-bottom:1px solid var(--border)}
 }
 @media(max-width:640px){
+  .fuer-wen-grid{grid-template-columns:1fr!important}
   nav ul{display:none}
   .nav-btn{display:none}
   .proj-grid,.reviews-grid,.blog-grid{grid-template-columns:1fr}
@@ -453,7 +454,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 /* about aside person initial — sun for founders */
 .person-initial-sun{
-  width:36px;height:36px;border-radius:6px;
+  width:36px;height:36px;border-radius:8px;
   background:var(--sun);
   display:flex;align-items:center;justify-content:center;
   font-size:0.8rem;font-weight:800;color:var(--black);
@@ -469,7 +470,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .mobile-menu.open{display:block}
 .mobile-menu a{display:block;padding:13px var(--pad);font-size:0.95rem;font-weight:500;color:var(--black);text-decoration:none;border-bottom:1px solid var(--border)}
 .mobile-menu a:last-child{border-bottom:none}
-.mobile-menu a.mobile-cta{background:var(--black);color:var(--white);margin:12px var(--pad) 4px;border-radius:6px;text-align:center;font-weight:700;border-bottom:none}
+.mobile-menu a.mobile-cta{background:var(--black);color:var(--white);margin:12px var(--pad) 4px;border-radius:8px;text-align:center;font-weight:700;border-bottom:none}
 @media(max-width:640px){
   .hamburger{display:flex}
 }
@@ -532,9 +533,9 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   </video>
   <div class="wrap" style="position:relative;z-index:1">
     <h1 aria-label="Solarberatung im Raum Stuttgart, Esslingen und Karlsruhe. StromSchwaben plant unabhängig und herstellerneutral.">Die Anlage die zu deinem Haus passt.<br><span style="opacity:0.35">Nicht die die gerade verfügbar ist.</span></h1>
-    <p style="font-size:0.78rem;font-weight:600;color:var(--sun);margin-top:12px;margin-bottom:0;letter-spacing:0.04em;text-transform:uppercase">Mit den StromSchwaben Strom sparen.</p>
+    <p style="font-size:0.78rem;font-weight:600;color:var(--sun);margin-top:12px;margin-bottom:0;letter-spacing:0.04em;text-transform:uppercase">Net schwätza, schaffe.</p>
     <p style="font-size:0.82rem;color:var(--muted);margin-top:4px;margin-bottom:0">Solaranlagen und Klimaanlagen im Raum Stuttgart, Esslingen und Karlsruhe.</p>
-    <p class="hero-sub" style="margin-top:24px">Wir sind keinem Hersteller verpflichtet und arbeiten herstellerneutral. Das erlaubt uns, dein Dach, deine Haustechnik und deinen Verbrauch zuerst zu verstehen, und dann die Komponenten zu wählen die wirklich passen. Mehr Module bedeuten nicht automatisch mehr Ertrag.</p>
+    <p class="hero-sub" style="margin-top:24px">Wir sind keinem Hersteller verpflichtet. Das heißt: Wir schauen zuerst was dein Dach, deine Haustechnik und dein Verbrauch wirklich brauchen. Und dann reden wir über Komponenten. Net anders rum. Mehr Module bedeuten nicht automatisch mehr Ertrag.</p>
     <div class="hero-btns">
       <a href="#kontakt" class="btn-dark">Kostenlose Beratung</a>
       <a href="solar-rechner.html" class="btn-plain" style="background:var(--white);border-color:var(--black)">Potenzial berechnen</a>
@@ -561,13 +562,13 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- ÜBER UNS -->
-<section class="section" id="über-uns">
+<section class="section bg-off" id="über-uns">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Wer wir sind</p>
-    <h2 class="sec-title">Anton und Manuel.</h2>
+    <h2 class="sec-title">Net schwätza, schaffe.</h2>
     <div class="about-layout">
       <div class="about-text">
-        <p>Wir kommen aus der Wirtschaft und haben Nachhaltigkeit zum Schwerpunkt gemacht, weil wir gesehen haben wie oft bei Solaranlagen Beratung und Verkauf dasselbe Interesse verfolgen. Das wollten wir anders machen. StromSchwaben berät unabhängig, plant herstellerneutral und gibt eine ehrliche Einschätzung, auch wenn die lautet: eine Anlage lohnt sich in diesem Fall nicht oder nicht in der angebotenen Größe. Dafür braucht es keine Bindung an ein Produkt und kein Lager das abgebaut werden muss.</p>
+        <p>Anton und Manuel. Zwei Schwaben, die zu oft gesehen haben was passiert wenn jemand eine Anlage kauft die nicht zu seinem Haus passt. Zu groß. Falsch ausgerichtet. Vom günstigsten Anbieter. Wir haben StromSchwaben gegründet weil wir das anders machen wollten: erst verstehen, dann empfehlen. Und wenn sich eine Anlage nicht lohnt, sagen wir das. Auch wenn es unbequem ist. Net schwätza, schaffe.</p>
         <p>Für die technische Installation arbeiten wir mit der <strong>Celaris GmbH</strong> aus Karlsruhe zusammen. Was anfangs wie eine ungewöhnliche Kombination klingt, funktioniert in der Praxis besonders gut: Badener und Schwaben, die gemeinsam anpacken. Die Zusammenarbeit läuft reibungslos, weil beide Seiten das gleiche Qualitätsverständnis mitbringen.</p>
       </div>
     </div>
@@ -588,11 +589,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .pc-back p{font-size:0.84rem;color:var(--text);line-height:1.6;text-align:justify}
 @media(max-width:640px){.pc-grid{grid-template-columns:1fr}.pc-card{height:auto}.pc-inner{transition:none}.pc-card.open .pc-inner{transform:none}.pc-face{position:static;backface-visibility:visible}.pc-back{display:none;transform:none}.pc-card.open .pc-back{display:flex}.pc-card.open .pc-front{display:none}}
 </style>
-<section class="section bg-off" id="probleme">
+<section class="section" id="probleme">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Warum wir</p>
-    <h2 class="sec-title">Worauf wir bei jedem Projekt achten.</h2>
-    <p class="sec-body">Vier Punkte die den Unterschied machen zwischen einer Anlage die funktioniert und einer die auf dem Papier gut aussieht. Tippen um mehr zu lesen.</p>
+    <h2 class="sec-title">Was andere gerne verschweigen.</h2>
+    <p class="sec-body">Vier Dinge die bei Solaranlagen regelmäßig schiefgehen. Nicht bei uns. Tippen zum Lesen.</p>
     <div class="pc-grid">
       <div class="pc-card" onclick="this.classList.toggle('open')" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.classList.toggle('open')}" tabindex="0" role="button">
         <div class="pc-inner">
@@ -639,7 +640,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- VORGEHEN -->
-<section class="section" id="vorgehen">
+<section class="section bg-off" id="vorgehen">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Vorgehen</p>
     <h2 class="sec-title">So planen wir deine Photovoltaikanlage.</h2>
@@ -666,7 +667,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- PROJEKTE -->
-<section class="section bg-off" id="projekte">
+<section class="section" id="projekte">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Referenzprojekte</p>
     <h2 class="sec-title">Solaranlagen, die wir im Raum Stuttgart begleitet haben.</h2>
@@ -680,11 +681,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- REVIEWS -->
-<section class="section" id="stimmen">
+<section class="section bg-off" id="stimmen">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Was in der Branche passiert</p>
     <h2 class="sec-title">Was in der Branche falsch läuft.</h2>
-    <p class="sec-body">Woran man eine sorgfältige Planung erkennt, sieht man oft erst Jahre später. Diese Beispiele zeigen warum wir bei jeder Anlage zuerst analysieren, bevor wir empfehlen.</p>
+    <p class="sec-body">Drei echte Fälle aus der Region. Was schiefgelaufen ist und warum es nicht hätte passieren müssen.</p>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
 
       <div style="border-bottom:1px solid var(--border)">
@@ -744,6 +745,41 @@ document.querySelectorAll('.r-body').forEach(b=>{
 });
 </script>
 
+
+<!-- FÜR WEN -->
+<section class="section">
+  <div class="wrap">
+    <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Für wen wir da sind</p>
+    <h2 class="sec-title">Erkennst du dich wieder?</h2>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px" class="fuer-wen-grid">
+      <div class="proj-card" style="cursor:default">
+        <div class="proj-body">
+          <p class="sun-tag">Schon ein Angebot</p>
+          <h3>Du hast schon ein Angebot. Aber du bist nicht sicher.</h3>
+          <p>Ob die Anlage wirklich zu deinem Haus passt, die Dimensionierung stimmt und der Preis fair ist. Wir schauen drauf und sagen dir was wir denken, auch wenn das Angebot gut ist.</p>
+          <a href="#kontakt" class="proj-cta">Angebot prüfen lassen</a>
+        </div>
+      </div>
+      <div class="proj-card" style="cursor:default">
+        <div class="proj-body">
+          <p class="sun-tag">Noch am Überlegen</p>
+          <h3>Du weißt noch nicht ob es sich bei dir lohnt.</h3>
+          <p>Nicht jedes Dach und nicht jeder Haushalt profitiert gleich. Wir rechnen das ehrlich mit dir durch, bevor du irgendetwas unterschreibst. Auch wenn das Ergebnis Nein ist.</p>
+          <a href="#kontakt" class="proj-cta">Kostenlos einschätzen lassen</a>
+        </div>
+      </div>
+      <div class="proj-card" style="cursor:default">
+        <div class="proj-body">
+          <p class="sun-tag">Konkret planen</p>
+          <h3>Du willst es richtig machen, nicht einfach schnell.</h3>
+          <p>Keine Standardlösung, keine Überdimensionierung. Eine Anlage die zu deiner Haustechnik, deinem Verbrauch und deinen Plänen passt. Net anders.</p>
+          <a href="#kontakt" class="proj-cta">Beratung anfragen</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- BLOG -->
 <style>
 .blog-grid{display:grid;grid-template-columns:1fr;gap:12px;margin-top:12px}.blog-article{border:1px solid var(--border);border-radius:8px;background:var(--white);overflow:hidden}
@@ -761,7 +797,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
 .blog-body table{width:100%;border-collapse:collapse;margin:16px 0;font-size:0.8rem}
 .blog-body td,.blog-body th{padding:8px 12px;border:1px solid var(--border);text-align:left}
 .blog-body th{background:var(--bg);font-weight:600}
-.blog-body .blog-cta{display:inline-block;margin-top:20px;padding:11px 22px;background:var(--black);color:var(--white);border-radius:6px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:opacity .15s}
+.blog-body .blog-cta{display:inline-block;margin-top:20px;padding:11px 22px;background:var(--black);color:var(--white);border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none;transition:opacity .15s}
 .blog-body .blog-cta:hover{opacity:.8}
 .blog-teaser{border:1px solid var(--border);border-radius:8px;background:var(--white);padding:22px}
 .blog-teaser h3{font-size:1rem;font-weight:600;line-height:1.4;margin-bottom:6px}
@@ -771,11 +807,11 @@ document.querySelectorAll('.r-body').forEach(b=>{
 .blog-teaser-link{font-size:0.8rem;font-weight:600;color:var(--black);text-decoration:none}
 .blog-teaser-link:hover{text-decoration:underline}
 </style>
-<section class="section" id="blog">
+<section class="section bg-off" id="blog">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Wissen und Erfahrungen</p>
     <h2 class="sec-title">Schwäbisch erklärt.</h2>
-    <p class="sec-body">Praxisbeispiele aus der Region. Unabhängig eingeschätzt. Damit du weißt was du kaufst, bevor du unterschreibst.</p>
+    <p class="sec-body">Kein Werbesprech. Keine Pauschalaussagen. Nur was wirklich stimmt, auch wenn es unbequem ist.</p>
 
     <div class="blog-filter" id="blog-filter">
       <button class="blog-filter-btn active" data-filter="alle" onclick="filterBlog(this)">Alle</button>
@@ -796,8 +832,8 @@ document.querySelectorAll('.r-body').forEach(b=>{
       <form action="https://formspree.io/f/meebkred" method="POST" style="display:flex;gap:8px;flex-wrap:wrap;min-width:280px">
         <input type="hidden" name="_subject" value="Newsletter Anmeldung">
         <input type="hidden" name="typ" value="Newsletter">
-        <input type="email" name="email" placeholder="deine@email.de" required style="flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;font-family:inherit;outline:none">
-        <button type="submit" style="padding:10px 20px;background:var(--black);color:var(--white);border:none;border-radius:6px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap">Anmelden</button>
+        <input type="email" name="email" placeholder="deine@email.de" required style="flex:1;min-width:200px;padding:10px 14px;border:1px solid var(--border);border-radius:8px;font-size:0.875rem;font-family:inherit;outline:none">
+        <button type="submit" style="padding:10px 20px;background:var(--black);color:var(--white);border:none;border-radius:8px;font-size:0.875rem;font-weight:600;cursor:pointer;white-space:nowrap">Anmelden</button>
       </form>
     </div>
       <article class="blog-teaser" data-cat="Wirtschaftlichkeit">
@@ -861,11 +897,11 @@ document.querySelectorAll('.r-body').forEach(b=>{
 <!-- KONTAKT -->
 <section class="section contact-bg" id="kontakt">
   <div class="wrap">
-    <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Beratung anfragen</p>
-    <h2 class="sec-title">Schreib uns kurz. Oder ruf einfach an.</h2>
+    <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Kein Pitch. Kein Druck.</p>
+    <h2 class="sec-title">Sag uns was du hast. Wir sagen dir ob es sich lohnt.</h2>
     <div class="contact-layout">
       <div class="contact-left">
-        <p>Wir schauen uns deine Situation an und sagen dir was sinnvoll ist, und was nicht. Auch ein bestehendes Angebot prüfen wir gerne, damit du weißt ob die Dimensionierung zu deinem Haus passt.</p>
+        <p>Kein Verkaufsgespräch. Keine vorbereiteten Argumente warum du jetzt kaufen solltest. Nur eine ehrliche Einschätzung was bei dir sinnvoll ist und was nicht. Auch wenn die Antwort Nein ist. Net schwätza, schaffe.</p>
         <div class="contact-facts">
           <p class="contact-fact">Raum <strong>Stuttgart, Esslingen und Karlsruhe</strong></p>
           <p class="contact-fact"><a href="tel:+491629191031" style="color:rgba(255,255,255,.6);text-decoration:none">+49 162 919 1031</a></p>
@@ -877,7 +913,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <div class="cf-group"><label>Name</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
         <div class="cf-group"><label>Telefon oder E-Mail</label><input type="text" name="kontakt" placeholder="+49 711 ... oder deine@email.de" required></div>
         <div class="cf-group"><label>Ort</label><input type="text" name="ort" placeholder="z.B. Stuttgart, Esslingen, Leinfelden" required></div>
-        <div class="cf-group"><label>Worum geht es?</label><select name="thema" required><option value="">Bitte wählen</option><option>Eigenheim / Einfamilienhaus</option><option>Gewerbehalle / Betrieb</option><option>Mehrfamilienhaus</option><option>Investition / Volleinspeiser</option><option>Ich bin noch nicht sicher</option></select></div>
+        <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option></select></div>
         <div class="cf-group"><label>Nachricht (optional)</label><textarea name="nachricht" rows="3" placeholder="Was du schon weißt: Dachgröße, Ausrichtung, Verbrauch..."></textarea></div>
         <input type="hidden" name="_replyto" value="info@stromschwaben.de"><button type="submit" class="cf-submit">Beratungsgespräch anfragen</button>
         <p class="cf-hint">Wir melden uns innerhalb von 24 Stunden. Mit der Anfrage entstehen keine Kosten und keine Verpflichtungen.</p>
@@ -908,16 +944,16 @@ document.querySelectorAll('.r-body').forEach(b=>{
       <div>
         <label style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:8px">Dachausrichtung</label>
         <div style="display:flex;gap:8px">
-          <button type="button" onclick="setDach('sued',this)" id="btn-sued" style="flex:1;padding:10px;border:1px solid var(--black);border-radius:6px;background:var(--black);color:white;font-size:0.8rem;font-weight:600;cursor:pointer">Süd</button>
-          <button type="button" onclick="setDach('ostwest',this)" id="btn-ostwest" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Ost/West</button>
-          <button type="button" onclick="setDach('flach',this)" id="btn-flach" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Flachdach</button>
+          <button type="button" onclick="setDach('sued',this)" id="btn-sued" style="flex:1;padding:10px;border:1px solid var(--black);border-radius:8px;background:var(--black);color:white;font-size:0.8rem;font-weight:600;cursor:pointer">Süd</button>
+          <button type="button" onclick="setDach('ostwest',this)" id="btn-ostwest" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Ost/West</button>
+          <button type="button" onclick="setDach('flach',this)" id="btn-flach" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Flachdach</button>
         </div>
       </div>
       <div>
         <label style="font-size:0.8rem;font-weight:600;display:block;margin-bottom:8px">Speicher geplant?</label>
         <div style="display:flex;gap:8px">
-          <button type="button" onclick="setSpeicher(true,this)" id="btn-ja" style="flex:1;padding:10px;border:1px solid var(--black);border-radius:6px;background:var(--black);color:white;font-size:0.8rem;font-weight:600;cursor:pointer">Ja</button>
-          <button type="button" onclick="setSpeicher(false,this)" id="btn-nein" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Nein</button>
+          <button type="button" onclick="setSpeicher(true,this)" id="btn-ja" style="flex:1;padding:10px;border:1px solid var(--black);border-radius:8px;background:var(--black);color:white;font-size:0.8rem;font-weight:600;cursor:pointer">Ja</button>
+          <button type="button" onclick="setSpeicher(false,this)" id="btn-nein" style="flex:1;padding:10px;border:1px solid var(--border);border-radius:8px;background:transparent;color:var(--black);font-size:0.8rem;font-weight:600;cursor:pointer">Nein</button>
         </div>
       </div>
     </div>
@@ -944,7 +980,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
       </div>
 
       <!-- Beispiel-Box -->
-      <div id="res-beispiel" style="background:var(--white);border:1px solid var(--border);border-radius:6px;padding:14px;margin-bottom:16px">
+      <div id="res-beispiel" style="background:var(--white);border:1px solid var(--border);border-radius:8px;padding:14px;margin-bottom:16px">
         <div style="font-size:0.72rem;font-weight:700;text-transform:uppercase;letter-spacing:0.06em;color:var(--muted);margin-bottom:6px">Fiktives Beispiel aus der Region</div>
         <p id="res-beispiel-text" style="font-size:0.84rem;color:var(--text);line-height:1.65;margin:0"></p>
       </div>
@@ -952,7 +988,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
       <p style="font-size:0.75rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px">Alle Angaben sind Richtwerte ohne Gewähr. Abhängig von Dachfläche, Verschattung, Verbrauchsprofil und Komponentenwahl können die tatsächlichen Werte abweichen.</p>
     </div>
 
-    <a href="#kontakt" onclick="document.getElementById('modal-rechner').style.display='none'" style="display:block;margin-top:20px;padding:13px;background:var(--black);color:var(--white);text-align:center;border-radius:6px;font-size:0.875rem;font-weight:600;text-decoration:none">Kostenlose Beratung anfragen</a>
+    <a href="#kontakt" onclick="document.getElementById('modal-rechner').style.display='none'" style="display:block;margin-top:20px;padding:13px;background:var(--black);color:var(--white);text-align:center;border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none">Kostenlose Beratung anfragen</a>
   </div>
 </div>
 
