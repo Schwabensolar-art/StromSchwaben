@@ -1,4 +1,7 @@
 User-agent: *
 Allow: /
 
+Disallow: /hero-bg.mp4
+Disallow: /hero1-bg.mp4
+
 Sitemap: https://stromschwaben.de/sitemap.xml
