@@ -593,6 +593,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .pc-back p{font-size:0.84rem;color:var(--text);line-height:1.6;text-align:justify}
 @media(max-width:640px){.pc-grid{grid-template-columns:1fr}.pc-card{height:auto}.pc-inner{transition:none}.pc-card.open .pc-inner{transform:none}.pc-face{position:static;backface-visibility:visible}.pc-back{display:none;transform:none}.pc-card.open .pc-back{display:flex}.pc-card.open .pc-front{display:none}}
 @media(max-width:640px){.dm-grid{grid-template-columns:1fr!important}}
+@media(max-width:640px){.ubernahme-row{flex-direction:column!important}.ubernahme-row img{width:100%!important;height:auto!important;max-height:180px}}
 </style>
 <section class="section" id="probleme">
   <div class="wrap">
@@ -717,13 +718,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">Ü</div>
-            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, von uns repariert</div><div style="font-size:0.75rem;color:var(--muted)">Dachrinne voller Bauschutt</div></div>
+            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, Dachrinne gereinigt</div><div style="font-size:0.75rem;color:var(--muted)">Dachrinne voller Bauschutt</div></div>
           </div>
           <span class="r-arrow" style="font-size:0.75rem;font-weight:600;color:var(--muted);flex-shrink:0">↓</span>
         </div>
         <div class="r-body" style="max-height:0;overflow:hidden;padding:0 22px;transition:max-height 0.3s ease,padding 0.3s ease">
-          <img src="pfusch-dachrinne.jpg" alt="Dachrinne voller Ziegel-Schnittreste und einer liegen gelassenen Trennscheibe nach Solarmontage" style="width:100%;border-radius:8px;margin:4px 0 14px;display:block">
-          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Ein Kunde hatte sich zuvor an einen bundesweit tätigen Anbieter gewandt. Beim Zuschnitt der Dachziegel für die Modulmontage wurden Schnittreste und sogar eine Trennscheibe einfach in der Dachrinne liegen gelassen, statt die Baustelle zu säubern. Über die Zeit hat sich das dort weiter angesammelt und die Rinne verstopft. Wir haben die Anlage übernommen, die Dachrinne gereinigt und den Schaden behoben. Umsichtigkeit auf der Baustelle ist keine Kleinigkeit, sondern Handwerk.</p>
+          <div class="ubernahme-row" style="display:flex;gap:16px;align-items:flex-start;margin:4px 0 14px">
+            <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify;flex:1;margin:0">Ein Kunde hatte sich zuvor an einen bundesweit tätigen Anbieter gewandt. Beim Zuschnitt der Dachziegel für die Modulmontage wurden Schnittreste und sogar eine Trennscheibe einfach in der Dachrinne liegen gelassen, statt die Baustelle zu säubern. Über die Zeit hat sich das dort weiter angesammelt und die Rinne verstopft. Wir haben die Anlage übernommen, die Dachrinne gereinigt und den Schaden behoben. Umsichtigkeit auf der Baustelle ist keine Kleinigkeit, sondern Handwerk.</p>
+            <img src="pfusch-dachrinne.jpg" alt="Dachrinne voller Ziegel-Schnittreste und einer liegen gelassenen Trennscheibe nach Solarmontage" style="width:140px;height:140px;object-fit:cover;border-radius:8px;flex-shrink:0">
+          </div>
         </div>
       </div>
 
@@ -731,13 +734,15 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
             <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">Ü</div>
-            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, von uns repariert</div><div style="font-size:0.75rem;color:var(--muted)">Unsachgemäße Modulbefestigung</div></div>
+            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, Befestigung erneuert</div><div style="font-size:0.75rem;color:var(--muted)">Unsachgemäße Modulbefestigung</div></div>
           </div>
           <span class="r-arrow" style="font-size:0.75rem;font-weight:600;color:var(--muted);flex-shrink:0">↓</span>
         </div>
         <div class="r-body" style="max-height:0;overflow:hidden;padding:0 22px;transition:max-height 0.3s ease,padding 0.3s ease">
-          <img src="pfusch-befestigung.jpg" alt="Unsachgemäß befestigte Halterung für Modulschienen mit freigelegter Dachabdichtung" style="width:100%;border-radius:8px;margin:4px 0 14px;display:block">
-          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Bei einem weiteren Projekt eines bundesweit tätigen Anbieters war die Halterung für die Modulschienen unzureichend befestigt, die Dachabdichtung an dieser Stelle blieb offen liegen statt fachgerecht wieder verschlossen zu werden. Eine solche Befestigung hält Windlasten auf Dauer nicht sicher stand und birgt zusätzlich ein Feuchtigkeitsrisiko fürs Dach. Wir haben die Befestigung erneuert und die Abdichtung wiederhergestellt.</p>
+          <div class="ubernahme-row" style="display:flex;gap:16px;align-items:flex-start;margin:4px 0 14px">
+            <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify;flex:1;margin:0">Bei einem weiteren Projekt eines bundesweit tätigen Anbieters war die Halterung für die Modulschienen unzureichend befestigt, die Dachabdichtung an dieser Stelle blieb offen liegen statt fachgerecht wieder verschlossen zu werden. Eine solche Befestigung hält Windlasten auf Dauer nicht sicher stand und birgt zusätzlich ein Feuchtigkeitsrisiko fürs Dach. Wir haben die Befestigung erneuert und die Abdichtung wiederhergestellt.</p>
+            <img src="pfusch-befestigung.jpg" alt="Unsachgemäß befestigte Halterung für Modulschienen mit freigelegter Dachabdichtung" style="width:140px;height:140px;object-fit:cover;border-radius:8px;flex-shrink:0">
+          </div>
         </div>
       </div>
 
