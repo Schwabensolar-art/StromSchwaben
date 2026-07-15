@@ -188,7 +188,7 @@ nav a:hover{color:var(--black)}
 .pa-left{color:var(--muted)}
 .pa-bad{color:var(--muted);font-weight:500;font-size:0.84rem}
 .pa-good{color:var(--black);font-weight:600;display:flex;align-items:center;gap:6px}
-.pa-good::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sun);flex-shrink:0}
+.pa-good::before{content:none}
 .pa-footer{margin-top:20px;padding-top:20px;border-top:1px solid var(--border);font-size:0.775rem;color:var(--muted);line-height:1.6}
 .pa-footer strong{color:var(--black)}
 
@@ -394,7 +394,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 }
 
 /* ── SUN ELEMENTS ── */
-.sun-dot{display:inline-block;width:8px;height:8px;border-radius:50%;background:var(--sun);flex-shrink:0;margin-top:5px}
+.sun-dot{display:none}
 .sun-line{display:flex;align-items:flex-start;gap:10px}
 .step-n{font-size:0.7rem;font-weight:700;color:var(--muted);min-width:18px;margin-top:3px;letter-spacing:.04em}
 
@@ -429,7 +429,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 /* Trust item with sun dot */
 .trust-val-sun{display:flex;align-items:center;gap:6px}
-.trust-val-sun::before{content:'';display:inline-block;width:6px;height:6px;border-radius:50%;background:var(--sun);flex-shrink:0}
+.trust-val-sun::before{content:none}
 
 /* Hero eyebrow with sun */
 .hero-eyebrow-wrap{display:flex;align-items:center;gap:8px;margin-bottom:24px}
@@ -437,7 +437,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 
 /* pa-good sun dot */
 .pa-good-sun{color:var(--black);font-weight:600;display:flex;align-items:center;gap:5px}
-.pa-good-sun::before{content:'';display:inline-block;width:7px;height:7px;border-radius:50%;background:var(--sun);flex-shrink:0}
+.pa-good-sun::before{content:none}
 
 /* service number sun */
 .service-num-sun{
@@ -454,7 +454,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   font-size:0.68rem;font-weight:700;text-transform:uppercase;
   letter-spacing:.08em;color:var(--muted);margin-bottom:8px;
 }
-.sun-tag::before{content:'';display:inline-block;width:5px;height:5px;border-radius:50%;background:var(--sun);flex-shrink:0}
+.sun-tag::before{content:none}
 
 /* about aside person initial — sun for founders */
 .person-initial-sun{
@@ -710,45 +710,34 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Was in der Branche passiert</p>
     <h2 class="sec-title">Was in der Branche falsch läuft.</h2>
-    <p class="sec-body">Drei echte Fälle aus der Region. Was schiefgelaufen ist und warum es nicht hätte passieren müssen.</p>
+    <p class="sec-body">Zwei echte Übernahmeprojekte aus unserer Praxis. Was wir vorgefunden haben und wie wir es behoben haben.</p>
     <div style="margin-top:40px;display:flex;flex-direction:column;gap:0;border:1px solid var(--border);border-radius:10px;overflow:hidden">
 
       <div style="border-bottom:1px solid var(--border)">
         <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
-            <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">M</div>
-            <div><div style="font-size:0.84rem;font-weight:600">Markus R., Bekannter</div><div style="font-size:0.75rem;color:var(--muted)">Raum Stuttgart, Verschattung ignoriert</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">Ü</div>
+            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, von uns repariert</div><div style="font-size:0.75rem;color:var(--muted)">Dachrinne voller Bauschutt</div></div>
           </div>
           <span class="r-arrow" style="font-size:0.75rem;font-weight:600;color:var(--muted);flex-shrink:0">↓</span>
         </div>
         <div class="r-body" style="max-height:0;overflow:hidden;padding:0 22px;transition:max-height 0.3s ease,padding 0.3s ease">
-          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Ein Bekannter hat eine 12 kWp Anlage gekauft. Standardpaket, schnell installiert. Erst beim ersten Winter hat er gemerkt dass zwei Module dauerhaft im Schatten des Schornsteins liegen. Der Anbieter hat das Dach nie richtig angeschaut. Die Anlage produziert heute 30 Prozent weniger als versprochen.</p>
-        </div>
-      </div>
-
-      <div style="border-bottom:1px solid var(--border)">
-        <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
-          <div style="display:flex;align-items:center;gap:12px">
-            <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">S</div>
-            <div><div style="font-size:0.84rem;font-weight:600">Sandra K., Bekannte</div><div style="font-size:0.75rem;color:var(--muted)">Raum Karlsruhe, Falsches Speicherkonzept</div></div>
-          </div>
-          <span class="r-arrow" style="font-size:0.75rem;font-weight:600;color:var(--muted);flex-shrink:0">↓</span>
-        </div>
-        <div class="r-body" style="max-height:0;overflow:hidden;padding:0 22px;transition:max-height 0.3s ease,padding 0.3s ease">
-          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Eine Unternehmerin aus unserem Netzwerk wollte eine Gewerbehalle elektrifizieren. Der Anbieter hat ihr eine Anlage verkauft ohne zu fragen wann der Betrieb läuft. Wäre der Eigenverbrauch analysiert worden, hätte sie auf einen Speicher verzichten und stattdessen die Anlage größer dimensionieren können. Mehrkosten: über 8.000 Euro.</p>
+          <img src="pfusch-dachrinne.jpg" alt="Dachrinne voller Ziegel-Schnittreste und einer liegen gelassenen Trennscheibe nach Solarmontage" style="width:100%;border-radius:8px;margin:4px 0 14px;display:block">
+          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Ein Kunde hatte sich zuvor an einen bundesweit tätigen Anbieter gewandt. Beim Zuschnitt der Dachziegel für die Modulmontage wurden Schnittreste und sogar eine Trennscheibe einfach in der Dachrinne liegen gelassen, statt die Baustelle zu säubern. Über die Zeit hat sich das dort weiter angesammelt und die Rinne verstopft. Wir haben die Anlage übernommen, die Dachrinne gereinigt und den Schaden behoben. Umsichtigkeit auf der Baustelle ist keine Kleinigkeit, sondern Handwerk.</p>
         </div>
       </div>
 
       <div>
         <div onclick="this.nextElementSibling.classList.toggle('open');this.querySelector('.r-arrow').textContent=this.nextElementSibling.classList.contains('open')?'↑':'↓'" style="padding:18px 22px;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;user-select:none" tabindex="0" role="button" onkeydown="if(event.key==='Enter'||event.key===' '){event.preventDefault();this.click()}">
           <div style="display:flex;align-items:center;gap:12px">
-            <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">T</div>
-            <div><div style="font-size:0.84rem;font-weight:600">Thomas B., Nachbar</div><div style="font-size:0.75rem;color:var(--muted)">Raum Esslingen, Billigmontage, teurer Schaden</div></div>
+            <div style="background:var(--bg);border:1px solid var(--border);width:32px;height:32px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:0.75rem;font-weight:700;color:var(--muted);flex-shrink:0">Ü</div>
+            <div><div style="font-size:0.84rem;font-weight:600">Übernahmeprojekt, von uns repariert</div><div style="font-size:0.75rem;color:var(--muted)">Unsachgemäße Modulbefestigung</div></div>
           </div>
           <span class="r-arrow" style="font-size:0.75rem;font-weight:600;color:var(--muted);flex-shrink:0">↓</span>
         </div>
         <div class="r-body" style="max-height:0;overflow:hidden;padding:0 22px;transition:max-height 0.3s ease,padding 0.3s ease">
-          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Ein Nachbar hat auf einen günstigen Onlineanbieter gesetzt. Montage war subunternehmerisch, niemand kannte das Dach. Die Dachdurchführungen wurden nicht fachgerecht abgedichtet. Nach dem ersten starken Regen stand Wasser im Dachstuhl. Der Anbieter war telefonisch kaum noch erreichbar.</p>
+          <img src="pfusch-befestigung.jpg" alt="Unsachgemäß befestigte Halterung für Modulschienen mit freigelegter Dachabdichtung" style="width:100%;border-radius:8px;margin:4px 0 14px;display:block">
+          <p style="font-size:0.875rem;color:var(--text);line-height:1.75;text-align:justify">Bei einem weiteren Projekt eines bundesweit tätigen Anbieters war die Halterung für die Modulschienen unzureichend befestigt, die Dachabdichtung an dieser Stelle blieb offen liegen statt fachgerecht wieder verschlossen zu werden. Eine solche Befestigung hält Windlasten auf Dauer nicht sicher stand und birgt zusätzlich ein Feuchtigkeitsrisiko fürs Dach. Wir haben die Befestigung erneuert und die Abdichtung wiederhergestellt.</p>
         </div>
       </div>
 
