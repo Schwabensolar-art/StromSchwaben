@@ -247,8 +247,8 @@ input[type=range]::-webkit-slider-thumb{appearance:none;width:14px;height:14px;b
 .proj-img span{font-size:0.75rem;color:var(--muted);font-weight:500}
 .proj-body{padding:18px 20px 20px;display:flex;flex-direction:column;flex:1}
 .proj-type{font-size:0.68rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;color:var(--muted);margin-bottom:6px}
-.proj-body h3{font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:6px}
-.proj-body p{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:12px;flex:1}
+.proj-body h3{font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:6px;min-height:2.45em}
+.proj-body p{font-size:0.8rem;color:var(--muted);line-height:1.6;margin-bottom:12px;display:-webkit-box;-webkit-line-clamp:4;-webkit-box-orient:vertical;overflow:hidden}
 .proj-cta{font-size:0.78rem;font-weight:600;color:var(--black);border-bottom:1px solid var(--border);padding-bottom:1px;align-self:flex-start;transition:border-color .15s}
 .proj-cta:hover{border-color:var(--black)}
 
@@ -694,13 +694,14 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 <section class="section" id="projekte">
   <div class="wrap">
     <p class="sec-label" style="display:flex;align-items:center;gap:6px"><span style="width:6px;height:6px;border-radius:50%;background:var(--sun);display:inline-block;flex-shrink:0"></span>Referenzprojekte</p>
-    <h2 class="sec-title">Solaranlagen, die wir im Raum Stuttgart begleitet haben.</h2>
+    <h2 class="sec-title">Drei Beispielprojekte vom Gewerbe bis zum Eigenheim.</h2>
     <p class="sec-body">Eigenheime, Gewerbehallen, Flachdächer. Jede Situation ist anders und jede Anlage wurde passgenau geplant.</p>
     <div class="proj-grid">
-      <article class="proj-card"><div class="proj-img"><img src="1.jpg" alt="Einfamilienhaus mit Solaranlage Südausrichtung" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Eigenheim</p><h3>Einfamilienhaus, Schrägdach Südausrichtung</h3><p>12 kWp, 10 kWh Speicher. Verbrauch tagsüber gering, Speicher kompensiert den Abendverbrauch. Indikative Amortisation ca. 7 Jahre.</p><a href="#kontakt" class="proj-cta">Ähnliches Projekt anfragen</a></div></article>
-      <article class="proj-card"><div class="proj-img"><img src="3.jpg" alt="Solaranlage auf Altbau mit Dachgaube, teilweise verschattet" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Eigenheim</p><h3>Altbau, teilweise verschattet</h3><p>Schornstein und Dachgaube haben die nutzbare Fläche reduziert. 6 kWp war das Sinnvolle. Ehrliche Einschätzung statt überdimensioniertem Angebot.</p><a href="#kontakt" class="proj-cta">Ähnliches Projekt anfragen</a></div></article>
-      <article class="proj-card"><div class="proj-img"><img src="6.jpg" alt="Gewerbehalle mit großer Flachdach-Solaranlage" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Gewerbe</p><h3>Produktionshalle, Flachdach, 98 kWp</h3><p>Tagverbrauch durch Maschinen hoch. Vollständige Eigenverbrauchsanlage, kein Speicher nötig. Indikative Amortisation unter 7 Jahren.</p><a href="#kontakt" class="proj-cta">Ähnliches Projekt anfragen</a></div></article>
+      <article class="proj-card"><div class="proj-img"><img src="projekt-eigenheim-flachdach.jpg" alt="Kompakte Solaranlage auf Flachdach eines Privathauses, aufgeständerte Module auf Kiesdach" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Eigenheim</p><h3>Privathaus, Flachdach</h3><p>Aufgeständerte Module auf einem Kiesdach, ohne Durchdringung der Dachhaut. Bei Flachdächern zählt vor allem der richtige Aufständerungswinkel, damit sich die Modulreihen nicht gegenseitig verschatten.</p></div></article>
+      <article class="proj-card"><div class="proj-img"><img src="projekt-eigenheim-schraegdach.jpg" alt="Einfamilienhaus mit Solaranlage auf Ziegel-Satteldach in Wohnstraße" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Eigenheim</p><h3>Einfamilienhaus, Satteldach</h3><p>Klassisches Ziegeldach in einer Wohnstraße. Module und Halterung wurden auf die vorhandene Dachstruktur abgestimmt. Die technische Installation übernahm unser Partner Celaris, von der Verkabelung bis zur Inbetriebnahme.</p></div></article>
+      <article class="proj-card"><div class="proj-img"><img src="projekt-gewerbehalle.jpg" alt="Große Solaranlage auf Trapezblechdach einer Gewerbehalle" style="width:100%;height:100%;object-fit:cover" loading="lazy"></div><div class="proj-body"><p class="sun-tag">Gewerbe</p><h3>Gewerbehalle, Trapezblechdach</h3><p>Große, zusammenhängende Dachfläche mit hoher installierbarer Leistung. Bei Gewerbehallen steht meist der hohe Tagverbrauch durch Maschinen und Betrieb im Vordergrund, dafür wird die Anlage entsprechend ausgelegt.</p></div></article>
     </div>
+    <a href="#kontakt" onclick="setKontaktThema('Ich plane konkret und suche die richtige Beratung')" style="display:inline-block;margin-top:28px;font-size:0.875rem;font-weight:600;color:var(--black);border-bottom:1px solid var(--border);padding-bottom:2px;transition:border-color .15s">Ähnliches Projekt anfragen →</a>
   </div>
 </section>
 
