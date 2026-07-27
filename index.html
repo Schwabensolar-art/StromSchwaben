@@ -102,6 +102,14 @@
         "@type": "Answer",
         "text": "Die handwerkliche Montage und Inbetriebnahme übernimmt die Celaris GmbH aus Karlsruhe, ein Meisterbetrieb mit eigenen Monteuren aus der Region. Euer Ansprechpartner für Beratung, Planung und das gesamte Projekt sind wir von StromSchwaben. Wir koordinieren alles und begleiten euch vom ersten Gespräch bis zur fertigen Anlage."
       }
+    },
+    {
+      "@type": "Question",
+      "name": "Was passiert bei einem Stromausfall?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Eine normale Photovoltaikanlage schaltet sich bei Stromausfall automatisch ab. Mit einer geeigneten Notstrom- oder Ersatzstromlösung kann das Haus oder ein Teil des Hauses weiterhin mit Strom versorgt werden. Ob sich das lohnt, hängt von den persönlichen Anforderungen ab."
+      }
     }
   ]
 }
@@ -125,7 +133,7 @@ a,button,input,select,textarea,[role="button"]{touch-action:manipulation}
 }
 html{scroll-behavior:auto;overflow-x:hidden}
 body{font-family:'Geist',system-ui,sans-serif;background:var(--white);color:var(--text);line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden;overflow-wrap:break-word;word-break:normal}
-p{text-align:justify}
+p{text-align:justify;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto}
 img{max-width:100%}
 .honeycomb-bg{background-color:var(--white);background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V17L28 1l28 16v33L28 66zm0-6l22-13V23L28 7 6 20v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.5'/%3E%3Cpath d='M28 100L0 84V51l28-17 28 17v33L28 100zm0-6l22-13V57L28 41 6 57v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.5'/%3E%3C/svg%3E");}
 .section:not(.bg-off):not(.contact-bg){background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='56' height='100'%3E%3Cpath d='M28 66L0 50V17L28 1l28 16v33L28 66zm0-6l22-13V23L28 7 6 20v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.4'/%3E%3Cpath d='M28 100L0 84V51l28-17 28 17v33L28 100zm0-6l22-13V57L28 41 6 57v24l22 13z' fill='none' stroke='%23E0DED8' stroke-width='0.6' opacity='0.4'/%3E%3C/svg%3E");}
@@ -291,7 +299,7 @@ summary{padding:16px 20px;font-size:0.875rem;font-weight:600;cursor:pointer;list
 summary::-webkit-details-marker{display:none}
 summary::after{content:"+";font-size:1rem;font-weight:400;color:var(--muted);margin-left:12px;flex-shrink:0}
 details[open] summary::after{content:"−"}
-.faq-body{padding:0 20px 16px;font-size:0.84rem;color:var(--muted);line-height:1.75;text-align:justify}
+.faq-body{padding:0 20px 16px;font-size:0.84rem;color:var(--muted);line-height:1.75;text-align:justify;hyphens:auto;-webkit-hyphens:auto;-ms-hyphens:auto}
 
 /* ── KONTAKT ── */
 .contact-bg{background:var(--black);color:var(--white)}
@@ -936,6 +944,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
       <details><summary>Brauche ich einen Speicher dazu?</summary><div class="faq-body">Speicherpreise sind seit 2022 um rund 40 Prozent gefallen. Ohne Speicher liegt die typische Autarkie bei etwa 30 Prozent, mit Speicher bei 65 bis 75 Prozent. Ob sich das für dich lohnt hängt davon ab wann du hauptsächlich Strom verbrauchst. Das klären wir im Gespräch.</div></details>
       <details><summary>Was ist der Unterschied zu anderen Anbietern?</summary><div class="faq-body">Wir sind herstellerneutral und analysieren zuerst deine Situation, bevor wir die passenden Komponenten bestellen. Außerdem bist du direkt bei Anton oder Manuel, nicht bei einem Callcenter.</div></details>
       <details><summary>Wer installiert die Anlage?</summary><div class="faq-body">Die handwerkliche Montage und Inbetriebnahme übernimmt die Celaris GmbH aus Karlsruhe, ein Meisterbetrieb mit eigenen Monteuren aus der Region. Euer Ansprechpartner für Beratung, Planung und das gesamte Projekt sind wir von StromSchwaben. Wir koordinieren alles und begleiten euch vom ersten Gespräch bis zur fertigen Anlage.</div></details>
+      <details><summary>Was passiert bei einem Stromausfall?</summary><div class="faq-body">Eine normale Photovoltaikanlage schaltet sich bei Stromausfall automatisch ab. Mit einer geeigneten Notstrom- oder Ersatzstromlösung kann das Haus oder ein Teil des Hauses weiterhin mit Strom versorgt werden. Ob sich das lohnt, hängt von den persönlichen Anforderungen ab.</div></details>
     </div>
   </div>
 </section>
