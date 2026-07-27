@@ -595,6 +595,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .pc-back p{font-size:0.84rem;color:var(--text);line-height:1.6;text-align:justify}
 @media(max-width:640px){.pc-grid{grid-template-columns:1fr}.pc-card{height:auto}.pc-inner{transition:none}.pc-card.open .pc-inner{transform:none}.pc-face{position:static;backface-visibility:visible}.pc-back{display:none;transform:none}.pc-card.open .pc-back{display:flex}.pc-card.open .pc-front{display:none}}
 @media(max-width:640px){.dm-grid{grid-template-columns:1fr!important}}
+.dm-card{background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:28px;display:flex;flex-direction:column;text-decoration:none;color:inherit;cursor:pointer;transition:border-color .15s,transform .15s}
+.dm-card:hover{border-color:var(--black);transform:translateY(-2px)}
+.dm-card h3{font-size:0.9rem;font-weight:600;margin-bottom:6px;color:var(--black)}
+.dm-card p{font-size:0.84rem;color:var(--muted);line-height:1.65;text-align:justify;margin-bottom:14px;flex:1}
+.dm-card span{font-size:0.78rem;font-weight:600;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start}
 @media(max-width:640px){.ubernahme-row{flex-direction:column!important}.ubernahme-row img{width:100%!important;height:auto!important;max-height:180px}}
 </style>
 <section class="section" id="probleme">
@@ -681,14 +686,16 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     <h2 class="sec-title">Auch eine Option: Dachmiete und Contracting.</h2>
     <p class="sec-body" style="text-align:justify;max-width:640px">Eine eigene Solaranlage ist bei uns der Kernfokus, aber nicht jeder möchte oder kann investieren. Auch dafür gibt es sinnvolle Wege, dein Dach zu nutzen. Wir beraten dich unabhängig dazu, welches Modell zu deiner Situation passt.</p>
     <div class="dm-grid" style="display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:32px">
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:28px">
-        <h3 style="font-size:0.9rem;font-weight:600;margin-bottom:6px">Mietmodell</h3>
-        <p style="font-size:0.84rem;color:var(--muted);line-height:1.65;text-align:justify">Du stellst deine Dachfläche zur Verfügung, ein spezialisierter Betreiber errichtet und betreibt die Anlage. Du erhältst eine vereinbarte Mietzahlung und kannst den erzeugten Strom oft vergünstigt beziehen, ganz ohne eigene Investition.</p>
-      </div>
-      <div style="background:var(--bg);border:1px solid var(--border);border-radius:10px;padding:28px">
-        <h3 style="font-size:0.9rem;font-weight:600;margin-bottom:6px">Contracting</h3>
-        <p style="font-size:0.84rem;color:var(--muted);line-height:1.65;text-align:justify">Du nutzt den Strom der Anlage, ohne selbst zu investieren. Ein spezialisierter Betreiber errichtet, betreibt und wartet die Anlage, du zahlst nur für den gelieferten Strom.</p>
-      </div>
+      <a href="#kontakt" class="dm-card" onclick="setKontaktThema('Ich interessiere mich für das Mietmodell')">
+        <h3>Mietmodell</h3>
+        <p>Du stellst deine Dachfläche zur Verfügung, ein spezialisierter Betreiber errichtet und betreibt die Anlage. Du erhältst eine vereinbarte Mietzahlung und kannst den erzeugten Strom oft vergünstigt beziehen, ganz ohne eigene Investition.</p>
+        <span>Dazu beraten lassen →</span>
+      </a>
+      <a href="#kontakt" class="dm-card" onclick="setKontaktThema('Ich interessiere mich für Contracting')">
+        <h3>Contracting</h3>
+        <p>Du nutzt den Strom der Anlage, ohne selbst zu investieren. Ein spezialisierter Betreiber errichtet, betreibt und wartet die Anlage, du zahlst nur für den gelieferten Strom.</p>
+        <span>Dazu beraten lassen →</span>
+      </a>
     </div>
   </div>
 </section>
@@ -956,7 +963,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <div class="cf-group"><label>Name</label><input type="text" name="name" placeholder="Max Mustermann" required></div>
         <div class="cf-group"><label>Telefon oder E-Mail</label><input type="text" name="kontakt" placeholder="+49 711 ... oder deine@email.de" required></div>
         <div class="cf-group"><label>Ort</label><input type="text" name="ort" placeholder="z.B. Stuttgart, Esslingen, Leinfelden" required></div>
-        <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" id="kontakt-thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option></select></div>
+        <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" id="kontakt-thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option><option>Ich interessiere mich für das Mietmodell</option><option>Ich interessiere mich für Contracting</option></select></div>
         <div class="cf-group"><label>Nachricht (optional)</label><textarea name="nachricht" rows="3" placeholder="Was du schon weißt: Dachgröße, Ausrichtung, Verbrauch..."></textarea></div>
         <input type="hidden" name="_replyto" value="info@stromschwaben.de"><button type="submit" class="cf-submit">Beratungsgespräch anfragen</button>
         <p class="cf-hint">Wir melden uns innerhalb von 24 Stunden. Mit der Anfrage entstehen keine Kosten und keine Verpflichtungen.</p>
