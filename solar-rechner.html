@@ -462,8 +462,11 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .rc-info::after{content:attr(data-tip);position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--black);color:#fff;font-size:0.75rem;font-weight:400;line-height:1.5;padding:8px 12px;border-radius:6px;width:220px;white-space:normal;pointer-events:none;opacity:0;transition:opacity .15s;z-index:100;font-style:normal}
 .rc-info:hover::after,.rc-info:focus::after{opacity:1}
 .rc-stat-label{display:flex;align-items:center;gap:4px}
-.rc-field input[type="number"]{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;font-family:inherit;box-sizing:border-box}
-.rc-field input[type="number"]:focus{outline:2px solid var(--black);outline-offset:1px}
+.rc-field input[type="number"],.rc-field input[type="email"]{width:100%;padding:9px 11px;border:1px solid var(--border);border-radius:6px;font-size:0.875rem;font-family:inherit;box-sizing:border-box}
+.rc-field input[type="number"]:focus,.rc-field input[type="email"]:focus{outline:2px solid var(--black);outline-offset:1px}
+.rc-field input.rc-input-error{border-color:#c0392b}
+.rc-field-error{font-size:0.75rem;color:#c0392b;margin-top:6px;display:none}
+.rc-field-error.show{display:block}
 .rc-row{display:grid;grid-template-columns:1fr 1fr;gap:12px}
 .rc-btn-group{display:flex;gap:6px;flex-wrap:wrap}
 .rc-btn-opt{flex:1;min-width:64px;padding:8px 6px;border:1px solid var(--border);border-radius:6px;background:transparent;color:var(--black);font-size:0.76rem;font-weight:600;cursor:pointer;text-align:center;transition:.12s}
@@ -763,9 +766,16 @@ body{padding-bottom:80px}
             <div class="rc-stat"><div class="rc-stat-val" id="stat-kwp">0,0 kWp</div><div class="rc-stat-label">Anlagenleistung <i class="rc-info" data-tip="kWp = Kilowatt peak, die Nennleistung unter optimalen Bedingungen. Typisch für ein Einfamilienhaus: 6–12 kWp.">i</i></div></div>
           </div>
         </div>
+        <div class="rc-card">
+          <div class="rc-field">
+            <label for="rc-email">Deine E-Mail-Adresse <i class="rc-info" data-tip="Damit wir dir dein Ergebnis zuordnen und bei Fragen erreichen können. Keine Weitergabe an Dritte.">i</i></label>
+            <input type="email" id="rc-email" placeholder="name@beispiel.de" autocomplete="email">
+            <p class="rc-field-error" id="rc-email-error">Bitte gib eine gültige E-Mail-Adresse ein.</p>
+          </div>
+        </div>
         <div class="wz-nav">
           <button class="wz-btn-back" onclick="goStep(3)">↑ Zurück</button>
-          <button class="wz-btn-next" onclick="goStep(5)">Ergebnis anzeigen ↓</button>
+          <button class="wz-btn-next" onclick="checkEmailAndShowResult()">Ergebnis anzeigen ↓</button>
         </div>
       </div>
 
@@ -860,6 +870,21 @@ body{padding-bottom:80px}
 // ===== Wizard Navigation =====
 let currentStep = 1;
 const totalSteps = 5;
+
+function checkEmailAndShowResult() {
+  const input = document.getElementById('rc-email');
+  const error = document.getElementById('rc-email-error');
+  const valid = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(input.value.trim());
+  if (!valid) {
+    input.classList.add('rc-input-error');
+    error.classList.add('show');
+    input.focus();
+    return;
+  }
+  input.classList.remove('rc-input-error');
+  error.classList.remove('show');
+  goStep(5);
+}
 
 function goStep(n) {
   document.getElementById('step' + currentStep).classList.remove('active');
@@ -1096,6 +1121,8 @@ function submitToFormspree() {
 
   const data = {
     _subject: 'Solar-Rechner Ergebnis \u2013 neue Berechnung',
+    _replyto: document.getElementById('rc-email').value.trim(),
+    'E-Mail': document.getElementById('rc-email').value.trim(),
     'Dachfl\u00e4che A': dachABreite+'m x '+dachALaenge+'m | '+richtungLabels[dach.A.richtung]+' | '+neigungLabels[dach.A.neigung],
     'Dachfl\u00e4che B': dach.B.aktiv ? dachBBreite+'m x '+dachBLaenge+'m | '+richtungLabels[dach.B.richtung]+' | '+neigungLabels[dach.B.neigung] : 'Nicht angegeben',
     'Module platziert': moduleCount+' Module ('+kwp+' kWp)',
