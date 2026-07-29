@@ -499,6 +499,13 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .blog-teaser.hidden{display:none}
 .blog-teaser.blog-collapsed{display:none}
 
+/* Scroll reveal */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease,transform .7s ease}
+.reveal.is-visible{opacity:1;transform:translateY(0)}
+@media (prefers-reduced-motion: reduce){
+  .reveal{opacity:1;transform:none;transition:none}
+}
+
 </style>
 </head>
 <body>
@@ -575,7 +582,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- ÜBER UNS -->
-<section class="section bg-off" id="über-uns">
+<section class="section reveal bg-off" id="über-uns">
   <div class="wrap">
     <p class="sec-label">Wer wir sind</p>
     <h2 class="sec-title">Erst verstehen, dann umsetzen.</h2>
@@ -609,7 +616,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 .dm-card span{font-size:0.78rem;font-weight:600;color:var(--black);border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start}
 @media(max-width:640px){.ubernahme-row{flex-direction:column!important}.ubernahme-row img{width:100%!important;height:auto!important;max-height:180px}}
 </style>
-<section class="section" id="probleme">
+<section class="section reveal" id="probleme">
   <div class="wrap">
     <p class="sec-label">Warum wir</p>
     <h2 class="sec-title">Was andere gerne verschweigen.</h2>
@@ -660,7 +667,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- VORGEHEN -->
-<section class="section bg-off" id="vorgehen">
+<section class="section reveal bg-off" id="vorgehen">
   <div class="wrap">
     <p class="sec-label">Vorgehen</p>
     <h2 class="sec-title">So planen wir deine Photovoltaikanlage.</h2>
@@ -687,7 +694,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- AUCH EINE OPTION: DACHMIETE -->
-<section class="section" id="dachmiete">
+<section class="section reveal" id="dachmiete">
   <div class="wrap">
     <p class="sec-label">Alternative Modelle</p>
     <h2 class="sec-title">Auch eine Option: Dachmiete und Contracting.</h2>
@@ -708,7 +715,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- PROJEKTE -->
-<section class="section" id="projekte">
+<section class="section reveal" id="projekte">
   <div class="wrap">
     <p class="sec-label">Referenzprojekte</p>
     <h2 class="sec-title">Drei Beispielprojekte vom Gewerbe bis zum Eigenheim.</h2>
@@ -723,7 +730,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
 </section>
 
 <!-- REVIEWS -->
-<section class="section bg-off" id="stimmen">
+<section class="section reveal bg-off" id="stimmen">
   <div class="wrap">
     <p class="sec-label">Was in der Branche passiert</p>
     <h2 class="sec-title">Was in der Branche falsch läuft.</h2>
@@ -782,7 +789,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
 
 
 <!-- FÜR WEN -->
-<section class="section">
+<section class="section reveal">
   <div class="wrap">
     <p class="sec-label">Für wen wir da sind</p>
     <h2 class="sec-title">Erkennst du dich wieder?</h2>
@@ -840,7 +847,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
 .blog-teaser-link{font-size:0.8rem;font-weight:600;color:var(--black);text-decoration:none}
 .blog-teaser-link:hover{text-decoration:underline}
 </style>
-<section class="section bg-off" id="blog">
+<section class="section reveal bg-off" id="blog">
   <div class="wrap">
     <p class="sec-label">Wissen und Erfahrungen</p>
     <h2 class="sec-title">Schwäbisch erklärt.</h2>
@@ -927,7 +934,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
 </section>
 
 <!-- FAQ -->
-<section class="section-sm bg-off" id="faq" style="position:relative;">
+<section class="section-sm reveal bg-off" id="faq" style="position:relative;">
   <div id="faq-video-wrap" style="position:absolute;top:0;left:0;width:100%;height:100%;overflow:hidden;z-index:0;pointer-events:none">
     <video autoplay muted loop playsinline aria-hidden="true" id="faq-video" style="position:sticky;top:0;width:100%;height:100vh;object-fit:cover;opacity:0.18;display:block">
       <source src="hero1-bg.mp4" type="video/mp4">
@@ -949,7 +956,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
 </section>
 
 <!-- KONTAKT -->
-<section class="section contact-bg" id="kontakt">
+<section class="section reveal contact-bg" id="kontakt">
   <div class="wrap">
     <p class="sec-label">Unverbindlich und ehrlich</p>
     <h2 class="sec-title">Sag uns was du hast. Wir sagen dir ob es sich lohnt.</h2>
@@ -1345,6 +1352,25 @@ function setKontaktThema(value) {
     }
   }
 }
+</script>
+
+<script>
+(function() {
+  var els = document.querySelectorAll('.reveal');
+  if (!('IntersectionObserver' in window) || !els.length) {
+    els.forEach(function(el) { el.classList.add('is-visible'); });
+    return;
+  }
+  var observer = new IntersectionObserver(function(entries) {
+    entries.forEach(function(entry) {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  els.forEach(function(el) { observer.observe(el); });
+})();
 </script>
 
 </body>
