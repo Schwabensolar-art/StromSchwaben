@@ -27,6 +27,6 @@ Die Bundesnetzagentur hat klare Grenzen gesetzt:
 
 4,2 kW reichen, damit eine typische Wärmepumpe im Einfamilienhaus weiterläuft, nur eventuell mit etwas weniger Leistung. Durch die Trägheit eines beheizten Hauses merkst du kurze Drosselungen in der Regel nicht.
 
-## Unser Fazit
+## Bewertung
 
 Abschalten darf der Netzbetreiber nicht. Und für die Möglichkeit, im Notfall zu drosseln, bekommst du einen Rabatt auf die Netzentgelte von 110 bis 190 Euro im Jahr oder mehr. Wie du das Beste herausholst, steht im Artikel zu [§ 14a EnWG](/wissen/paragraph-14a-netzentgelt-waermepumpe-wallbox/).

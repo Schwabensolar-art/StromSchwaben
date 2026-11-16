@@ -30,7 +30,7 @@ faq:
     antwort: "So nennt man den ab 2029 schrittweise steigenden Pflichtanteil an Bio-Brennstoffen für neu eingebaute Gas- und Ölheizungen. Die genauen Prozentsätze sollte man vor einer Entscheidung im Gesetzestext prüfen."
 ---
 
-Kaum ein Gesetz hat in den letzten Jahren so viel Streit ausgelöst wie das Heizungsgesetz. Die alte Regel, dass jede neue Heizung zu mindestens 65 Prozent mit erneuerbarer Energie laufen muss, ist jetzt Geschichte. Seit dem **29. Juli 2026** gilt das **Gebäudemodernisierungsgesetz**, kurz GModG.<sup><a href="#q2">2</a></sup> Was sich ändert und was das für deine Entscheidung heißt.
+Seit dem **29. Juli 2026** gilt das **Gebäudemodernisierungsgesetz**, kurz GModG.<sup><a href="#q2">2</a></sup> Es ersetzt das Gebäudeenergiegesetz und streicht die Regel, dass jede neue Heizung zu mindestens 65 Prozent mit erneuerbarer Energie laufen muss. Dafür kommen neue Vorgaben für die Brennstoffe.
 
 ## Der Weg zum neuen Gesetz
 
@@ -68,7 +68,7 @@ Mieter sollen vor überhöhten Nebenkosten geschützt werden, wenn der Vermieter
 
 ## Was das für deine Entscheidung heißt
 
-Das neue Gesetz nimmt den Zwang heraus, aber es nimmt dir die Rechnung nicht ab. Drei Dinge solltest du bei einer neuen Gas- oder Ölheizung bedenken:
+Bei einer neuen Gas- oder Ölheizung solltest du drei Dinge bedenken:
 
 1. **Der CO2-Preis wird zum Marktpreis.** 2027 liegt er noch im festen Korridor von 55 bis 65 Euro pro Tonne. Ab 2028 soll er sich im europäischen Emissionshandel frei bilden. Mehr dazu im Artikel zum [CO2-Preis 2027](/wissen/co2-preis-2027-heizen-tanken/).
 2. **Bio-Brennstoffe sind knapp und teurer.** Wie viel Biogas und Bioöl kosten, wenn die Nachfrage durch Quote und Biotreppe steigt, ist offen.

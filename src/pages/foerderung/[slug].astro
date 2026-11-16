@@ -32,7 +32,7 @@ const statusKlasse = { offen: 'status-offen', 'Mittel ausgeschöpft': 'status-zu
       {d.hinweis && <p class="prose"><span class="hinweis" style="display:block"><strong>Wichtig:</strong> {d.hinweis}</span></p>}
       <div class="prose" style="margin-top:24px"><Content /></div>
       <p style="margin-top:28px"><a class="btn" href={d.antrag} target="_blank" rel="noopener">Zur offiziellen Programmseite</a></p>
-      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Konditionen geprüft am {datum(d.geprueft)}</span></p>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">Konditionen geprüft am {datum(d.geprueft)}</span></p>
       <Quellen quellen={d.quellen} />
       <p class="disclaimer">Alle Angaben ohne Gewähr. Förderbedingungen ändern sich oft kurzfristig. Verbindlich sind die Richtlinien und Merkblätter des Förderträgers. Bei vielen Programmen musst du den Antrag stellen, bevor du einen Auftrag vergibst.</p>
     </article>

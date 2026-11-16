@@ -31,13 +31,13 @@ faq:
     antwort: "Nur wenn sie als steuerbare Einrichtung nach § 14a EnWG beim Netzbetreiber angemeldet ist. Der Betrieb einer Wärmepumpe allein reicht nicht."
 ---
 
-Hinter dem sperrigen Namen **§ 14a Energiewirtschaftsgesetz** steckt ein gutes Angebot für alle, die eine Wärmepumpe, eine Wallbox oder einen ähnlichen großen Stromverbraucher betreiben: weniger Netzentgelte gegen die Erlaubnis, das Gerät in seltenen Ausnahmefällen kurz zu drosseln. Viele Haushalte nutzen das nicht optimal, weil sie das Prinzip nicht kennen.
+Nach **§ 14a Energiewirtschaftsgesetz** zahlen Haushalte mit Wärmepumpe oder Wallbox weniger Netzentgelt. Im Gegenzug darf der Netzbetreiber das Gerät drosseln, wenn das Netz überlastet zu werden droht. Viele Haushalte holen dabei nicht das Maximum heraus, weil sie die Wahlmöglichkeiten nicht kennen.
 
 ## Worum es geht
 
 Seit dem **1. Januar 2024** gelten neue Regeln für sogenannte **steuerbare Verbrauchseinrichtungen**.<sup><a href="#q2">2</a></sup> Dazu zählen vor allem Wärmepumpen und private Ladeeinrichtungen für E-Autos, also Wallboxen.
 
-Der Deal ist einfach:
+Die Regeln im Einzelnen:
 
 - **Der Netzbetreiber muss dich anschließen.** Er darf neue Wärmepumpen oder Wallboxen nicht mehr mit dem Hinweis auf ein überlastetes Netz ablehnen oder verzögern.<sup><a href="#q2">2</a></sup>
 - **Dafür darf er im Notfall drosseln.** Droht eine konkrete Überlastung, darf er die Leistung deines Geräts auf bis zu **4,2 kW** senken. Komplett abschalten darf er nicht.<sup><a href="#q2">2</a></sup> Eine Wärmepumpe läuft also weiter, ein E-Auto lädt weiter, nur langsamer.
@@ -79,4 +79,4 @@ Für ein E-Auto mit rund 2.500 kWh im Jahr deckt die Pauschale aus Modul 1 laut 
 
 ## Was ist mit älteren Geräten?
 
-Für Wärmepumpen und Wallboxen, die **vor dem 1. Januar 2024** in Betrieb gegangen sind, gibt es den Rabatt nur, wenn sie nach der alten oder neuen Regel des § 14a beim Netzbetreiber angemeldet sind. Der Betrieb einer Wärmepumpe allein reicht nicht, entscheidend ist, dass sie steuerbar ist.<sup><a href="#q1">1</a></sup> Nachtspeicherheizungen fallen dauerhaft nicht unter die neue Regel.<sup><a href="#q2">2</a></sup>
+Für Wärmepumpen und Wallboxen, die **vor dem 1. Januar 2024** in Betrieb gegangen sind, gibt es den Rabatt nur, wenn sie nach der alten oder neuen Regel des § 14a beim Netzbetreiber angemeldet sind. Der Betrieb einer Wärmepumpe allein reicht nicht, sie muss steuerbar sein.<sup><a href="#q1">1</a></sup> Nachtspeicherheizungen fallen dauerhaft nicht unter die neue Regel.<sup><a href="#q2">2</a></sup>

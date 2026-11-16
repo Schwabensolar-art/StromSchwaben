@@ -27,11 +27,11 @@ const jsonLd = [{
       <span class="tag" data-pagefind-filter="Kategorie">Mythen-Check</span>
       <h1 class="page" data-pagefind-meta="title">„{d.mythos}“</h1>
       <p style="margin:8px 0 20px"><span class={`urteil ${klasse[d.urteil]}`} style="font-size:.85rem">Urteil: {d.urteil}</span></p>
-      <div class="tldr"><h2>Kurz gesagt</h2><p>{d.kurz}</p></div>
+      <div class="tldr"><h2>Ergebnis</h2><p>{d.kurz}</p></div>
       <div class="prose"><Content /></div>
-      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Geprüft am {datum(d.geprueft)}</span></p>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">Geprüft am {datum(d.geprueft)}</span></p>
       <Quellen quellen={d.quellen} />
-      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/mythen/">← Alle Mythen</a></p>
+      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/mythen/">Alle Mythen</a></p>
     </article>
   </div>
 </Base>

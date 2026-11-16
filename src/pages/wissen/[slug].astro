@@ -58,7 +58,7 @@ if (d.faq.length) jsonLd.push({
           <span>Von <strong>{autor.name}</strong></span>
           <span>Veröffentlicht {datum(d.veroeffentlicht)}</span>
           {d.aktualisiert && <span>Aktualisiert {datum(d.aktualisiert)}</span>}
-          <span class="checked">✓ Fakten geprüft am {datum(d.geprueft)}</span>
+          <span class="checked">Fakten geprüft am {datum(d.geprueft)}</span>
           <span>{lesezeit(e.body)} Min. Lesezeit</span>
           <a href="#quellen" style="text-decoration:underline">{d.quellen.length} Quellen</a>
         </div>

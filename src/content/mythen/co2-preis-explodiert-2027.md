@@ -24,6 +24,6 @@ Ursprünglich sollte der deutsche CO2-Preis für Heizöl, Gas und Sprit 2027 in 
 
 Für ein Einfamilienhaus mit 20.000 kWh Gasverbrauch bedeutet das nach unserer Rechnung 2027 rund 260 bis 310 Euro CO2-Kosten im Jahr, also etwa so viel wie 2026.
 
-## Unser Fazit
+## Bewertung
 
 Für 2027 ist die Aussage falsch. Für die Zeit ab 2028 ist sie offen: Wie hoch der Marktpreis im ETS2 sein wird, kann heute niemand sicher sagen. Wer eine Heizung für die nächsten 20 Jahre plant, sollte steigende CO2-Kosten deshalb trotzdem einrechnen. Details im Artikel [CO2-Preis 2027](/wissen/co2-preis-2027-heizen-tanken/).

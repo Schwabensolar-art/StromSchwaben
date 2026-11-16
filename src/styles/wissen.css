@@ -74,7 +74,7 @@ h1.page{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700;letter-spacing:-.035e
 .art-head{max-width:var(--read);margin:0 auto;padding:16px 0 8px}
 .art-meta{display:flex;gap:6px 18px;flex-wrap:wrap;font-size:.8rem;color:var(--muted);margin-top:4px}
 .art-meta strong{color:var(--black);font-weight:600}
-.checked{display:inline-flex;align-items:center;gap:6px;color:var(--ok);font-weight:600}
+.checked{color:var(--ok);font-weight:600}
 .art-layout{display:grid;grid-template-columns:minmax(0,var(--read)) 260px;gap:56px;justify-content:center;padding:24px 0 72px}
 .art-aside{position:sticky;top:132px;align-self:start;font-size:.82rem}
 .art-aside h2{font-size:.7rem;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin-bottom:10px}
@@ -111,7 +111,8 @@ h1.page{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700;letter-spacing:-.035e
 details.faq{border-bottom:1px solid var(--border);padding:14px 0}
 details.faq summary{font-weight:650;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:12px}
 details.faq summary::after{content:'+';font-weight:400;color:var(--muted)}
-details.faq[open] summary::after{content:'–'}
+details.faq summary::after{transition:transform .15s}
+details.faq[open] summary::after{transform:rotate(45deg)}
 details.faq p{margin-top:8px;color:#444;font-size:.95rem}
 .disclaimer{font-size:.8rem;color:var(--muted);margin-top:32px;line-height:1.6}
 

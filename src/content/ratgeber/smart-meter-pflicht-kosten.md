@@ -30,7 +30,7 @@ faq:
     antwort: "Der Anschlussnehmer, in der Regel also der Hauseigentümer. Die Kosten für einen Umbau oder Austausch des Zählerschranks sind nicht von den gesetzlichen Preisobergrenzen abgedeckt."
 ---
 
-In immer mehr Häusern wird der alte Stromzähler mit der Drehscheibe ausgetauscht. Manche bekommen einen einfachen digitalen Zähler, andere ein **intelligentes Messsystem**, umgangssprachlich Smart Meter. Was davon du bekommst und was es kosten darf, regelt das Messstellenbetriebsgesetz. Hier die Regeln im Überblick.
+In immer mehr Häusern wird der alte Stromzähler mit der Drehscheibe ausgetauscht. Manche bekommen einen einfachen digitalen Zähler, andere ein **intelligentes Messsystem**, umgangssprachlich Smart Meter. Welchen Zähler du bekommst und was er kosten darf, regelt das Messstellenbetriebsgesetz.
 
 ## Zwei Arten von digitalen Zählern
 
@@ -72,7 +72,7 @@ Ein Einfamilienhaus mit 4.500 kWh Haushaltsstrom bekommt eine neue Wärmepumpe. 
 
 ## Wer den Zählerschrank zahlt
 
-Das ist der Punkt, der viele überrascht: Ist der Zählerschrank zu alt oder zu klein für den neuen Zähler, muss er umgebaut oder ersetzt werden. Diese Kosten trägt der **Anschlussnehmer**, also in der Regel der Hauseigentümer. Sie sind **nicht** von den Preisobergrenzen gedeckt.<sup><a href="#q1">1</a></sup> Je nach Zustand der Anlage können hier schnell vierstellige Beträge zusammenkommen.
+Ist der Zählerschrank zu alt oder zu klein für den neuen Zähler, muss er umgebaut oder ersetzt werden. Diese Kosten trägt der **Anschlussnehmer**, also in der Regel der Hauseigentümer. Sie sind **nicht** von den Preisobergrenzen gedeckt.<sup><a href="#q1">1</a></sup> Je nach Zustand der Anlage können hier schnell vierstellige Beträge zusammenkommen.
 
 **Tipp:** Wenn ohnehin eine PV-Anlage, eine Wallbox oder eine Wärmepumpe geplant ist, lohnt es sich, den Zählerschrank gleich mitzumachen. Dann zahlst du den Elektriker nur einmal.
 

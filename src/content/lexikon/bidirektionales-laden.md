@@ -1,6 +1,6 @@
 ---
 begriff: "Bidirektionales Laden"
-kurz: "E-Auto-Akku, der nicht nur lädt, sondern auch Strom ans Haus oder ins Netz zurückgibt."
+kurz: "E-Auto-Akku, der Strom auch wieder ans Haus oder ins Netz abgibt."
 synonyme: ["Vehicle-to-Home", "V2H", "Vehicle-to-Grid", "V2G"]
 verwandt: ["mispel", "steuerbare-verbrauchseinrichtung", "smart-meter"]
 quellen:

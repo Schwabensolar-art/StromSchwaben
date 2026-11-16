@@ -27,7 +27,7 @@ const jsonLd = [{
       {d.synonyme.length > 0 && <p class="art-meta">Auch: {d.synonyme.join(', ')}</p>}
       <div class="tldr" style="margin-top:20px"><h2>Kurz erklärt</h2><p>{d.kurz}</p></div>
       <div class="prose"><Content /></div>
-      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Geprüft am {datum(d.geprueft)}</span></p>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">Geprüft am {datum(d.geprueft)}</span></p>
       {d.quellen.length > 0 && <Quellen quellen={d.quellen} />}
       {artikel.length > 0 && (
         <section data-pagefind-ignore>
@@ -41,7 +41,7 @@ const jsonLd = [{
           <div class="lex-links">{verwandt.map((v) => <a href={`/lexikon/${v.id}/`}>{v.data.begriff}</a>)}</div>
         </section>
       )}
-      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/lexikon/">← Zum Lexikon</a></p>
+      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/lexikon/">Zum Lexikon</a></p>
     </article>
   </div>
 </Base>

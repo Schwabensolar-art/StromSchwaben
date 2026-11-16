@@ -32,7 +32,7 @@ faq:
     antwort: "Bei einer Preiserhöhung hast du ein Sonderkündigungsrecht. Vergleiche Tarife und wechsle, wenn es günstigere Angebote gibt. Mit Wärmepumpe oder Wallbox lohnt sich außerdem ein Blick auf die Netzentgelt-Rabatte nach § 14a EnWG."
 ---
 
-Jedes Jahr im Herbst werden die Bausteine des Strompreises für das kommende Jahr festgelegt. Für 2027 sieht es so aus: Die Umlagen steigen deutlich, die Stromsteuer bleibt gleich, bei den Netzentgelten ist noch nicht alles entschieden. Hier ist, was feststeht und was offen ist.
+Jedes Jahr im Herbst werden die Bausteine des Strompreises für das kommende Jahr festgelegt. Für 2027 steigen die Umlagen deutlich, die Stromsteuer bleibt gleich, und bei den Netzentgelten ist noch nicht alles entschieden.
 
 ## Woraus dein Strompreis besteht
 
@@ -79,7 +79,7 @@ Die Stromsteuer für Haushalte bleibt damit 2027 bei **2,05 Cent pro kWh**. Ob d
 
 Die Netzentgelte machen einen großen Teil des Strompreises aus und unterscheiden sich stark zwischen den Netzgebieten. Für 2027 kommt eine politische Unsicherheit dazu: Der Bund bezuschusst die Kosten der großen Übertragungsnetze. Dieser Zuschuss soll von 6,5 Milliarden Euro im Jahr 2026 auf rund 5,5 Milliarden Euro im Jahr 2027 sinken. Das dazu nötige Gesetz war Ende Oktober 2026 noch nicht beschlossen.<sup><a href="#q1">1</a></sup>
 
-Was das für dich heißt, siehst du erst, wenn dein Netzbetreiber seine endgültigen Preise veröffentlicht und dein Versorger sie weitergibt.
+Wie stark sich das auf deine Rechnung auswirkt, zeigt sich erst, wenn dein Netzbetreiber seine endgültigen Preise veröffentlicht und dein Versorger sie weitergibt.
 
 ## Was du jetzt tun kannst
 

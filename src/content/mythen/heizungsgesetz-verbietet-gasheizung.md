@@ -27,6 +27,6 @@ Ganz ohne Auflagen ist das aber nicht:
 - Ab **2029** müssen neu eingebaute Gas- und Ölheizungen schrittweise einen steigenden Anteil Bio-Brennstoff nutzen.
 - Ab **2045** müssen alle Heizbrennstoffe klimaneutral sein.
 
-## Unser Fazit
+## Bewertung
 
 Ein Verbot gibt es nicht. Wer sich heute für eine Gas- oder Ölheizung entscheidet, sollte aber die steigenden Brennstoff- und CO2-Kosten über die Lebensdauer der Heizung einrechnen. Mehr dazu im Artikel zum [neuen Heizungsgesetz](/wissen/gebaeudemodernisierungsgesetz-heizungsgesetz-2026/).

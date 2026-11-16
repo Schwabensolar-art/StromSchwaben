@@ -27,7 +27,7 @@ faq:
     antwort: "Ja. Du schließt zuerst einen Vertrag mit dem Fachbetrieb, der unter dem Vorbehalt der Förderzusage steht, und stellst dann den Antrag bei der KfW, bevor die Arbeiten beginnen."
 ---
 
-Wer seine alte Öl- oder Gasheizung durch eine Wärmepumpe, Pelletheizung oder einen Wärmenetzanschluss ersetzt, bekommt dafür einen Zuschuss von der KfW, das Programm heißt **Heizungsförderung 458**. Ab Februar 2027 wird diese Förderung schrittweise weniger. Hier steht, was jetzt gilt und was sich wann ändert.
+Wer seine alte Öl- oder Gasheizung durch eine Wärmepumpe, Pelletheizung oder einen Wärmenetzanschluss ersetzt, bekommt dafür einen Zuschuss von der KfW, das Programm heißt **Heizungsförderung 458**. Ab Februar 2027 wird diese Förderung schrittweise weniger.
 
 ## So setzt sich die Förderung heute zusammen
 
