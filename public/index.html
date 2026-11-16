@@ -549,6 +549,25 @@ nav a.nav-wissen{color:var(--black);font-weight:700;box-shadow:inset 0 -2px 0 va
   .wm-grid{grid-template-columns:1fr}
   .wissen-band-links a:not(.wb-btn){display:none}
 }
+
+/* Anfrage-Fenster oben */
+#anfrage{border:0;padding:0;margin:72px auto auto;width:min(520px,calc(100% - 24px));max-height:calc(100dvh - 96px);border-radius:12px;background:var(--white);color:var(--black);box-shadow:0 24px 60px rgba(0,0,0,.25);overflow:auto}
+#anfrage::backdrop{background:rgba(0,0,0,.45)}
+#anfrage[open]{animation:anfrage-rein .22s ease-out}
+@keyframes anfrage-rein{from{opacity:0;transform:translateY(-16px)}to{opacity:1;transform:none}}
+.af-kopf{display:flex;align-items:flex-start;justify-content:space-between;gap:16px;padding:24px 24px 0}
+.af-kopf h2{font-size:1.25rem;font-weight:700;letter-spacing:-0.02em;line-height:1.3;margin:0}
+.af-kopf p{text-align:left;font-size:0.84rem;color:var(--muted);margin:6px 0 0;line-height:1.5}
+.af-zu{flex:none;width:36px;height:36px;border-radius:50%;border:1px solid var(--border);background:var(--white);cursor:pointer;display:grid;place-items:center}
+.af-zu:hover{border-color:var(--black)}
+#anfrage form{padding:20px 24px 24px}
+.af-zeile{display:grid;grid-template-columns:1fr 1fr;gap:0 12px}
+.af-tel{font-size:0.8rem;color:var(--muted);text-align:center;margin-top:12px}
+.af-tel a{color:var(--black);font-weight:600}
+@media (max-width:600px){
+  #anfrage{margin-top:12px;max-height:calc(100dvh - 24px)}
+  .af-zeile{grid-template-columns:1fr}
+}
 </style>
 </head>
 <body>
@@ -566,7 +585,7 @@ nav a.nav-wissen{color:var(--black);font-weight:700;box-shadow:inset 0 -2px 0 va
         <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       </ul>
     </nav>
-    <a href="#kontakt" class="nav-btn">Beratung anfragen</a>
+    <a href="#kontakt" class="nav-btn">Schreib uns</a>
     <div style="display:flex;gap:12px;align-items:center;margin-left:4px">
       <a href="https://www.instagram.com/stromschwaben.de/" target="_blank" rel="noopener" title="Instagram" style="color:var(--muted);transition:color .15s;display:flex;align-items:center" onmouseover="this.style.color='var(--black)'" onmouseout="this.style.color='var(--muted)'">
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="0.5" fill="currentColor" stroke="none"/></svg>
@@ -587,7 +606,7 @@ nav a.nav-wissen{color:var(--black);font-weight:700;box-shadow:inset 0 -2px 0 va
   <a href="/mythen/" onclick="closeMobileMenu()">Mythen-Check</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="solar-rechner.html" onclick="closeMobileMenu()">Solar-Rechner</a>
-  <a href="#kontakt" class="mobile-cta" onclick="closeMobileMenu()">Beratung anfragen</a>
+  <a href="#kontakt" class="mobile-cta" onclick="closeMobileMenu()">Schreib uns</a>
 </div>
 
 
@@ -614,7 +633,7 @@ nav a.nav-wissen{color:var(--black);font-weight:700;box-shadow:inset 0 -2px 0 va
     <h1 aria-label="Solarberatung im Raum Stuttgart, Esslingen und Karlsruhe. StromSchwaben plant unabhängig und herstellerneutral.">Die Anlage, die zu deinem Haus passt.<br><span style="color:var(--sun)">Nicht die, die gerade verfügbar ist.</span></h1>
     <p style="font-size:0.9375rem;opacity:0.45;font-weight:600;margin-top:2px;margin-bottom:40px">Solaranlagen und Klimaanlagen im Raum Stuttgart, Esslingen und Karlsruhe.</p>
     <div class="hero-btns">
-      <a href="#kontakt" class="btn-dark">Kostenlose Beratung</a>
+      <a href="#kontakt" class="btn-dark">Schreib uns</a>
       <a href="solar-rechner.html" class="btn-plain" style="background:var(--white);border-color:var(--black)">Potenzial berechnen</a>
     </div>
     <div class="hero-stats" style="grid-template-columns:repeat(4,1fr);background:transparent;border-radius:8px;padding:20px 0;border:none;border-top:1px solid rgba(0,0,0,0.08)">
@@ -909,14 +928,14 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <p class="sun-tag" style="margin-bottom:12px">Noch am Überlegen</p>
         <p style="font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:10px;min-height:56px">Du weißt noch nicht, ob es sich bei dir lohnt.</p>
         <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1">Nicht jedes Dach und nicht jeder Haushalt profitiert gleich. Wir rechnen das ehrlich mit dir durch, bevor du irgendetwas unterschreibst. Auch wenn das Ergebnis Nein ist.</p>
-        <a href="#kontakt" onclick="setKontaktThema('Ich überlege noch, ob es sich lohnt')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Kostenlos einschätzen lassen</a>
+        <a href="#kontakt" onclick="setKontaktThema('Ich überlege noch, ob es sich lohnt')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Einschätzen lassen</a>
       </div>
 
       <div style="border:1px solid var(--border);border-radius:8px;background:var(--white);padding:24px;display:flex;flex-direction:column">
         <p class="sun-tag" style="margin-bottom:12px">Konkret planen</p>
         <p style="font-size:0.875rem;font-weight:600;line-height:1.4;margin-bottom:10px;min-height:56px">Du willst es richtig machen, nicht einfach schnell.</p>
         <p style="font-size:0.875rem;color:var(--muted);line-height:1.7;flex:1">Keine Standardlösung, keine Überdimensionierung. Eine Anlage, die zu deiner Haustechnik, deinem Verbrauch und deinen Plänen passt. Net anders.</p>
-        <a href="#kontakt" onclick="setKontaktThema('Ich plane konkret und suche die richtige Beratung')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Beratung anfragen</a>
+        <a href="#kontakt" onclick="setKontaktThema('Ich plane konkret und suche die richtige Beratung')" style="font-size:0.78rem;font-weight:600;color:var(--black);text-decoration:none;border-bottom:1px solid var(--black);padding-bottom:1px;align-self:flex-start;margin-top:20px">Schreib uns</a>
       </div>
 
     </div>
@@ -1119,12 +1138,64 @@ document.querySelectorAll('.r-body').forEach(b=>{
         <div class="cf-group"><label>Ort</label><input type="text" name="ort" placeholder="z.B. Stuttgart, Esslingen, Leinfelden" required></div>
         <div class="cf-group"><label>Wo stehst du gerade?</label><select name="thema" id="kontakt-thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch, ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option><option>Ich interessiere mich für das Mietmodell</option><option>Ich interessiere mich für Contracting</option></select></div>
         <div class="cf-group"><label>Nachricht (optional)</label><textarea name="nachricht" rows="3" placeholder="Was du schon weißt: Dachgröße, Ausrichtung, Verbrauch..."></textarea></div>
-        <input type="hidden" name="_replyto" value="info@stromschwaben.de"><button type="submit" class="cf-submit">Beratungsgespräch anfragen</button>
+        <input type="hidden" name="_replyto" value="info@stromschwaben.de"><button type="submit" class="cf-submit">Anfrage abschicken</button>
         <p class="cf-hint">Wir melden uns innerhalb von 24 Stunden. Mit der Anfrage entstehen keine Kosten und keine Verpflichtungen.</p>
-      </div>
+      </form>
     </div>
   </div>
 </section>
+
+
+<!-- ANFRAGE-FENSTER -->
+<dialog id="anfrage" aria-labelledby="anfrage-titel">
+  <div class="af-kopf">
+    <div>
+      <h2 id="anfrage-titel">Erzähl uns kurz, worum es geht</h2>
+      <p>Wir melden uns innerhalb von 24 Stunden. Unverbindlich und ohne Kosten.</p>
+    </div>
+    <button type="button" class="af-zu" aria-label="Fenster schließen" onclick="document.getElementById('anfrage').close()"><svg width="14" height="14" viewBox="0 0 14 14" aria-hidden="true"><path d="M1 1l12 12M13 1L1 13" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></button>
+  </div>
+  <form action="https://formspree.io/f/meebkred" method="POST">
+    <div class="af-zeile">
+      <div class="cf-group"><label for="af-name">Name</label><input id="af-name" type="text" name="name" placeholder="Max Mustermann" autocomplete="name" required></div>
+      <div class="cf-group"><label for="af-ort">Ort</label><input id="af-ort" type="text" name="ort" placeholder="z.B. Filderstadt" required></div>
+    </div>
+    <div class="cf-group"><label for="af-kontakt">Telefon oder E-Mail</label><input id="af-kontakt" type="text" name="kontakt" placeholder="+49 711 ... oder deine@email.de" required></div>
+    <div class="cf-group"><label for="anfrage-thema">Wo stehst du gerade?</label><select name="thema" id="anfrage-thema" required><option value="">Bitte wählen</option><option>Ich habe schon ein Angebot und bin unsicher</option><option>Ich überlege noch, ob es sich lohnt</option><option>Ich plane konkret und suche die richtige Beratung</option><option>Ich habe eine Gewerbehalle oder einen Betrieb</option><option>Ich bin noch ganz am Anfang</option><option>Ich interessiere mich für das Mietmodell</option><option>Ich interessiere mich für Contracting</option></select></div>
+    <div class="cf-group"><label for="af-nachricht">Nachricht (optional)</label><textarea id="af-nachricht" name="nachricht" rows="3" placeholder="Was du schon weißt: Dachgröße, Ausrichtung, Verbrauch..."></textarea></div>
+    <input type="hidden" name="_replyto" value="info@stromschwaben.de"><input type="hidden" name="quelle" value="Anfrage-Fenster">
+    <button type="submit" class="cf-submit">Anfrage abschicken</button>
+    <p class="af-tel">Lieber direkt sprechen? <a href="tel:+491629191031">+49 162 919 1031</a></p>
+  </form>
+</dialog>
+
+<script>
+(function () {
+  var fenster = document.getElementById('anfrage');
+  if (!fenster || typeof fenster.showModal !== 'function') return;
+  function oeffne() {
+    if (!fenster.open) fenster.showModal();
+    setTimeout(function () { document.getElementById('af-name').focus(); }, 50);
+  }
+  window.oeffneAnfrage = oeffne;
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest('a[href]');
+    if (!a) return;
+    var h = a.getAttribute('href');
+    if (h === '#kontakt' || h === '/#kontakt' || h === 'index.html#kontakt' || h === '/index.html#kontakt') {
+      e.preventDefault();
+      oeffne();
+    }
+  });
+  fenster.addEventListener('click', function (e) { if (e.target === fenster) fenster.close(); });
+  if (location.hash === '#kontakt') {
+    history.replaceState(null, '', location.pathname + location.search);
+    window.scrollTo(0, 0);
+    window.addEventListener('load', function () { window.scrollTo(0, 0); });
+    oeffne();
+  }
+})();
+</script>
 
 <!-- RECHNER MODAL -->
 <div id="modal-rechner" style="display:none;position:fixed;inset:0;z-index:200;background:rgba(0,0,0,0.55);overflow-y:auto" onclick="if(event.target===this)this.style.display='none'">
@@ -1192,7 +1263,7 @@ document.querySelectorAll('.r-body').forEach(b=>{
       <p style="font-size:0.75rem;color:var(--muted);line-height:1.6;border-top:1px solid var(--border);padding-top:14px">Alle Angaben sind Richtwerte ohne Gewähr. Abhängig von Dachfläche, Verschattung, Verbrauchsprofil und Komponentenwahl können die tatsächlichen Werte abweichen.</p>
     </div>
 
-    <a href="#kontakt" onclick="document.getElementById('modal-rechner').style.display='none'" style="display:block;margin-top:20px;padding:13px;background:var(--black);color:var(--white);text-align:center;border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none">Kostenlose Beratung anfragen</a>
+    <a href="#kontakt" onclick="document.getElementById('modal-rechner').style.display='none'" style="display:block;margin-top:20px;padding:13px;background:var(--black);color:var(--white);text-align:center;border-radius:8px;font-size:0.875rem;font-weight:600;text-decoration:none">Ergebnis mit uns besprechen</a>
   </div>
 </div>
 
@@ -1410,14 +1481,16 @@ document.addEventListener('DOMContentLoaded', initBlog);
 
 <script>
 function setKontaktThema(value) {
-  var select = document.getElementById('kontakt-thema');
-  if (!select) return;
-  for (var i = 0; i < select.options.length; i++) {
-    if (select.options[i].text === value) {
-      select.selectedIndex = i;
-      break;
+  ['kontakt-thema', 'anfrage-thema'].forEach(function (id) {
+    var select = document.getElementById(id);
+    if (!select) return;
+    for (var i = 0; i < select.options.length; i++) {
+      if (select.options[i].text === value) {
+        select.selectedIndex = i;
+        break;
+      }
     }
-  }
+  });
 }
 </script>
 
