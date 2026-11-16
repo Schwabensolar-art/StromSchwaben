@@ -197,3 +197,4 @@ footer.site{background:var(--black);color:rgba(255,255,255,.6);padding:40px 0 28
 .urteil-filter button:hover{border-color:var(--black)}
 .urteil-filter button[aria-pressed="true"]{background:var(--black);border-color:var(--black);color:var(--white)}
 .urteil-filter .n{opacity:.6;font-weight:500;margin-left:4px}
+.foot-bottom .foot-ki{flex-basis:100%}.foot-ki a{text-decoration:underline}
