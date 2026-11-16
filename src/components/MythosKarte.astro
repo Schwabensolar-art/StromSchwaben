@@ -7,7 +7,7 @@ const { m } = Astro.props;
 const d = m.data;
 const klasse = { falsch: 'falsch', 'teilweise richtig': 'teilweise', richtig: 'richtig' } as const;
 ---
-<details class={`mythos mythos-${klasse[d.urteil]}`}>
+<details class={`mythos mythos-${klasse[d.urteil]}`} data-urteil={klasse[d.urteil]}>
   <summary>
     <div class="mythos-bild"><MythosIllu motiv={d.illustration} titel={`Illustration: ${d.mythos}`} /></div>
     <span class="mythos-label">Mythos</span>

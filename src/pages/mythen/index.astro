@@ -5,6 +5,13 @@ import MythosKarte from '../../components/MythosKarte.astro';
 import { mischeMythen } from '../../lib/util';
 
 const mythen = mischeMythen(await getCollection('mythen'));
+const zaehle = (u: string) => mythen.filter((m) => m.data.urteil === u).length;
+const filter = [
+  { wert: 'alle', label: 'Alle', anzahl: mythen.length },
+  { wert: 'falsch', label: 'Falsch', anzahl: zaehle('falsch') },
+  { wert: 'teilweise', label: 'Teilweise richtig', anzahl: zaehle('teilweise richtig') },
+  { wert: 'richtig', label: 'Richtig', anzahl: zaehle('richtig') },
+];
 ---
 <Base title="Mythen-Check: Was stimmt wirklich?" description="Verbreitete Behauptungen zu Solar, Heizung und Strom im Faktencheck. Mit klarem Urteil und Quellen: falsch, teilweise richtig oder richtig." aktiv="mythen">
   <section class="hero">
@@ -16,9 +23,32 @@ const mythen = mischeMythen(await getCollection('mythen'));
   </section>
   <section class="sec">
     <div class="wrap">
-      <div class="mythen-grid">
+      <div class="urteil-filter" role="group" aria-label="Nach Urteil filtern">
+        {filter.map((f) => (
+          <button type="button" data-filter={f.wert} aria-pressed={f.wert === 'alle' ? 'true' : 'false'}>
+            {f.label}<span class="n">{f.anzahl}</span>
+          </button>
+        ))}
+      </div>
+      <div class="mythen-grid" id="mythen-liste">
         {mythen.map((m) => <MythosKarte m={m} />)}
       </div>
+      <script is:inline>
+        (function () {
+          var knoepfe = document.querySelectorAll('.urteil-filter button');
+          var karten = document.querySelectorAll('#mythen-liste [data-urteil]');
+          function setze(wert) {
+            knoepfe.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.filter === wert)); });
+            karten.forEach(function (k) { k.hidden = wert !== 'alle' && k.dataset.urteil !== wert; });
+            var url = new URL(location.href);
+            if (wert === 'alle') url.searchParams.delete('urteil'); else url.searchParams.set('urteil', wert);
+            history.replaceState(null, '', url);
+          }
+          knoepfe.forEach(function (b) { b.addEventListener('click', function () { setze(b.dataset.filter); }); });
+          var start = new URLSearchParams(location.search).get('urteil');
+          if (start && document.querySelector('.urteil-filter [data-filter="' + start + '"]')) setze(start);
+        })();
+      </script>
       <div class="cta" style="margin-top:40px">
         <div><h2>Welchen Mythos sollen wir prüfen?</h2><p>Schick uns Behauptungen, die dir begegnen. Wir prüfen sie und veröffentlichen das Ergebnis mit Quellen.</p></div>
         <a class="btn" href="mailto:info@stromschwaben.de?subject=Mythos%20pr%C3%BCfen">Mythos einreichen</a>
