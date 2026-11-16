@@ -1,0 +1,121 @@
+---
+import '../styles/wissen.css';
+
+interface Props {
+  title: string;
+  description: string;
+  aktiv?: 'start' | 'ratgeber' | 'foerderung' | 'lexikon' | 'mythen' | 'suche' | 'redaktion';
+  ogType?: 'website' | 'article';
+  jsonLd?: Record<string, unknown>[];
+  noindex?: boolean;
+}
+const { title, description, aktiv, ogType = 'website', jsonLd = [], noindex = false } = Astro.props;
+const canonical = new URL(Astro.url.pathname, Astro.site).href;
+const fullTitle = `${title} | StromSchwaben Wissen`;
+const og = new URL('/og-image.png', Astro.site).href;
+const sub = [
+  ['start', '/wissen/', 'Übersicht'],
+  ['ratgeber', '/wissen/ratgeber/', 'Ratgeber'],
+  ['foerderung', '/foerderung/', 'Förderung'],
+  ['lexikon', '/lexikon/', 'Lexikon'],
+  ['mythen', '/mythen/', 'Mythen-Check'],
+  ['suche', '/wissen/suche/', 'Suche'],
+] as const;
+---
+<!doctype html>
+<html lang="de">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{fullTitle}</title>
+  <meta name="description" content={description}>
+  <link rel="canonical" href={canonical}>
+  {noindex && <meta name="robots" content="noindex, follow">}
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/png" sizes="96x96" href="/favicon-96.png">
+  <link rel="stylesheet" href="/fonts/geist.css">
+  <link rel="alternate" type="application/rss+xml" title="StromSchwaben Wissen" href="/wissen/rss.xml">
+  <meta property="og:type" content={ogType}>
+  <meta property="og:url" content={canonical}>
+  <meta property="og:title" content={title}>
+  <meta property="og:description" content={description}>
+  <meta property="og:image" content={og}>
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:locale" content="de_DE">
+  <meta property="og:site_name" content="StromSchwaben">
+  <meta name="twitter:card" content="summary_large_image">
+  {jsonLd.map((d) => <script type="application/ld+json" set:html={JSON.stringify(d)} />)}
+  <slot name="head" />
+</head>
+<body>
+  <a class="skip" href="#inhalt">Zum Inhalt springen</a>
+  <header class="site">
+    <div class="nav">
+      <a class="logo" href="/"><span>Strom</span>Schwaben</a>
+      <nav aria-label="Hauptnavigation">
+        <ul>
+          <li><a href="/index.html#über-uns">Über uns</a></li>
+          <li><a href="/index.html#vorgehen">Vorgehen</a></li>
+          <li><a href="/index.html#projekte">Projekte</a></li>
+          <li><a href="/wissen/" aria-current="page">Wissen</a></li>
+          <li><a href="/solar-rechner.html">Solar-Rechner</a></li>
+        </ul>
+      </nav>
+      <a href="/index.html#kontakt" class="nav-btn">Beratung anfragen</a>
+    </div>
+    <nav class="subnav" aria-label="Wissensbereich">
+      <div class="subnav-in">
+        <span class="label">Wissen</span>
+        {sub.map(([key, href, label]) => (
+          <a href={href} aria-current={aktiv === key ? 'page' : undefined}>{label}</a>
+        ))}
+      </div>
+    </nav>
+  </header>
+
+  <main id="inhalt">
+    <slot />
+  </main>
+
+  <footer class="site">
+    <div class="wrap">
+      <div class="foot">
+        <div>
+          <div class="foot-logo"><span>Strom</span>Schwaben</div>
+          <p>Energiewissen mit Quellen. Kei Gschwätz, nur was stimmt, auch wenn es unbequem ist.</p>
+        </div>
+        <div>
+          <h3>Wissen</h3>
+          <ul>
+            <li><a href="/wissen/ratgeber/">Ratgeber</a></li>
+            <li><a href="/foerderung/">Förder-Datenbank</a></li>
+            <li><a href="/lexikon/">Lexikon</a></li>
+            <li><a href="/mythen/">Mythen-Check</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Über uns</h3>
+          <ul>
+            <li><a href="/wissen/so-arbeiten-wir/">So arbeiten wir</a></li>
+            <li><a href="/index.html">StromSchwaben</a></li>
+            <li><a href="/index.html#kontakt">Kontakt</a></li>
+            <li><a href="/wissen/rss.xml">RSS-Feed</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Rechtliches</h3>
+          <ul>
+            <li><a href="/impressum.html">Impressum</a></li>
+            <li><a href="/datenschutz.html">Datenschutz</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="foot-bottom">
+        <span>© {new Date().getFullYear()} StromSchwaben</span>
+        <span>Alle Angaben ohne Gewähr. Keine Rechts- oder Steuerberatung.</span>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>

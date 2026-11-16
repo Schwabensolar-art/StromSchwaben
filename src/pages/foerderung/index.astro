@@ -1,0 +1,52 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import { datumKurz } from '../../lib/util';
+
+const alle = await getCollection('foerderung');
+const ebenen = ['Bund', 'Land', 'Kommune'] as const;
+const statusKlasse = { offen: 'status-offen', 'Mittel ausgeschöpft': 'status-zu', 'Änderung angekündigt': 'status-warn', beendet: 'status-zu' } as const;
+const gebiete = (ebene: string) => [...new Set(alle.filter((f) => f.data.ebene === ebene).map((f) => f.data.gebiet))];
+---
+<Base title="Förder-Datenbank: Zuschüsse, Kredite, Steuervorteile" description="Förderung für Photovoltaik, Wärmepumpe, Speicher und Sanierung von Bund, Land und Kommune. Mit Höhe, Status, Prüfdatum und Link zum Antrag." aktiv="foerderung">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Förder-Datenbank</p>
+      <h1 class="page">Welche Förderung gibt es für dich?</h1>
+      <p class="lead">Programme von Bund, Ländern und Kommunen, gegliedert nach Gebiet. Bei jedem Programm steht, wann wir es zuletzt geprüft haben. Förderbedingungen ändern sich oft; verbindlich ist immer die Seite des Förderträgers.</p>
+      <div class="cats" style="margin-top:24px">
+        {ebenen.map((e) => gebiete(e).map((g) => <a href={`#${e}-${g}`}>{e === 'Bund' ? 'Bundesweit' : g}</a>))}
+      </div>
+    </div>
+  </section>
+  {ebenen.map((ebene) => gebiete(ebene).map((gebiet, i) => (
+    <section class="sec" id={`${ebene}-${gebiet}`} style="scroll-margin-top:110px;padding-bottom:16px">
+      <div class="wrap">
+        <div class="sec-head"><h2>{ebene === 'Bund' ? 'Bundesweit' : `${gebiet}`}</h2><span class="eyebrow">{ebene}</span></div>
+        <table class="ftable">
+          <thead><tr><th>Programm</th><th>Art</th><th>Für</th><th>Höhe</th><th>Status</th><th>Geprüft</th></tr></thead>
+          <tbody>
+            {alle.filter((f) => f.data.ebene === ebene && f.data.gebiet === gebiet).map((f) => (
+              <tr>
+                <td><a href={`/foerderung/${f.id}/`}>{f.data.name}</a><br><span style="color:var(--muted);font-size:.8rem">{f.data.traeger}</span></td>
+                <td>{f.data.art}</td>
+                <td>{f.data.fuer.join(', ')}</td>
+                <td>{f.data.hoehe}</td>
+                <td><span class={`status ${statusKlasse[f.data.status]}`}>{f.data.status}</span></td>
+                <td>{datumKurz(f.data.geprueft)}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+    </section>
+  )))}
+  <section class="sec">
+    <div class="wrap">
+      <div class="cta">
+        <div><h2>Dein Programm fehlt?</h2><p>Wir bauen die Datenbank Stück für Stück aus. Schick uns Programme aus deiner Stadt oder deinem Landkreis.</p></div>
+        <a class="btn" href="mailto:info@stromschwaben.de?subject=F%C3%B6rderprogramm%20vorschlagen">Programm vorschlagen</a>
+      </div>
+    </div>
+  </section>
+</Base>

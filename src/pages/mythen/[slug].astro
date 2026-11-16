@@ -1,0 +1,37 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Quellen from '../../components/Quellen.astro';
+import { datum, isoDatum } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const alle = await getCollection('mythen');
+  return alle.map((e) => ({ params: { slug: e.id }, props: { e } }));
+}
+const { e } = Astro.props;
+const { Content } = await render(e);
+const d = e.data;
+const klasse = { falsch: 'urteil-falsch', 'teilweise richtig': 'urteil-teilweise', richtig: 'urteil-richtig' } as const;
+const rating = { falsch: 1, 'teilweise richtig': 3, richtig: 5 } as const;
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'ClaimReview',
+  url: new URL(Astro.url.pathname, Astro.site).href, claimReviewed: d.mythos, datePublished: isoDatum(d.veroeffentlicht),
+  author: { '@type': 'Organization', name: 'StromSchwaben' },
+  reviewRating: { '@type': 'Rating', ratingValue: rating[d.urteil], bestRating: 5, worstRating: 1, alternateName: d.urteil },
+}];
+---
+<Base title={`Mythos: ${d.mythos}`} description={`Faktencheck: ${d.kurz}`.slice(0, 160)} aktiv="mythen" ogType="article" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="/wissen/">Wissen</a> / <a href="/mythen/">Mythen-Check</a></nav>
+    <article data-pagefind-body style="max-width:var(--read);margin:0 auto;padding:16px 0 72px">
+      <span class="tag" data-pagefind-filter="Kategorie">Mythen-Check</span>
+      <h1 class="page" data-pagefind-meta="title">„{d.mythos}“</h1>
+      <p style="margin:8px 0 20px"><span class={`urteil ${klasse[d.urteil]}`} style="font-size:.85rem">Urteil: {d.urteil}</span></p>
+      <div class="tldr"><h2>Kurz gesagt</h2><p>{d.kurz}</p></div>
+      <div class="prose"><Content /></div>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Geprüft am {datum(d.geprueft)}</span></p>
+      <Quellen quellen={d.quellen} />
+      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/mythen/">← Alle Mythen</a></p>
+    </article>
+  </div>
+</Base>

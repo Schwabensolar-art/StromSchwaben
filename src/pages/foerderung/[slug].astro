@@ -1,0 +1,40 @@
+---
+import { getCollection, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Quellen from '../../components/Quellen.astro';
+import { datum, pruefAlter, isoDatum } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const alle = await getCollection('foerderung');
+  return alle.map((e) => ({ params: { slug: e.id }, props: { e } }));
+}
+const { e } = Astro.props;
+const { Content } = await render(e);
+const d = e.data;
+if (pruefAlter(d.geprueft)) console.warn(`[Prüfung fällig] Förderung ${e.id}: zuletzt geprüft ${isoDatum(d.geprueft)}`);
+const statusKlasse = { offen: 'status-offen', 'Mittel ausgeschöpft': 'status-zu', 'Änderung angekündigt': 'status-warn', beendet: 'status-zu' } as const;
+---
+<Base title={`${d.name}: Konditionen und Antrag`} description={`${d.name} (${d.traeger}): ${d.kurz}`.slice(0, 160)} aktiv="foerderung">
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="/wissen/">Wissen</a> / <a href="/foerderung/">Förderung</a> / <a href={`/foerderung/#${d.ebene}-${d.gebiet}`}>{d.ebene === 'Bund' ? 'Bundesweit' : d.gebiet}</a></nav>
+    <article data-pagefind-body style="max-width:var(--read);margin:0 auto;padding:16px 0 72px">
+      <span class="tag" data-pagefind-filter="Kategorie">Förderung</span>
+      <h1 class="page" data-pagefind-meta="title">{d.name}</h1>
+      <p class="lead">{d.kurz}</p>
+      <dl class="facts">
+        <div><dt>Träger</dt><dd>{d.traeger}</dd></div>
+        <div><dt>Gebiet</dt><dd>{d.gebiet}</dd></div>
+        <div><dt>Art</dt><dd>{d.art}</dd></div>
+        <div><dt>Höhe</dt><dd>{d.hoehe}</dd></div>
+        <div><dt>Für</dt><dd>{d.fuer.join(', ')}</dd></div>
+        <div><dt>Status</dt><dd><span class={`status ${statusKlasse[d.status]}`}>{d.status}</span></dd></div>
+      </dl>
+      {d.hinweis && <p class="prose"><span class="hinweis" style="display:block"><strong>Wichtig:</strong> {d.hinweis}</span></p>}
+      <div class="prose" style="margin-top:24px"><Content /></div>
+      <p style="margin-top:28px"><a class="btn" href={d.antrag} target="_blank" rel="noopener">Zur offiziellen Programmseite</a></p>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Konditionen geprüft am {datum(d.geprueft)}</span></p>
+      <Quellen quellen={d.quellen} />
+      <p class="disclaimer">Alle Angaben ohne Gewähr. Förderbedingungen ändern sich oft kurzfristig. Verbindlich sind die Richtlinien und Merkblätter des Förderträgers. Bei vielen Programmen musst du den Antrag stellen, bevor du einen Auftrag vergibst.</p>
+    </article>
+  </div>
+</Base>

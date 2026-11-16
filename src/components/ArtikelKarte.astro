@@ -1,0 +1,15 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import { datumKurz, ratgeberUrl } from '../lib/util';
+interface Props { e: CollectionEntry<'ratgeber'> }
+const { e } = Astro.props;
+---
+<a class="card" href={ratgeberUrl(e)}>
+  <span class="tag">{e.data.kategorie}</span>
+  <h3>{e.data.titel}</h3>
+  <p>{e.data.beschreibung}</p>
+  <div class="meta">
+    <span>{datumKurz(e.data.aktualisiert ?? e.data.veroeffentlicht)}</span>
+    <span>{e.data.quellen.length} Quellen</span>
+  </div>
+</a>

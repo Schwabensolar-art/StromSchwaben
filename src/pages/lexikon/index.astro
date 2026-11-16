@@ -1,0 +1,47 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+
+const alle = (await getCollection('lexikon')).sort((a, b) => a.data.begriff.localeCompare(b.data.begriff, 'de'));
+const buchstabe = (s: string) => {
+  const c = s[0].toUpperCase().replace('Ä', 'A').replace('Ö', 'O').replace('Ü', 'U');
+  return /[A-Z]/.test(c) ? c : '#';
+};
+const gruppen = new Map<string, typeof alle>();
+for (const e of alle) {
+  const b = buchstabe(e.data.begriff);
+  gruppen.set(b, [...(gruppen.get(b) ?? []), e]);
+}
+const abc = [...'ABCDEFGHIJKLMNOPQRSTUVWXYZ'];
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'DefinedTermSet', name: 'StromSchwaben Energie-Lexikon',
+  url: 'https://stromschwaben.de/lexikon/',
+  hasDefinedTerm: alle.map((e) => ({ '@type': 'DefinedTerm', name: e.data.begriff, description: e.data.kurz, url: `https://stromschwaben.de/lexikon/${e.id}/` })),
+}];
+---
+<Base title="Energie-Lexikon von A bis Z" description="Energie-Begriffe einfach erklärt: von Autarkiegrad über Smart Meter bis Wechselrichter. Kurz, verständlich und mit Verweis auf Gesetze und Quellen." aktiv="lexikon" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Lexikon</p>
+      <h1 class="page">Energie-Begriffe von A bis Z</h1>
+      <p class="lead">{alle.length} Begriffe, die dir in Angeboten, Stromrechnungen und Gesetzestexten begegnen. Kurz erklärt, ohne Fachchinesisch.</p>
+    </div>
+  </section>
+  <section class="sec">
+    <div class="wrap">
+      <nav class="az" aria-label="Alphabet">
+        {abc.map((b) => gruppen.has(b) ? <a href={`#${b}`}>{b}</a> : <span aria-hidden="true">{b}</span>)}
+      </nav>
+      {[...gruppen.entries()].map(([b, liste]) => (
+        <div class="lex-group">
+          <h2 id={b}>{b}</h2>
+          <ul class="lex-list">
+            {liste.map((e) => (
+              <li><a href={`/lexikon/${e.id}/`}><strong>{e.data.begriff}</strong><span>{e.data.kurz}</span></a></li>
+            ))}
+          </ul>
+        </div>
+      ))}
+    </div>
+  </section>
+</Base>

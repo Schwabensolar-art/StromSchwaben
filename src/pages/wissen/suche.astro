@@ -1,0 +1,14 @@
+---
+import Base from '../../layouts/Base.astro';
+import Suche from '../../components/Suche.astro';
+---
+<Base title="Suche" description="Durchsuche alle Ratgeber, Lexikon-Begriffe, Mythen-Checks und Förderprogramme von StromSchwaben." aktiv="suche">
+  <section class="hero" style="min-height:60vh">
+    <div class="wrap">
+      <p class="eyebrow">Suche</p>
+      <h1 class="page">Was willst du wissen?</h1>
+      <p class="lead">Durchsucht alle Ratgeber, das Lexikon, die Mythen-Checks und die Förder-Datenbank. Die Suche läuft komplett in deinem Browser, ohne Tracking.</p>
+      <Suche autofocus />
+    </div>
+  </section>
+</Base>

@@ -1,0 +1,92 @@
+---
+import { getCollection } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import ArtikelKarte from '../../components/ArtikelKarte.astro';
+import Suche from '../../components/Suche.astro';
+import { ratgeberListe, slugify } from '../../lib/util';
+import { ALTARTIKEL } from '../../lib/altartikel';
+import { KATEGORIEN } from '../../content.config';
+
+const ratgeber = await ratgeberListe();
+const lexikon = await getCollection('lexikon');
+const mythen = (await getCollection('mythen')).sort((a, b) => +b.data.veroeffentlicht - +a.data.veroeffentlicht);
+const foerderung = await getCollection('foerderung');
+const quellenZahl = new Set(ratgeber.flatMap((r) => r.data.quellen.map((q) => q.url))).size;
+const urteilKlasse = { falsch: 'urteil-falsch', 'teilweise richtig': 'urteil-teilweise', richtig: 'urteil-richtig' } as const;
+
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'WebSite', name: 'StromSchwaben Wissen', url: 'https://stromschwaben.de/wissen/',
+  potentialAction: { '@type': 'SearchAction', target: 'https://stromschwaben.de/wissen/suche/?q={query}', 'query-input': 'required name=query' },
+}];
+---
+<Base title="Energiewissen mit Quellen" description="Unabhängig erklärt und mit Quellen belegt: Förderung, Strompreise, Heizung, Photovoltaik und Energierecht. Die Wissensdatenbank von StromSchwaben." aktiv="start" jsonLd={jsonLd}>
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">StromSchwaben Wissen</p>
+      <h1 class="page">Energiewissen mit Quellen.<br>Kei Gschwätz.</h1>
+      <p class="lead">Förderung, Strompreise, Heizung, Photovoltaik und Energierecht: verständlich erklärt, jede Zahl mit Quelle und Prüfdatum. Damit du Entscheidungen auf Fakten baust und nicht auf Werbeversprechen.</p>
+      <Suche />
+      <div class="stats">
+        <div><strong>{ratgeber.length + ALTARTIKEL.length}</strong>Artikel</div>
+        <div><strong>{lexikon.length}</strong>Lexikon-Begriffe</div>
+        <div><strong>{foerderung.length}</strong>Förderprogramme</div>
+        <div><strong>{quellenZahl}</strong>verlinkte Quellen</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>Was 2027 auf dich zukommt</h2><a class="more" href="/wissen/ratgeber/">Alle Ratgeber</a></div>
+      <div class="grid">{ratgeber.slice(0, 6).map((e) => <ArtikelKarte e={e} />)}</div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="sec-head"><h2>Themen</h2></div>
+      <div class="cats">
+        {KATEGORIEN.map((k) => <a href={`/wissen/ratgeber/#${slugify(k)}`}>{k}</a>)}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec">
+    <div class="wrap">
+      <div class="sec-head"><h2>Mythen-Check</h2><a class="more" href="/mythen/">Alle Mythen</a></div>
+      <div class="grid">
+        {mythen.slice(0, 3).map((m) => (
+          <a class="card" href={`/mythen/${m.id}/`}>
+            <span class={`urteil ${urteilKlasse[m.data.urteil]}`}>{m.data.urteil}</span>
+            <h3>„{m.data.mythos}“</h3>
+            <p>{m.data.kurz}</p>
+          </a>
+        ))}
+      </div>
+    </div>
+  </section>
+
+  <section class="sec sec-alt">
+    <div class="wrap">
+      <div class="grid">
+        <a class="card" href="/foerderung/">
+          <span class="tag">Förder-Datenbank</span>
+          <h3>Welche Förderung gibt es für mich?</h3>
+          <p>Zuschüsse, Kredite und Steuervorteile von Bund, Land und Kommune. Mit Höhe, Status und Prüfdatum, gegliedert nach Gebiet.</p>
+          <div class="meta"><span>{foerderung.length} Programme</span></div>
+        </a>
+        <a class="card" href="/lexikon/">
+          <span class="tag">Lexikon</span>
+          <h3>Energie-Begriffe von A bis Z</h3>
+          <p>Von Autarkiegrad bis Wechselrichter: kurz erklärt, ohne Fachchinesisch, mit Verweisen auf die Gesetze.</p>
+          <div class="meta"><span>{lexikon.length} Begriffe</span></div>
+        </a>
+        <a class="card" href="/wissen/so-arbeiten-wir/">
+          <span class="tag">Transparenz</span>
+          <h3>So arbeiten wir</h3>
+          <p>Wer schreibt hier, woher kommen die Zahlen, und wie trennen wir Wissen von Beratung? Unsere Regeln offen erklärt.</p>
+        </a>
+      </div>
+    </div>
+  </section>
+</Base>

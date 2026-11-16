@@ -1,0 +1,28 @@
+---
+/** Volltextsuche über Pagefind. Der Index entsteht beim Build und läuft komplett im Browser. */
+interface Props { autofocus?: boolean }
+const { autofocus = false } = Astro.props;
+---
+<div class="search" id="suche" data-autofocus={autofocus ? '1' : undefined}></div>
+<link href="/pagefind/pagefind-ui.css" rel="stylesheet">
+<script is:inline src="/pagefind/pagefind-ui.js"></script>
+<script is:inline>
+  window.addEventListener('DOMContentLoaded', () => {
+    if (!window.PagefindUI) {
+      document.getElementById('suche').innerHTML = '<p style="font-size:.85rem;color:#767676">Die Suche steht nach dem Build zur Verfügung.</p>';
+      return;
+    }
+    const el = document.getElementById('suche');
+    new PagefindUI({
+      element: '#suche',
+      showSubResults: true,
+      showImages: false,
+      resetStyles: false,
+      translations: { placeholder: 'Suche: Förderung, Smart Meter, CO2-Preis …', zero_results: 'Keine Treffer für [SEARCH_TERM]' },
+    });
+    const q = new URLSearchParams(location.search).get('q');
+    const input = el.querySelector('input');
+    if (input && q) { input.value = q; input.dispatchEvent(new Event('input')); }
+    if (input && el.dataset.autofocus) input.focus();
+  });
+</script>

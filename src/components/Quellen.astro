@@ -1,0 +1,19 @@
+---
+import { datumKurz } from '../lib/util';
+interface Props {
+  quellen: { titel: string; url: string; herausgeber: string; datum?: Date }[];
+  titel?: string;
+}
+const { quellen, titel = 'Quellen' } = Astro.props;
+---
+<section class="quellen" id="quellen" aria-labelledby="quellen-h">
+  <h2 class="box-title" id="quellen-h">{titel}</h2>
+  <ol>
+    {quellen.map((q, i) => (
+      <li id={`q${i + 1}`}>
+        {q.herausgeber}: <a href={q.url} target="_blank" rel="noopener">{q.titel}</a>
+        {q.datum && <>, {datumKurz(q.datum)}</>}
+      </li>
+    ))}
+  </ol>
+</section>

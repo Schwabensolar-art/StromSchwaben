@@ -1,0 +1,43 @@
+---
+import Base from '../../layouts/Base.astro';
+import ArtikelKarte from '../../components/ArtikelKarte.astro';
+import { ratgeberListe, slugify, datumKurz } from '../../lib/util';
+import { ALTARTIKEL } from '../../lib/altartikel';
+import { KATEGORIEN } from '../../content.config';
+
+const ratgeber = await ratgeberListe();
+const gruppen = KATEGORIEN.map((k) => ({
+  k,
+  neu: ratgeber.filter((r) => r.data.kategorie === k),
+  alt: ALTARTIKEL.filter((a) => a.kategorie === k),
+})).filter((g) => g.neu.length || g.alt.length);
+---
+<Base title="Alle Ratgeber" description="Alle Ratgeber-Artikel von StromSchwaben nach Themen: Strompreis, Heizung, Förderung, Photovoltaik, Speicher, Recht und E-Mobilität." aktiv="ratgeber">
+  <section class="hero">
+    <div class="wrap">
+      <p class="eyebrow">Ratgeber</p>
+      <h1 class="page">Alle Artikel nach Themen</h1>
+      <p class="lead">Jeder Artikel nennt seine Quellen und das Datum, an dem wir die Fakten zuletzt geprüft haben.</p>
+      <div class="cats" style="margin-top:24px">
+        {gruppen.map((g) => <a href={`#${slugify(g.k)}`}>{g.k} ({g.neu.length + g.alt.length})</a>)}
+      </div>
+    </div>
+  </section>
+  {gruppen.map((g, i) => (
+    <section class={`sec ${i % 2 ? 'sec-alt' : ''}`} id={slugify(g.k)} style="scroll-margin-top:110px">
+      <div class="wrap">
+        <div class="sec-head"><h2>{g.k}</h2></div>
+        <div class="grid">
+          {g.neu.map((e) => <ArtikelKarte e={e} />)}
+          {g.alt.map((a) => (
+            <a class="card" href={a.url}>
+              <span class="tag">{a.kategorie}</span>
+              <h3>{a.titel}</h3>
+              <div class="meta"><span>{datumKurz(new Date(a.datum))}</span></div>
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  ))}
+</Base>

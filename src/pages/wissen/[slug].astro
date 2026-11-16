@@ -1,0 +1,121 @@
+---
+import { getEntries, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Quellen from '../../components/Quellen.astro';
+import ArtikelKarte from '../../components/ArtikelKarte.astro';
+import { AUTOREN } from '../../content.config';
+import { datum, isoDatum, lesezeit, ratgeberListe, slugify, pruefAlter } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const liste = await ratgeberListe();
+  return liste.map((e) => ({ params: { slug: e.id }, props: { e, liste } }));
+}
+
+const { e, liste } = Astro.props;
+const { Content, headings } = await render(e);
+const d = e.data;
+const autor = AUTOREN[d.autor];
+const lex = await getEntries(d.lexikon);
+const toc = headings.filter((h) => h.depth === 2);
+const aehnlich = liste.filter((x) => x.id !== e.id && x.data.kategorie === d.kategorie).slice(0, 2)
+  .concat(liste.filter((x) => x.id !== e.id && x.data.kategorie !== d.kategorie)).slice(0, 3);
+if (pruefAlter(d.geprueft, 180)) console.warn(`[Prüfung fällig] ${e.id}: zuletzt geprüft ${isoDatum(d.geprueft)}`);
+
+const url = new URL(Astro.url.pathname, Astro.site).href;
+const jsonLd: Record<string, unknown>[] = [
+  {
+    '@context': 'https://schema.org', '@type': 'Article',
+    headline: d.titel, description: d.beschreibung,
+    datePublished: isoDatum(d.veroeffentlicht), dateModified: isoDatum(d.aktualisiert ?? d.veroeffentlicht),
+    author: { '@type': d.autor === 'redaktion' ? 'Organization' : 'Person', name: autor.name },
+    publisher: { '@type': 'Organization', name: 'StromSchwaben', logo: { '@type': 'ImageObject', url: 'https://stromschwaben.de/favicon-96.png' } },
+    image: 'https://stromschwaben.de/og-image.png', mainEntityOfPage: url, inLanguage: 'de-DE',
+    citation: d.quellen.map((q) => q.url),
+  },
+  {
+    '@context': 'https://schema.org', '@type': 'BreadcrumbList',
+    itemListElement: [
+      { '@type': 'ListItem', position: 1, name: 'Wissen', item: 'https://stromschwaben.de/wissen/' },
+      { '@type': 'ListItem', position: 2, name: d.kategorie, item: `https://stromschwaben.de/wissen/ratgeber/?kategorie=${slugify(d.kategorie)}` },
+      { '@type': 'ListItem', position: 3, name: d.titel, item: url },
+    ],
+  },
+];
+if (d.faq.length) jsonLd.push({
+  '@context': 'https://schema.org', '@type': 'FAQPage',
+  mainEntity: d.faq.map((f) => ({ '@type': 'Question', name: f.frage, acceptedAnswer: { '@type': 'Answer', text: f.antwort } })),
+});
+---
+<Base title={d.titel} description={d.beschreibung} aktiv="ratgeber" ogType="article" jsonLd={jsonLd} noindex={d.entwurf}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="/wissen/">Wissen</a> / <a href={`/wissen/ratgeber/#${slugify(d.kategorie)}`}>{d.kategorie}</a></nav>
+    <article data-pagefind-body>
+      <header class="art-head">
+        <span class="tag" data-pagefind-filter="Kategorie">{d.kategorie}</span>
+        <h1 class="page" data-pagefind-meta="title">{d.titel}</h1>
+        <p class="lead">{d.beschreibung}</p>
+        <div class="art-meta" data-pagefind-ignore>
+          <span>Von <strong>{autor.name}</strong></span>
+          <span>Veröffentlicht {datum(d.veroeffentlicht)}</span>
+          {d.aktualisiert && <span>Aktualisiert {datum(d.aktualisiert)}</span>}
+          <span class="checked">✓ Fakten geprüft am {datum(d.geprueft)}</span>
+          <span>{lesezeit(e.body)} Min. Lesezeit</span>
+          <a href="#quellen" style="text-decoration:underline">{d.quellen.length} Quellen</a>
+        </div>
+      </header>
+      <div class="art-layout">
+        <div>
+          <section class="tldr" aria-label="Das Wichtigste in Kürze">
+            <h2>Das Wichtigste in Kürze</h2>
+            <ul>{d.kurzfassung.map((k) => <li>{k}</li>)}</ul>
+          </section>
+          <div class="prose"><Content /></div>
+
+          {d.faq.length > 0 && (
+            <section aria-labelledby="faq-h">
+              <h2 class="box-title" id="faq-h">Häufige Fragen</h2>
+              {d.faq.map((f) => (<details class="faq"><summary>{f.frage}</summary><p>{f.antwort}</p></details>))}
+            </section>
+          )}
+
+          <Quellen quellen={d.quellen} />
+
+          {lex.length > 0 && (
+            <section data-pagefind-ignore>
+              <h2 class="box-title">Begriffe aus diesem Artikel</h2>
+              <div class="lex-links">{lex.map((l) => <a href={`/lexikon/${l.id}/`}>{l.data.begriff}</a>)}</div>
+            </section>
+          )}
+
+          <p class="disclaimer" data-pagefind-ignore>
+            Dieser Artikel ersetzt keine Rechts-, Steuer- oder Förderberatung. Gesetze und Förderbedingungen ändern sich;
+            maßgeblich sind die verlinkten Originalquellen. Fehler gefunden? Schreib uns an
+            <a href="mailto:info@stromschwaben.de" style="text-decoration:underline">info@stromschwaben.de</a>.
+            Wie wir arbeiten, steht <a href="/wissen/so-arbeiten-wir/" style="text-decoration:underline">hier</a>.
+          </p>
+        </div>
+        <aside class="art-aside" data-pagefind-ignore>
+          {toc.length > 2 && (
+            <div class="toc">
+              <h2>Inhalt</h2>
+              <ol>{toc.map((h) => <li><a href={`#${h.slug}`}>{h.text}</a></li>)}</ol>
+            </div>
+          )}
+          <div class="aside-box">
+            <strong>Was heißt das für dein Haus?</strong>
+            <p>Wir rechnen es dir kostenlos und ehrlich durch, auch wenn das Ergebnis Nein ist.</p>
+            <a class="btn" href="/index.html#kontakt">Beratung anfragen</a>
+          </div>
+        </aside>
+      </div>
+    </article>
+  </div>
+  {aehnlich.length > 0 && (
+    <section class="sec sec-alt" data-pagefind-ignore>
+      <div class="wrap">
+        <div class="sec-head"><h2>Weiterlesen</h2><a class="more" href="/wissen/ratgeber/">Alle Ratgeber</a></div>
+        <div class="grid">{aehnlich.map((x) => <ArtikelKarte e={x} />)}</div>
+      </div>
+    </section>
+  )}
+</Base>

@@ -1,0 +1,47 @@
+---
+import { getCollection, getEntries, render } from 'astro:content';
+import Base from '../../layouts/Base.astro';
+import Quellen from '../../components/Quellen.astro';
+import { datum, ratgeberListe, ratgeberUrl } from '../../lib/util';
+
+export async function getStaticPaths() {
+  const alle = await getCollection('lexikon');
+  return alle.map((e) => ({ params: { slug: e.id }, props: { e } }));
+}
+const { e } = Astro.props;
+const { Content } = await render(e);
+const d = e.data;
+const verwandt = await getEntries(d.verwandt);
+const artikel = (await ratgeberListe()).filter((r) => r.data.lexikon.some((l) => l.id === e.id));
+const jsonLd = [{
+  '@context': 'https://schema.org', '@type': 'DefinedTerm', name: d.begriff, description: d.kurz,
+  inDefinedTermSet: 'https://stromschwaben.de/lexikon/', url: new URL(Astro.url.pathname, Astro.site).href,
+}];
+---
+<Base title={`${d.begriff}: Was ist das?`} description={`${d.begriff} einfach erklärt: ${d.kurz}`.slice(0, 160)} aktiv="lexikon" jsonLd={jsonLd}>
+  <div class="wrap">
+    <nav class="crumbs" aria-label="Brotkrumen"><a href="/wissen/">Wissen</a> / <a href="/lexikon/">Lexikon</a></nav>
+    <article data-pagefind-body style="max-width:var(--read);margin:0 auto;padding:16px 0 72px">
+      <span class="tag" data-pagefind-filter="Kategorie">Lexikon</span>
+      <h1 class="page" data-pagefind-meta="title">{d.begriff}</h1>
+      {d.synonyme.length > 0 && <p class="art-meta">Auch: {d.synonyme.join(', ')}</p>}
+      <div class="tldr" style="margin-top:20px"><h2>Kurz erklärt</h2><p>{d.kurz}</p></div>
+      <div class="prose"><Content /></div>
+      <p class="art-meta" style="margin-top:20px"><span class="checked">✓ Geprüft am {datum(d.geprueft)}</span></p>
+      {d.quellen.length > 0 && <Quellen quellen={d.quellen} />}
+      {artikel.length > 0 && (
+        <section data-pagefind-ignore>
+          <h2 class="box-title">Mehr dazu in unseren Ratgebern</h2>
+          <ul class="prose">{artikel.map((a) => <li><a href={ratgeberUrl(a)}>{a.data.titel}</a></li>)}</ul>
+        </section>
+      )}
+      {verwandt.length > 0 && (
+        <section data-pagefind-ignore>
+          <h2 class="box-title">Verwandte Begriffe</h2>
+          <div class="lex-links">{verwandt.map((v) => <a href={`/lexikon/${v.id}/`}>{v.data.begriff}</a>)}</div>
+        </section>
+      )}
+      <p style="margin-top:32px" data-pagefind-ignore><a class="btn btn-ghost" href="/lexikon/">← Zum Lexikon</a></p>
+    </article>
+  </div>
+</Base>
