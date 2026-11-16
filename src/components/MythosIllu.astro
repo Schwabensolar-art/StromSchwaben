@@ -1,0 +1,105 @@
+---
+/**
+ * Einfache Linien-Illustrationen für den Mythen-Check.
+ * Einheitlicher Stil: schwarze Kontur, Sonnengelb als Akzent, heller Hintergrundkreis.
+ */
+export const ILLUS = ['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher'] as const;
+interface Props { motiv: (typeof ILLUS)[number]; titel?: string }
+const { motiv, titel = '' } = Astro.props;
+---
+<svg class="illu" viewBox="0 0 160 120" role="img" aria-label={titel} xmlns="http://www.w3.org/2000/svg"
+  fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+  <circle cx="80" cy="62" r="52" fill="var(--sun-light)" stroke="none" />
+
+  {motiv === 'heizung' && (
+    <g>
+      <!-- Gastherme mit Flamme -->
+      <rect x="50" y="30" width="48" height="64" rx="6" fill="#fff" />
+      <rect x="58" y="40" width="32" height="12" rx="3" />
+      <path d="M74 84c-8-4-8-12-2-18 0 6 4 6 4 2 0-4 4-8 2-12 8 6 10 14 4 24-2 3-5 4-8 4z" fill="var(--sun)" />
+      <path d="M62 94v8M86 94v8" />
+      <!-- Verbotsschild, durchgestrichen als widerlegt -->
+      <circle cx="112" cy="40" r="16" fill="#fff" stroke="var(--bad)" />
+      <path d="M101 51l22-22" stroke="var(--bad)" />
+      <path d="M96 22l32 36" stroke="var(--ink)" stroke-width="3" />
+    </g>
+  )}
+
+  {motiv === 'netz' && (
+    <g>
+      <!-- Strommast -->
+      <path d="M38 102l12-62 12 62M42 78h16M45 62h10M50 40V28M38 34h24" />
+      <path d="M62 34c14 6 24 6 36 18" stroke-dasharray="4 4" />
+      <!-- Wärmepumpe -->
+      <rect x="86" y="58" width="44" height="40" rx="5" fill="#fff" />
+      <circle cx="102" cy="78" r="11" />
+      <path d="M102 70v16M94 78h16" stroke-width="2" />
+      <path d="M118 68h6M118 76h6M118 84h6" stroke-width="2" />
+      <!-- Drossel statt Aus: Regler halb -->
+      <rect x="92" y="22" width="40" height="14" rx="7" fill="#fff" />
+      <rect x="92" y="22" width="24" height="14" rx="7" fill="var(--sun)" />
+    </g>
+  )}
+
+  {motiv === 'co2' && (
+    <g>
+      <!-- Wolke mit CO2 -->
+      <path d="M44 66a14 14 0 0 1 4-27 18 18 0 0 1 34-4 13 13 0 0 1 16 13 11 11 0 0 1-2 18z" fill="#fff" />
+      <text x="70" y="58" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="15" font-weight="700" fill="var(--ink)" stroke="none">CO₂</text>
+      <!-- flache Preiskurve statt Explosion -->
+      <path d="M30 100h100" />
+      <path d="M34 92l20-4 20-1 20-1" stroke="var(--sun-dark)" stroke-width="3" />
+      <path d="M94 86l14-14 14-22" stroke="var(--ink)" stroke-dasharray="3 5" />
+      <circle cx="94" cy="86" r="4" fill="var(--sun)" />
+      <text x="118" y="44" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="11" font-weight="700" fill="var(--ink)" stroke="none">2028?</text>
+    </g>
+  )}
+
+  {motiv === 'winter' && (
+    <g>
+      <!-- tiefe Wintersonne -->
+      <circle cx="118" cy="36" r="10" fill="var(--sun)" />
+      <path d="M118 18v-4M136 36h4M131 23l3-3M131 49l3 3M105 23l-3-3" />
+      <!-- Haus mit Solardach und Schnee -->
+      <path d="M36 102V66l34-28 34 28v36z" fill="#fff" />
+      <path d="M45 60l25-20 25 20" fill="var(--ink)" stroke="none" opacity=".85" />
+      <path d="M52 54l18-14M60 58l18-14M70 40l25 20" stroke="#fff" stroke-width="1.5" />
+      <path d="M30 68l40-33 40 33" />
+      <path d="M33 66c6-3 10 1 15-2s9-1 14-4" stroke="#fff" stroke-width="3" />
+      <rect x="62" y="80" width="16" height="22" />
+      <!-- Schneeflocken -->
+      <path d="M128 70v10M123 75h10M125 72l6 6M131 72l-6 6" stroke-width="1.8" />
+      <path d="M28 40v8M24 44h8" stroke-width="1.8" />
+    </g>
+  )}
+
+  {motiv === 'smartmeter' && (
+    <g>
+      <!-- Zähler -->
+      <rect x="44" y="26" width="52" height="72" rx="6" fill="#fff" />
+      <rect x="52" y="36" width="36" height="16" rx="2" fill="var(--sun-light)" />
+      <text x="70" y="48" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="10" font-weight="700" fill="var(--ink)" stroke="none">0815,4</text>
+      <path d="M52 62h36M52 70h24" stroke-width="2" />
+      <path d="M60 84a10 10 0 0 1 20 0" />
+      <!-- Münzen, klein -->
+      <ellipse cx="116" cy="92" rx="14" ry="5" fill="var(--sun)" />
+      <path d="M102 92v-6M130 92v-6" />
+      <ellipse cx="116" cy="86" rx="14" ry="5" fill="var(--sun)" />
+      <text x="116" y="70" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="700" fill="var(--ink)" stroke="none">€?</text>
+    </g>
+  )}
+
+  {motiv === 'speicher' && (
+    <g>
+      <rect x="54" y="32" width="44" height="66" rx="6" fill="#fff" />
+      <rect x="68" y="26" width="16" height="6" rx="2" />
+      <rect x="62" y="70" width="28" height="20" rx="2" fill="var(--sun)" stroke="none" />
+      <path d="M78 42l-8 14h10l-8 14" stroke-width="2.5" />
+      <circle cx="118" cy="40" r="10" fill="var(--sun)" />
+    </g>
+  )}
+</svg>
+
+<style>
+  .illu{width:100%;height:auto;display:block;--ink:#111;--bad:#a8322d}
+</style>

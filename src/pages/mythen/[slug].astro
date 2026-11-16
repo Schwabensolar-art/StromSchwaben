@@ -2,6 +2,7 @@
 import { getCollection, render } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import Quellen from '../../components/Quellen.astro';
+import MythosIllu from '../../components/MythosIllu.astro';
 import { datum, isoDatum } from '../../lib/util';
 
 export async function getStaticPaths() {
@@ -24,6 +25,9 @@ const jsonLd = [{
   <div class="wrap">
     <nav class="crumbs" aria-label="Brotkrumen"><a href="/wissen/">Wissen</a> / <a href="/mythen/">Mythen-Check</a></nav>
     <article data-pagefind-body style="max-width:var(--read);margin:0 auto;padding:16px 0 72px">
+      <div style="max-width:360px;background:var(--bg);border-radius:12px;padding:12px 32px;margin-bottom:20px" data-pagefind-ignore>
+        <MythosIllu motiv={d.illustration} titel={`Illustration: ${d.mythos}`} />
+      </div>
       <span class="tag" data-pagefind-filter="Kategorie">Mythen-Check</span>
       <h1 class="page" data-pagefind-meta="title">„{d.mythos}“</h1>
       <p style="margin:8px 0 20px"><span class={`urteil ${klasse[d.urteil]}`} style="font-size:.85rem">Urteil: {d.urteil}</span></p>

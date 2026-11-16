@@ -1,6 +1,7 @@
 ---
 mythos: "Das Heizungsgesetz verbietet neue Gas- und Ölheizungen"
 urteil: "falsch"
+illustration: heizung
 kurz: "Seit dem Gebäudemodernisierungsgesetz vom Juli 2026 ist die Heizungswahl wieder frei. Neue Gas- und Ölheizungen sind erlaubt, müssen aber ab 2029 einen steigenden Bio-Anteil nutzen."
 veroeffentlicht: 2026-11-16
 geprueft: 2026-11-16

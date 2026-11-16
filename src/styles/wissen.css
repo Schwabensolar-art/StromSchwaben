@@ -58,6 +58,9 @@ h1.page{font-size:clamp(2rem,4.2vw,3.1rem);font-weight:700;letter-spacing:-.035e
 .cats a{font-size:.8rem;font-weight:600;border:1px solid var(--border);border-radius:999px;padding:6px 14px;background:var(--white)}
 .cats a:hover,.cats a[aria-current]{border-color:var(--black)}
 
+/* Mythen-Raster: Karten klappen unabhängig voneinander auf */
+.mythen-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(280px,1fr));gap:18px;align-items:start}
+
 /* Urteil-Badges */
 .urteil{display:inline-block;font-size:.7rem;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:4px}
 .urteil-falsch{color:var(--bad);background:var(--bad-bg)}

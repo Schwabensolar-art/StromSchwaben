@@ -1,6 +1,7 @@
 ---
 mythos: "Ab 2027 explodiert der CO2-Preis fürs Heizen"
 urteil: "falsch"
+illustration: co2
 kurz: "Für 2027 hat der Bundestag den CO2-Preis im Korridor von 55 bis 65 Euro pro Tonne gehalten, wie 2026. Der Wechsel in den EU-Emissionshandel kommt erst 2028. Wie teuer es dann wird, ist offen."
 veroeffentlicht: 2026-11-16
 geprueft: 2026-11-16

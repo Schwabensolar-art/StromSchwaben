@@ -1,28 +1,26 @@
 ---
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
+import MythosKarte from '../../components/MythosKarte.astro';
 
 const mythen = (await getCollection('mythen')).sort((a, b) => +b.data.veroeffentlicht - +a.data.veroeffentlicht);
-const klasse = { falsch: 'urteil-falsch', 'teilweise richtig': 'urteil-teilweise', richtig: 'urteil-richtig' } as const;
 ---
 <Base title="Mythen-Check: Was stimmt wirklich?" description="Verbreitete Behauptungen zu Solar, Heizung und Strom im Faktencheck. Mit klarem Urteil und Quellen: falsch, teilweise richtig oder richtig." aktiv="mythen">
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">Mythen-Check</p>
       <h1 class="page">Was stimmt wirklich?</h1>
-      <p class="lead">Behauptungen, die wir in Beratungsgesprächen, Kommentarspalten und Werbung immer wieder hören. Jede mit klarem Urteil und Quellen.</p>
+      <p class="lead">Behauptungen, die wir in Beratungsgesprächen, Kommentarspalten und Werbung immer wieder hören. Tipp auf einen Mythos, um das Urteil zu sehen. Jeder Faktencheck ist mit Quellen belegt.</p>
     </div>
   </section>
   <section class="sec">
     <div class="wrap">
-      <div class="grid">
-        {mythen.map((m) => (
-          <a class="card" href={`/mythen/${m.id}/`}>
-            <span class={`urteil ${klasse[m.data.urteil]}`}>{m.data.urteil}</span>
-            <h3>„{m.data.mythos}“</h3>
-            <p>{m.data.kurz}</p>
-          </a>
-        ))}
+      <div class="mythen-grid">
+        {mythen.map((m) => <MythosKarte m={m} />)}
+      </div>
+      <div class="cta" style="margin-top:40px">
+        <div><h2>Welchen Mythos sollen wir prüfen?</h2><p>Schick uns Behauptungen, die dir begegnen. Wir prüfen sie und veröffentlichen das Ergebnis mit Quellen.</p></div>
+        <a class="btn" href="mailto:info@stromschwaben.de?subject=Mythos%20pr%C3%BCfen">Mythos einreichen</a>
       </div>
     </div>
   </section>

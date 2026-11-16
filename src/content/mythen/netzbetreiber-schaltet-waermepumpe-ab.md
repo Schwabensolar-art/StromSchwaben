@@ -1,6 +1,7 @@
 ---
 mythos: "Der Netzbetreiber kann meine Wärmepumpe einfach abschalten"
 urteil: "falsch"
+illustration: netz
 kurz: "Der Netzbetreiber darf eine steuerbare Wärmepumpe oder Wallbox nur bei konkreter Netzüberlastung drosseln, und zwar höchstens auf 4,2 kW. Abschalten ist nicht erlaubt."
 veroeffentlicht: 2026-11-16
 geprueft: 2026-11-16
