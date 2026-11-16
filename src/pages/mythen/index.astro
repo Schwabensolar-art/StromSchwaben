@@ -2,8 +2,9 @@
 import { getCollection } from 'astro:content';
 import Base from '../../layouts/Base.astro';
 import MythosKarte from '../../components/MythosKarte.astro';
+import { mischeMythen } from '../../lib/util';
 
-const mythen = (await getCollection('mythen')).sort((a, b) => +b.data.veroeffentlicht - +a.data.veroeffentlicht);
+const mythen = mischeMythen(await getCollection('mythen'));
 ---
 <Base title="Mythen-Check: Was stimmt wirklich?" description="Verbreitete Behauptungen zu Solar, Heizung und Strom im Faktencheck. Mit klarem Urteil und Quellen: falsch, teilweise richtig oder richtig." aktiv="mythen">
   <section class="hero">

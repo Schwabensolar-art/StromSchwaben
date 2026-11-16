@@ -3,7 +3,7 @@
  * Einfache Linien-Illustrationen für den Mythen-Check.
  * Einheitlicher Stil: schwarze Kontur, Sonnengelb als Akzent, heller Hintergrundkreis.
  */
-export const ILLUS = ['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher', 'altbau', 'energiebilanz', 'recycling', 'alterung', 'balkon', 'eauto'] as const;
+export const ILLUS = ['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher', 'altbau', 'energiebilanz', 'recycling', 'alterung', 'balkon', 'eauto', 'laerm', 'brand', 'dynamisch', 'rabatt', 'ostwest'] as const;
 interface Props { motiv: (typeof ILLUS)[number]; titel?: string }
 const { motiv, titel = '' } = Astro.props;
 ---
@@ -186,6 +186,73 @@ const { motiv, titel = '' } = Astro.props;
       <path d="M129 74c0 10-8 10-19 8" />
       <path d="M38 30a8 8 0 0 1 14-5 7 7 0 0 1 10 6h-24z" fill="var(--sun-light)" stroke-width="2" />
       <circle cx="70" cy="34" r="8" fill="var(--sun)" />
+    </g>
+  )}
+  {motiv === 'laerm' && (
+    <g>
+      <!-- Zwei Häuser, Wärmepumpe dazwischen, Schallbögen -->
+      <path d="M22 102V70l20-16 20 16v32z" fill="#fff" />
+      <rect x="32" y="78" width="10" height="10" />
+      <path d="M98 102V70l20-16 20 16v32z" fill="#fff" />
+      <rect x="118" y="78" width="10" height="10" />
+      <rect x="64" y="80" width="26" height="22" rx="3" fill="#fff" />
+      <circle cx="74" cy="91" r="6" fill="var(--sun)" />
+      <path d="M84 85v12" stroke-width="2" />
+      <path d="M82 70a12 12 0 0 1 8 8M86 62a22 22 0 0 1 12 14" stroke="var(--sun-dark)" />
+      <text x="80" y="44" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="12" font-weight="700" fill="var(--ink)" stroke="none">dB</text>
+    </g>
+  )}
+
+  {motiv === 'brand' && (
+    <g>
+      <!-- Dach mit Modulen, Stecker mit Funke -->
+      <path d="M26 100V70l42-30 42 30v30z" fill="#fff" />
+      <path d="M44 66l24-17 24 17-24 0z" fill="var(--sun)" />
+      <path d="M56 58l24 0M50 62h36" stroke="#fff" stroke-width="1.5" />
+      <rect x="58" y="78" width="20" height="22" />
+      <rect x="112" y="64" width="14" height="10" rx="2" fill="#fff" />
+      <path d="M126 69h8M104 69h8" />
+      <path d="M118 52l-4 6h6l-4 6" stroke="var(--bad)" stroke-width="2" />
+    </g>
+  )}
+
+  {motiv === 'dynamisch' && (
+    <g>
+      <!-- Preiskurve über den Tag mit Uhr -->
+      <path d="M28 100h104M28 100V36" />
+      <path d="M30 70c10 0 12-14 22-14s12 30 24 30 12-34 26-34 14 12 26 12" stroke="var(--sun-dark)" stroke-width="3" />
+      <circle cx="76" cy="86" r="4" fill="var(--sun)" />
+      <circle cx="116" cy="34" r="12" fill="#fff" />
+      <path d="M116 26v8l6 4" stroke-width="2" />
+      <text x="40" y="44" font-family="Geist, system-ui, sans-serif" font-size="11" font-weight="700" fill="var(--ink)" stroke="none">ct</text>
+    </g>
+  )}
+
+  {motiv === 'rabatt' && (
+    <g>
+      <!-- Wallbox und Prozentzeichen -->
+      <rect x="40" y="34" width="34" height="50" rx="6" fill="#fff" />
+      <path d="M57 46l-6 10h8l-6 10" stroke="var(--sun-dark)" stroke-width="2" />
+      <path d="M57 84v8c0 8 10 8 10 0" />
+      <circle cx="112" cy="58" r="24" fill="var(--sun)" />
+      <path d="M102 70l20-24" stroke-width="3" />
+      <circle cx="103" cy="49" r="4" stroke-width="2.5" />
+      <circle cx="121" cy="67" r="4" stroke-width="2.5" />
+    </g>
+  )}
+
+  {motiv === 'ostwest' && (
+    <g>
+      <!-- Satteldach mit Modulen auf beiden Seiten, Sonne links und rechts -->
+      <path d="M40 102V72l40-30 40 30v30z" fill="#fff" />
+      <path d="M48 68l32-24v14L56 76z" fill="var(--sun)" />
+      <path d="M112 68L80 44v14l24 18z" fill="var(--sun)" />
+      <path d="M34 76l46-35 46 35" />
+      <rect x="72" y="82" width="16" height="20" />
+      <circle cx="24" cy="44" r="8" fill="var(--sun)" />
+      <circle cx="136" cy="44" r="8" fill="var(--sun-light)" />
+      <text x="24" y="66" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="10" font-weight="700" fill="var(--ink)" stroke="none">O</text>
+      <text x="136" y="66" text-anchor="middle" font-family="Geist, system-ui, sans-serif" font-size="10" font-weight="700" fill="var(--ink)" stroke="none">W</text>
     </g>
   )}
 </svg>

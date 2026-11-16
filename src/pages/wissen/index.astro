@@ -4,13 +4,13 @@ import Base from '../../layouts/Base.astro';
 import ArtikelKarte from '../../components/ArtikelKarte.astro';
 import Suche from '../../components/Suche.astro';
 import MythosKarte from '../../components/MythosKarte.astro';
-import { ratgeberListe, slugify } from '../../lib/util';
+import { ratgeberListe, slugify, mischeMythen } from '../../lib/util';
 import { ALTARTIKEL } from '../../lib/altartikel';
 import { KATEGORIEN } from '../../content.config';
 
 const ratgeber = await ratgeberListe();
 const lexikon = await getCollection('lexikon');
-const mythen = (await getCollection('mythen')).sort((a, b) => +b.data.veroeffentlicht - +a.data.veroeffentlicht);
+const mythen = mischeMythen(await getCollection('mythen'));
 const foerderung = await getCollection('foerderung');
 const quellenZahl = new Set(ratgeber.flatMap((r) => r.data.quellen.map((q) => q.url))).size;
 

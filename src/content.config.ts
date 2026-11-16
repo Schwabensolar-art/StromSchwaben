@@ -61,7 +61,7 @@ const mythen = defineCollection({
     mythos: z.string(),
     urteil: z.enum(['falsch', 'teilweise richtig', 'richtig']),
     kurz: z.string().max(220),
-    illustration: z.enum(['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher', 'altbau', 'energiebilanz', 'recycling', 'alterung', 'balkon', 'eauto']),
+    illustration: z.enum(['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher', 'altbau', 'energiebilanz', 'recycling', 'alterung', 'balkon', 'eauto', 'laerm', 'brand', 'dynamisch', 'rabatt', 'ostwest']),
     veroeffentlicht: z.coerce.date(),
     geprueft: z.coerce.date(),
     quellen: z.array(quelle).min(1),

@@ -25,3 +25,12 @@ export const ratgeberUrl = (e: CollectionEntry<'ratgeber'>) => `/wissen/${e.id}/
 export function pruefAlter(geprueft: Date, tage = 90) {
   return (Date.now() - +geprueft) / 864e5 > tage;
 }
+
+/** Mythen nach Datum sortieren und die Urteile abwechselnd mischen, damit die Übersicht nicht nur aus einer Farbe besteht. */
+export function mischeMythen<T extends { data: { urteil: string; veroeffentlicht: Date } }>(liste: T[]): T[] {
+  const sortiert = [...liste].sort((a, b) => +b.data.veroeffentlicht - +a.data.veroeffentlicht);
+  const gruppen = ['teilweise richtig', 'falsch', 'richtig'].map((u) => sortiert.filter((m) => m.data.urteil === u));
+  const ergebnis: T[] = [];
+  while (gruppen.some((g) => g.length)) for (const g of gruppen) if (g.length) ergebnis.push(g.shift()!);
+  return ergebnis;
+}
