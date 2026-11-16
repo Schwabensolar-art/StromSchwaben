@@ -29,19 +29,53 @@ const jsonLd = [{
   </section>
   <section class="sec">
     <div class="wrap">
+      <div class="lex-filter">
+        <label for="lex-q" class="sr-only">Begriff suchen</label>
+        <input id="lex-q" type="search" placeholder="Begriff suchen, z. B. Smart Meter, Autarkie, Netzentgelt" autocomplete="off">
+        <p id="lex-info" aria-live="polite">{alle.length} Begriffe. Für die Suche in allen Artikeln: <a href="/wissen/suche/">Volltextsuche</a>.</p>
+      </div>
       <nav class="az" aria-label="Alphabet">
         {abc.map((b) => gruppen.has(b) ? <a href={`#${b}`}>{b}</a> : <span aria-hidden="true">{b}</span>)}
       </nav>
       {[...gruppen.entries()].map(([b, liste]) => (
-        <div class="lex-group">
+        <div class="lex-group" data-gruppe>
           <h2 id={b}>{b}</h2>
           <ul class="lex-list">
             {liste.map((e) => (
-              <li><a href={`/lexikon/${e.id}/`}><strong>{e.data.begriff}</strong><span>{e.data.kurz}</span></a></li>
+              <li data-text={[e.data.begriff, ...(e.data.synonyme ?? []), e.data.kurz].join(' ').toLowerCase()}><a href={`/lexikon/${e.id}/`}><strong>{e.data.begriff}</strong><span>{e.data.kurz}</span></a></li>
             ))}
           </ul>
         </div>
       ))}
+  <p id="lex-leer" hidden class="lead" style="margin-top:8px">Kein Begriff gefunden. <a id="lex-voll" href="/wissen/suche/">In allen Artikeln suchen</a></p>
     </div>
   </section>
+  <script is:inline>
+    (() => {
+      const q = document.getElementById('lex-q');
+      const info = document.getElementById('lex-info');
+      const leer = document.getElementById('lex-leer');
+      const voll = document.getElementById('lex-voll');
+      const gruppen = [...document.querySelectorAll('[data-gruppe]')];
+      const infoText = info.innerHTML;
+      const norm = (t) => t.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+      q.addEventListener('input', () => {
+        const w = norm(q.value.trim());
+        let n = 0;
+        for (const g of gruppen) {
+          let sichtbar = 0;
+          for (const li of g.querySelectorAll('li')) {
+            const treffer = !w || norm(li.dataset.text).includes(w);
+            li.hidden = !treffer;
+            if (treffer) sichtbar++;
+          }
+          g.hidden = sichtbar === 0;
+          n += sichtbar;
+        }
+        info.innerHTML = w ? `${n} ${n === 1 ? 'Begriff' : 'Begriffe'} gefunden` : infoText;
+        leer.hidden = n > 0;
+        voll.href = '/wissen/suche/?q=' + encodeURIComponent(q.value.trim());
+      });
+    })();
+  </script>
 </Base>

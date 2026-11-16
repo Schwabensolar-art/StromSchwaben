@@ -176,3 +176,19 @@ footer.site{background:var(--black);color:rgba(255,255,255,.6);padding:40px 0 28
   .ftable td{display:block;border:0;padding:3px 0}
   .foot{grid-template-columns:1fr}
 }
+
+/* These im Hero und Mythen-Band auf der Wissen-Startseite */
+.these{display:inline-block;margin:14px 0 4px;padding:6px 12px;border-radius:999px;background:var(--sun-light);font-size:.85rem;font-weight:600;color:var(--black)}
+.mythen-band{background:var(--black);color:#fff}
+.mythen-band .eyebrow{color:var(--sun)}
+.mythen-band .sec-head h2{color:#fff}
+.mythen-band .more{color:#fff;border-color:#fff}
+.mythen-band .mythos{color:var(--black)}
+
+/* Lexikon-Filter */
+.lex-filter{margin:0 0 20px;max-width:640px}
+.lex-filter input{width:100%;padding:13px 16px;border:1px solid var(--border);border-radius:10px;font:inherit;font-size:1rem;background:var(--white)}
+.lex-filter input:focus{outline:2px solid var(--sun);outline-offset:1px;border-color:var(--black)}
+.lex-filter p{font-size:.85rem;color:var(--muted);margin-top:8px}
+.lex-filter a{color:var(--black);border-bottom:1px solid var(--black)}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}

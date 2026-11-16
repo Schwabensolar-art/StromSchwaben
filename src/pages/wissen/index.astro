@@ -23,14 +23,31 @@ const jsonLd = [{
   <section class="hero">
     <div class="wrap">
       <p class="eyebrow">StromSchwaben Wissen</p>
+      <p class="these">Unser Ziel: die Wissensseite Nummer 1 für Solar und Energie.</p>
       <h1 class="page">Energiewissen mit Quellen.<br>Kei Gschwätz.</h1>
       <p class="lead">Förderung, Strompreise, Heizung, Photovoltaik und Energierecht: verständlich erklärt, jede Zahl mit Quelle und Prüfdatum.</p>
       <Suche />
       <div class="stats">
         <div><strong>{ratgeber.length + ALTARTIKEL.length}</strong>Artikel</div>
+        <div><strong>{mythen.length}</strong>Mythen geprüft</div>
         <div><strong>{lexikon.length}</strong>Lexikon-Begriffe</div>
         <div><strong>{foerderung.length}</strong>Förderprogramme</div>
         <div><strong>{quellenZahl}</strong>verlinkte Quellen</div>
+      </div>
+    </div>
+  </section>
+
+  <section class="sec mythen-band">
+    <div class="wrap">
+      <div class="sec-head">
+        <div>
+          <p class="eyebrow">Mythen-Check</p>
+          <h2>Was stimmt wirklich?</h2>
+        </div>
+        <a class="more" href="/mythen/">Alle {mythen.length} Mythen</a>
+      </div>
+      <div class="mythen-grid">
+        {mythen.slice(0, 6).map((m) => <MythosKarte m={m} />)}
       </div>
     </div>
   </section>
@@ -47,15 +64,6 @@ const jsonLd = [{
       <div class="sec-head"><h2>Themen</h2></div>
       <div class="cats">
         {KATEGORIEN.map((k) => <a href={`/wissen/ratgeber/#${slugify(k)}`}>{k}</a>)}
-      </div>
-    </div>
-  </section>
-
-  <section class="sec">
-    <div class="wrap">
-      <div class="sec-head"><h2>Mythen-Check</h2><a class="more" href="/mythen/">Alle Mythen</a></div>
-      <div class="mythen-grid">
-        {mythen.slice(0, 3).map((m) => <MythosKarte m={m} />)}
       </div>
     </div>
   </section>

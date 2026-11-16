@@ -3,7 +3,7 @@
  * Einfache Linien-Illustrationen für den Mythen-Check.
  * Einheitlicher Stil: schwarze Kontur, Sonnengelb als Akzent, heller Hintergrundkreis.
  */
-export const ILLUS = ['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher'] as const;
+export const ILLUS = ['heizung', 'netz', 'co2', 'winter', 'smartmeter', 'speicher', 'altbau', 'energiebilanz', 'recycling', 'alterung', 'balkon', 'eauto'] as const;
 interface Props { motiv: (typeof ILLUS)[number]; titel?: string }
 const { motiv, titel = '' } = Astro.props;
 ---
@@ -96,6 +96,96 @@ const { motiv, titel = '' } = Astro.props;
       <rect x="62" y="70" width="28" height="20" rx="2" fill="var(--sun)" stroke="none" />
       <path d="M78 42l-8 14h10l-8 14" stroke-width="2.5" />
       <circle cx="118" cy="40" r="10" fill="var(--sun)" />
+    </g>
+  )}
+
+  {motiv === 'altbau' && (
+    <g>
+      <!-- Altbau mit Sprossenfenstern und Heizkörper -->
+      <path d="M30 102V58l30-24 30 24v44z" fill="#fff" />
+      <path d="M24 62l36-30 36 30" />
+      <rect x="40" y="64" width="14" height="16" />
+      <path d="M47 64v16M40 72h14" stroke-width="1.8" />
+      <rect x="66" y="64" width="14" height="16" />
+      <path d="M73 64v16M66 72h14" stroke-width="1.8" />
+      <rect x="52" y="86" width="16" height="16" />
+      <path d="M44 34v-8h8v4" />
+      <!-- Wärmepumpe daneben -->
+      <rect x="100" y="70" width="36" height="32" rx="4" fill="#fff" />
+      <circle cx="113" cy="86" r="9" fill="var(--sun)" />
+      <path d="M113 80v12M107 86h12" stroke-width="2" />
+      <path d="M127 78h4M127 86h4M127 94h4" stroke-width="2" />
+      <path d="M90 90h10" stroke-dasharray="3 3" />
+    </g>
+  )}
+
+  {motiv === 'energiebilanz' && (
+    <g>
+      <!-- Waage: Herstellung gegen Ertrag -->
+      <path d="M80 30v66M58 102h44M80 30l-40 12M80 30l40 22" />
+      <path d="M28 42h24l-12 22z" fill="#fff" />
+      <path d="M108 52h24l-12 22z" fill="#fff" />
+      <rect x="32" y="34" width="16" height="8" rx="1" fill="var(--ink)" stroke="none" />
+      <rect x="110" y="30" width="20" height="22" rx="1" fill="var(--sun)" />
+      <path d="M115 30v22M120 30v22M125 30v22M110 41h20" stroke="#fff" stroke-width="1.5" />
+      <circle cx="80" cy="30" r="4" fill="var(--sun)" />
+    </g>
+  )}
+
+  {motiv === 'recycling' && (
+    <g>
+      <!-- Modul im Kreislauf -->
+      <rect x="58" y="44" width="44" height="32" rx="2" fill="var(--sun)" />
+      <path d="M69 44v32M80 44v32M91 44v32M58 60h44" stroke="#fff" stroke-width="1.5" />
+      <path d="M46 52a36 36 0 0 1 52-28" />
+      <path d="M92 18l6 6-8 3" />
+      <path d="M116 62a36 36 0 0 1-30 34" />
+      <path d="M94 100l-8-4 5-7" />
+      <path d="M58 94a36 36 0 0 1-18-30" />
+      <path d="M34 70l6-6 6 6" />
+    </g>
+  )}
+
+  {motiv === 'alterung' && (
+    <g>
+      <!-- Modul und flache Leistungskurve -->
+      <rect x="30" y="30" width="40" height="28" rx="2" fill="var(--sun)" />
+      <path d="M40 30v28M50 30v28M60 30v28M30 44h40" stroke="#fff" stroke-width="1.5" />
+      <path d="M32 100h100M32 100V66" />
+      <path d="M36 74h20l70 6" stroke="var(--sun-dark)" stroke-width="3" />
+      <path d="M36 74l40 22" stroke="var(--ink)" stroke-dasharray="3 5" />
+      <text x="128" y="70" text-anchor="end" font-family="Geist, system-ui, sans-serif" font-size="10" font-weight="700" fill="var(--ink)" stroke="none">25 J.</text>
+    </g>
+  )}
+
+  {motiv === 'balkon' && (
+    <g>
+      <!-- Hauswand, Balkon mit Modul, Stecker -->
+      <rect x="34" y="20" width="92" height="84" fill="#fff" />
+      <rect x="48" y="30" width="28" height="34" />
+      <path d="M62 30v34" stroke-width="1.8" />
+      <path d="M40 72h80v26H40z" />
+      <path d="M40 72v26M60 72v26M80 72v26M100 72v26M120 72v26" stroke-width="1.5" />
+      <rect x="66" y="76" width="44" height="20" rx="1" fill="var(--sun)" />
+      <path d="M77 76v20M88 76v20M99 76v20" stroke="#fff" stroke-width="1.5" />
+      <path d="M110 86c10 0 12-10 4-20" />
+      <rect x="110" y="58" width="10" height="8" rx="2" fill="#fff" />
+      <path d="M113 58v-4M117 58v-4" stroke-width="2" />
+    </g>
+  )}
+
+  {motiv === 'eauto' && (
+    <g>
+      <!-- Elektroauto an der Wallbox -->
+      <path d="M30 88V76l10-16h42l14 16h14v12z" fill="#fff" />
+      <path d="M44 62l-6 14h52" stroke-width="2" />
+      <circle cx="48" cy="90" r="9" fill="#fff" />
+      <circle cx="96" cy="90" r="9" fill="#fff" />
+      <rect x="120" y="44" width="18" height="30" rx="3" fill="#fff" />
+      <path d="M131 52l-5 8h6l-5 8" stroke="var(--sun-dark)" stroke-width="2" />
+      <path d="M129 74c0 10-8 10-19 8" />
+      <path d="M38 30a8 8 0 0 1 14-5 7 7 0 0 1 10 6h-24z" fill="var(--sun-light)" stroke-width="2" />
+      <circle cx="70" cy="34" r="8" fill="var(--sun)" />
     </g>
   )}
 </svg>

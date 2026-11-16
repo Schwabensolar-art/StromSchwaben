@@ -505,6 +505,50 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   .reveal{opacity:1;transform:none;transition:none}
 }
 
+
+/* Wissen: Band unter der Navigation und Mythen-Check auf der Startseite */
+.wissen-band{background:var(--black);color:var(--white)}
+.wissen-band .wrap{display:flex;align-items:center;justify-content:space-between;gap:12px 24px;flex-wrap:wrap;padding-top:12px;padding-bottom:12px}
+.wissen-band p{font-size:0.84rem;line-height:1.5;margin:0}
+.wissen-band strong{color:var(--sun)}
+.wissen-band-links{display:flex;align-items:center;gap:18px;flex-wrap:wrap}
+.wissen-band-links a{font-size:0.8rem;font-weight:500;color:rgba(255,255,255,0.75)}
+.wissen-band-links a:hover{color:var(--white)}
+.wissen-band-links a.wb-btn{background:var(--sun);color:var(--black);font-weight:700;padding:7px 14px;border-radius:8px}
+nav a.nav-wissen{color:var(--black);font-weight:700;box-shadow:inset 0 -2px 0 var(--sun)}
+.wissen-mythen{background:var(--black);color:var(--white);padding:64px 0}
+.wissen-mythen .sec-label{color:var(--sun)}
+.wissen-mythen .sec-title{color:var(--white)}
+.wissen-mythen .sec-body{color:rgba(255,255,255,0.7);text-align:left;max-width:600px}
+.wm-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;align-items:start;margin-top:32px}
+.wm-karte{background:var(--white);color:var(--black);border-radius:12px;overflow:hidden;--ink:#111;--sun-dark:#C9A020;--bad:#a8322d}
+.wm-karte summary{list-style:none;cursor:pointer;padding:18px 20px;display:flex;flex-direction:column;align-items:stretch;justify-content:flex-start;gap:8px;text-align:left;font-size:inherit;font-weight:inherit}
+.wm-karte summary::after{display:none;content:none}
+.wm-karte summary::-webkit-details-marker{display:none}
+.wm-bild{background:#F6F5F1;border-radius:8px;padding:8px 24px;margin-bottom:6px}
+.wm-bild svg{width:100%;height:auto;display:block;max-height:170px}
+.wm-label{font-size:0.68rem;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted)}
+.wm-karte h3{font-size:1.02rem;font-weight:700;line-height:1.35;letter-spacing:-0.01em}
+.wm-hinweis{display:flex;align-self:flex-start;align-items:center;gap:8px;font-size:0.82rem;font-weight:600}
+.wm-plus{width:20px;height:20px;border-radius:50%;background:var(--black);position:relative;transition:transform .2s}
+.wm-plus::before,.wm-plus::after{content:"";position:absolute;left:5px;right:5px;top:9px;height:2px;background:var(--white)}
+.wm-plus::after{transform:rotate(90deg)}
+.wm-karte[open] .wm-plus{transform:rotate(45deg)}
+.wm-antwort{padding:0 20px 20px;font-size:0.88rem;line-height:1.6}
+.wm-antwort p{margin:10px 0}
+.wm-antwort a{font-weight:600;border-bottom:1px solid var(--black)}
+.wm-urteil{display:inline-block;font-size:0.75rem;font-weight:700;padding:3px 10px;border-radius:999px}
+.wm-falsch{background:#FBE9E7;color:#a8322d}
+.wm-teilweise{background:#FDF3C7;color:#7a5c00}
+.wm-richtig{background:#E6F4EA;color:#1e6b34}
+.wm-mehr{display:flex;gap:10px;flex-wrap:wrap;margin-top:28px}
+.wm-mehr .btn-plain{color:var(--white);border-color:rgba(255,255,255,0.4)}
+.wm-mehr .btn-plain:hover{border-color:var(--white)}
+.wm-mehr .btn-sun{background:var(--sun);color:var(--black);font-size:0.875rem;font-weight:700;padding:11px 22px;border-radius:8px;display:inline-block}
+@media (max-width:900px){
+  .wm-grid{grid-template-columns:1fr}
+  .wissen-band-links a:not(.wb-btn){display:none}
+}
 </style>
 </head>
 <body>
@@ -517,7 +561,7 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
         <li><a href="#über-uns">Über uns</a></li>
         <li><a href="#vorgehen">Vorgehen</a></li>
         <li><a href="#projekte">Projekte</a></li>
-        <li><a href="/wissen/">Wissen</a></li>
+        <li><a href="/wissen/" class="nav-wissen">Wissen</a></li>
         <li><a href="#faq">FAQ</a></li>
         <li><a href="solar-rechner.html">Solar-Rechner</a></li>
       </ul>
@@ -539,12 +583,26 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
   <a href="#über-uns" onclick="closeMobileMenu()">Über uns</a>
   <a href="#vorgehen" onclick="closeMobileMenu()">Vorgehen</a>
   <a href="#projekte" onclick="closeMobileMenu()">Projekte</a>
-  <a href="#blog" onclick="closeMobileMenu()">Blog</a>
+  <a href="/wissen/" onclick="closeMobileMenu()">Wissen</a>
+  <a href="/mythen/" onclick="closeMobileMenu()">Mythen-Check</a>
   <a href="#faq" onclick="closeMobileMenu()">FAQ</a>
   <a href="solar-rechner.html" onclick="closeMobileMenu()">Solar-Rechner</a>
   <a href="#kontakt" class="mobile-cta" onclick="closeMobileMenu()">Beratung anfragen</a>
 </div>
 
+
+<!-- WISSEN -->
+<div class="wissen-band">
+  <div class="wrap">
+    <p><strong>StromSchwaben Wissen</strong> Unser Ziel: die Wissensseite Nummer 1 für Solar und Energie.</p>
+    <div class="wissen-band-links">
+      <a href="/mythen/">Mythen-Check</a>
+      <a href="/foerderung/">Förderung</a>
+      <a href="/lexikon/">Lexikon</a>
+      <a href="/wissen/" class="wb-btn">Zur Wissensdatenbank</a>
+    </div>
+  </div>
+</div>
 
 <!-- HERO -->
 <section class="hero">
@@ -579,6 +637,61 @@ footer{background:var(--black);border-top:1px solid rgba(255,255,255,.08);paddin
     </div>
   </div>
 </section>
+
+<!-- MYTHEN-CHECK -->
+<section class="wissen-mythen" id="mythen">
+  <div class="wrap">
+    <p class="sec-label">Mythen-Check</p>
+    <h2 class="sec-title">Was stimmt wirklich?</h2>
+    <p class="sec-body">Behauptungen, die wir in Beratungsgesprächen und Kommentarspalten immer wieder hören. Klick auf einen Mythos, um das Urteil zu sehen. Jeder Faktencheck ist mit Quellen belegt.</p>
+    <div class="wm-grid">
+      <details class="wm-karte">
+        <summary>
+          <div class="wm-bild"><svg class="illu" viewBox="0 0 160 120" role="img" aria-label="Illustration: Im Winter bringt eine Solaranlage nichts" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"> <circle cx="80" cy="62" r="52" fill="var(--sun-light)" stroke="none"></circle> <g> <!-- tiefe Wintersonne --><circle cx="118" cy="36" r="10" fill="var(--sun)"></circle> <path d="M118 18v-4M136 36h4M131 23l3-3M131 49l3 3M105 23l-3-3"></path> <!-- Haus mit Solardach und Schnee --> <path d="M36 102V66l34-28 34 28v36z" fill="#fff"></path> <path d="M45 60l25-20 25 20" fill="var(--ink)" stroke="none" opacity=".85"></path> <path d="M52 54l18-14M60 58l18-14M70 40l25 20" stroke="#fff" stroke-width="1.5"></path> <path d="M30 68l40-33 40 33"></path> <path d="M33 66c6-3 10 1 15-2s9-1 14-4" stroke="#fff" stroke-width="3"></path> <rect x="62" y="80" width="16" height="22"></rect> <!-- Schneeflocken --> <path d="M128 70v10M123 75h10M125 72l6 6M131 72l-6 6" stroke-width="1.8"></path> <path d="M28 40v8M24 44h8" stroke-width="1.8"></path> </g> </svg></div>
+          <span class="wm-label">Mythos</span>
+          <h3>„Im Winter bringt eine Solaranlage nichts“</h3>
+          <span class="wm-hinweis"><span class="wm-plus" aria-hidden="true"></span>Stimmt das?</span>
+        </summary>
+        <div class="wm-antwort">
+          <span class="wm-urteil wm-falsch">Urteil: falsch</span>
+          <p>Im Winter erzeugt eine Solaranlage deutlich weniger, aber nicht nichts. Dezember bis Februar liefern rund ein Zehntel des Jahresertrags, und fast jede dieser Kilowattstunden ersetzt teuren Netzstrom.</p>
+          <a href="/mythen/solaranlage-winter-bringt-nichts/">Ganzer Faktencheck mit Quellen</a>
+        </div>
+      </details>
+      <details class="wm-karte">
+        <summary>
+          <div class="wm-bild"><svg class="illu" viewBox="0 0 160 120" role="img" aria-label="Illustration: Eine Wärmepumpe funktioniert im Altbau nicht" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"> <circle cx="80" cy="62" r="52" fill="var(--sun-light)" stroke="none"></circle> <g> <!-- Altbau mit Sprossenfenstern und Heizkörper --><path d="M30 102V58l30-24 30 24v44z" fill="#fff"></path> <path d="M24 62l36-30 36 30"></path> <rect x="40" y="64" width="14" height="16"></rect> <path d="M47 64v16M40 72h14" stroke-width="1.8"></path> <rect x="66" y="64" width="14" height="16"></rect> <path d="M73 64v16M66 72h14" stroke-width="1.8"></path> <rect x="52" y="86" width="16" height="16"></rect> <path d="M44 34v-8h8v4"></path> <!-- Wärmepumpe daneben --> <rect x="100" y="70" width="36" height="32" rx="4" fill="#fff"></rect> <circle cx="113" cy="86" r="9" fill="var(--sun)"></circle> <path d="M113 80v12M107 86h12" stroke-width="2"></path> <path d="M127 78h4M127 86h4M127 94h4" stroke-width="2"></path> <path d="M90 90h10" stroke-dasharray="3 3"></path> </g> </svg></div>
+          <span class="wm-label">Mythos</span>
+          <h3>„Eine Wärmepumpe funktioniert im Altbau nicht“</h3>
+          <span class="wm-hinweis"><span class="wm-plus" aria-hidden="true"></span>Stimmt das?</span>
+        </summary>
+        <div class="wm-antwort">
+          <span class="wm-urteil wm-falsch">Urteil: falsch</span>
+          <p>Feldmessungen des Fraunhofer ISE in Häusern von 1826 bis 2001 zeigen: Luft-Wärmepumpen erreichen dort im Schnitt eine Jahresarbeitszahl von 3,3. Entscheidend ist die Vorlauftemperatur, nicht das Baujahr.</p>
+          <a href="/mythen/waermepumpe-funktioniert-nicht-im-altbau/">Ganzer Faktencheck mit Quellen</a>
+        </div>
+      </details>
+      <details class="wm-karte">
+        <summary>
+          <div class="wm-bild"><svg class="illu" viewBox="0 0 160 120" role="img" aria-label="Illustration: Der Vermieter kann ein Balkonkraftwerk einfach verbieten" xmlns="http://www.w3.org/2000/svg" fill="none" stroke="var(--ink)" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"> <circle cx="80" cy="62" r="52" fill="var(--sun-light)" stroke="none"></circle> <g> <!-- Hauswand, Balkon mit Modul, Stecker --><rect x="34" y="20" width="92" height="84" fill="#fff"></rect> <rect x="48" y="30" width="28" height="34"></rect> <path d="M62 30v34" stroke-width="1.8"></path> <path d="M40 72h80v26H40z"></path> <path d="M40 72v26M60 72v26M80 72v26M100 72v26M120 72v26" stroke-width="1.5"></path> <rect x="66" y="76" width="44" height="20" rx="1" fill="var(--sun)"></rect> <path d="M77 76v20M88 76v20M99 76v20" stroke="#fff" stroke-width="1.5"></path> <path d="M110 86c10 0 12-10 4-20"></path> <rect x="110" y="58" width="10" height="8" rx="2" fill="#fff"></rect> <path d="M113 58v-4M117 58v-4" stroke-width="2"></path> </g> </svg></div>
+          <span class="wm-label">Mythos</span>
+          <h3>„Der Vermieter kann ein Balkonkraftwerk einfach verbieten“</h3>
+          <span class="wm-hinweis"><span class="wm-plus" aria-hidden="true"></span>Stimmt das?</span>
+        </summary>
+        <div class="wm-antwort">
+          <span class="wm-urteil wm-falsch">Urteil: falsch</span>
+          <p>Seit Oktober 2024 können Mieter nach § 554 BGB verlangen, dass der Vermieter ein Steckersolargerät erlaubt. Ablehnen darf er nur, wenn es ihm nicht zumutbar ist.</p>
+          <a href="/mythen/vermieter-kann-balkonkraftwerk-verbieten/">Ganzer Faktencheck mit Quellen</a>
+        </div>
+      </details>
+    </div>
+    <div class="wm-mehr">
+      <a href="/mythen/" class="btn-sun">Alle Mythen ansehen</a>
+      <a href="/wissen/" class="btn-plain">Zur Wissensdatenbank</a>
+    </div>
+  </div>
+</section>
+
 
 <!-- ÜBER UNS -->
 <section class="section reveal bg-off" id="über-uns">
