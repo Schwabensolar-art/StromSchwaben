@@ -47,7 +47,7 @@ Laut Bundesnetzagentur ist der Einbau eines intelligenten Messsystems Pflicht be
 
 Liegt dein Verbrauch darunter und hast du keine dieser Anlagen, bekommst du in der Regel eine moderne Messeinrichtung. Der Messstellenbetreiber darf dir trotzdem einen Smart Meter einbauen, wenn er das möchte.<sup><a href="#q2">2</a></sup>
 
-<p class="hinweis">Im laufenden Gesetzgebungsverfahren zum EEG 2027 wird diskutiert, die Smart-Meter-Pflicht für PV-Anlagen deutlich früher greifen zu lassen. Beschlossen ist das noch nicht. Den aktuellen Stand zur EEG-Reform findest du in unserem <a href="/eeg-reform-2027.html">Artikel zum EEG 2027</a>.</p>
+<p class="hinweis">Im laufenden Gesetzgebungsverfahren zum EEG 2027 wird diskutiert, die Smart-Meter-Pflicht für PV-Anlagen deutlich früher greifen zu lassen. Beschlossen ist das noch nicht. Den aktuellen Stand zur EEG-Reform findest du in unserem <a href="/wissen/eeg-2027-einspeiseverguetung/">Artikel zum EEG 2027</a>.</p>
 
 ## Was ein Smart Meter kosten darf
 
